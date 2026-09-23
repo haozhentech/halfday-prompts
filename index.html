@@ -1,0 +1,3658 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#B8543F"><meta name="description" content="星起半食品摄影提示词组合工具：选择产品，自动带出原料与外观，自由组合场景、状态、角度和光线，复制完整提示词。">
+<title>星起半 · 食品摄影提示词 · 黄金组合与同景套图</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23B8543F'/%3E%3Cpath d='M8 8h5v6h6V8h5v16h-5v-6h-6v6H8z' fill='%23FFF4E9'/%3E%3C/svg%3E">
+<style>
+:root{--ink:#352820;--muted:#78695e;--red:#a74633;--line:#e5ddd5;--paper:#fffdf9;--cream:#f6f0e9;--peach:#f6e5dd;--radius:12px}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}button,input,textarea,select{font:inherit;color:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #b8543f;outline-offset:3px}button{touch-action:manipulation}a{color:inherit}.topbar{height:82px;padding:0 30px;background:var(--paper);border-bottom:1px solid var(--line);display:flex;gap:32px;align-items:center}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-size:20px;font-weight:650;line-height:1.3}.brand small{display:block;font-size:12px;letter-spacing:.16em;font-weight:550;color:var(--muted);margin-top:3px}.brand-mark{background:var(--red);color:#fff6eb;width:43px;height:43px;border-radius:50%;font-family:Georgia,serif;font-size:33px;display:grid;place-content:center}.title{padding-left:28px;border-left:1px solid var(--line);font-size:18px;font-weight:550}.topnote{margin-left:auto;color:var(--muted);font-size:14px}.workspace{display:grid;grid-template-columns:248px minmax(450px,1fr) minmax(340px,420px);min-height:calc(100vh - 82px);max-width:1740px;margin:auto}.catalog{background:#eee7df;border-right:1px solid var(--line);padding:27px 16px 20px;display:flex;flex-direction:column;position:sticky;top:0;height:calc(100dvh - 0px);max-height:calc(100dvh - 0px)}.catalog-head{padding:0 8px}.eyebrow{font-size:12px;font-weight:650;letter-spacing:.13em;color:var(--red)}h1,h2,h3,p{margin:0}h1{font-size:25px;font-weight:650;margin:6px 0 20px}h2{font-size:25px;line-height:1.35;font-weight:650}h3{font-size:17px;font-weight:650}.catalog input{background:#fffaf4;border-color:#ddd2c7;font-size:14px;padding:10px 12px}.catalog-tabs{display:flex;background:#e3d9ce;padding:4px;border-radius:8px;gap:4px;margin:14px 0}.catalog-tabs button{flex:1;font-size:14px;background:none;border:none;padding:7px 4px;border-radius:5px}.catalog-tabs button.selected{background:var(--paper);box-shadow:0 1px 4px #57413410;color:var(--red);font-weight:650}.product-list{overflow-y:auto;min-height:80px;flex:1;padding:0 2px;scrollbar-width:thin}.product-button{width:100%;display:flex;align-items:flex-start;gap:9px;text-align:left;background:transparent;border:1px solid transparent;padding:11px 9px;border-radius:8px;margin:2px 0;font-size:14px;line-height:1.45}.product-button:hover{background:#ffffff75}.product-button.selected{background:var(--paper);border-color:#d6b2a4;color:var(--red)}.product-id{font-size:12px;letter-spacing:.03em;min-width:25px;padding-top:2px;color:var(--muted);font-variant-numeric:tabular-nums}.custom-product{margin:14px 8px 9px;border:1px dashed #ae9685;border-radius:7px;padding:10px 6px;background:transparent;color:#765347;font-size:14px}.catalog-foot{font-size:12px;color:var(--muted);line-height:1.6;padding:0 8px}.editor{padding:30px 32px 60px;min-width:0}.editor-top{display:flex;gap:14px;align-items:center;justify-content:space-between}.editor-top .eyebrow{margin-bottom:7px}.badge{background:#ead9ce;padding:5px 10px;font-size:12px;white-space:nowrap;border-radius:5px;color:#77503f;letter-spacing:.07em}.intro{font-size:14px;color:var(--muted);margin:10px 0 24px}.block{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:23px;margin-bottom:19px}.section-label{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:17px}.text-button{border:none;background:none;font-size:13px;color:var(--red);padding:0;text-decoration:underline;text-underline-offset:4px}.muted{font-size:13px;color:var(--muted)}label{display:block;font-size:14px;font-weight:550;margin:15px 0 7px}input,textarea,select{display:block;width:100%;background:#fff;border:1px solid #dfd6cc;border-radius:7px;padding:10px 12px;outline:none;line-height:1.6}input:focus,textarea:focus,select:focus{border-color:var(--red);box-shadow:0 0 0 3px #b8543f14}textarea{resize:vertical;font-size:14px}select{font-size:14px;min-height:44px}input{font-size:15px}label:first-child{margin-top:0}.control-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.scene-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.scene-button{padding:12px 10px;text-align:left;background:#fff;border:1px solid #ded6ce;border-radius:8px}.scene-button small{display:block;font-size:12px;color:var(--muted);margin-bottom:3px}.scene-button strong{font-size:14px;font-weight:600}.scene-button:hover{border-color:#b28c7d}.scene-button.selected{background:var(--peach);border-color:var(--red);color:var(--red)}.scene-button.selected small{color:var(--red)}.note{margin-top:12px;padding:10px 12px;background:#f8eddf;color:#805939;border-radius:5px;font-size:13px}details{border-top:1px solid var(--line);margin-top:20px;padding-top:16px}summary{font-size:14px;color:#765347;cursor:pointer}.result{position:sticky;top:0;height:100dvh;background:var(--paper);border-left:1px solid var(--line);display:flex;flex-direction:column;padding:30px 26px 20px;min-height:500px}.result-header{display:flex;gap:8px;align-items:center;justify-content:space-between}.result-header .eyebrow{margin-bottom:7px}.result h2{font-size:21px}.live-label{font-size:12px;color:var(--red);border:1px solid #e4c7bb;border-radius:20px;padding:3px 9px;white-space:nowrap}.recipe-strip{display:flex;gap:8px;align-items:center;margin:24px 0 14px;font-size:12px;color:#785340}.recipe-strip span:first-child,.recipe-strip span:last-child{background:#f3e9e0;padding:5px 8px;border-radius:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.prompt-output{border:1px solid #e5ddd4;background:#faf6f0;color:#504138;line-height:1.9;flex:1;min-height:260px;resize:none;border-radius:9px;padding:17px;font-size:14px}.result-actions{margin-top:17px;display:flex;align-items:center;gap:12px}.copy-button{border:none;background:var(--red);color:#fff8f0;font-size:15px;font-weight:550;padding:13px 17px;border-radius:7px;flex:1;display:flex;justify-content:space-between;gap:15px;align-items:center}.copy-button:hover{background:#873a2a}.copy-button span{font-size:22px;line-height:1}.usage{font-size:13px;color:var(--muted);line-height:1.7;margin-top:15px}.privacy-note{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:12px}.empty{padding:22px 10px;color:var(--muted);font-size:14px}#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:#392b23;color:white;padding:11px 20px;border-radius:8px;font-size:14px;opacity:0;pointer-events:none;transition:.15s;z-index:10;max-width:90vw;text-align:center}#toast.visible{opacity:1;transform:translateX(-50%) translateY(0)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}[hidden]{display:none!important}@media(min-width:1550px){.editor{padding-left:46px;padding-right:46px}.workspace{grid-template-columns:265px minmax(520px,1fr) 440px}}@media(max-width:1180px){.workspace{grid-template-columns:215px minmax(360px,1fr) 330px}.editor{padding:25px 20px}.result{padding:25px 19px}.block{padding:19px}.scene-grid{grid-template-columns:repeat(2,1fr)}.topnote{display:none}}@media(max-width:980px){.workspace{grid-template-columns:220px minmax(0,1fr)}.result{grid-column:2;position:static;height:auto;min-height:0;border-left:0;margin:0 20px 30px;border:1px solid var(--line);border-radius:12px}.prompt-output{height:540px;flex:none}.catalog{grid-row:1 / span 2}.editor{padding-bottom:0}.topbar{height:76px;padding:0 22px;gap:20px}.title{font-size:16px;padding-left:20px}}@media(max-width:650px){.topbar{padding:15px 18px;height:auto;gap:12px;flex-wrap:wrap}.brand{font-size:18px}.brand small{font-size:11px}.brand-mark{width:38px;height:38px;font-size:28px}.title{font-size:14px;margin-left:auto;border:none;padding:0}.workspace{display:block}.catalog{height:auto;max-height:none;position:static;padding:22px 14px 16px;border-bottom:1px solid var(--line);border-right:0}.catalog-head{padding:0 4px}.catalog-head h1{font-size:21px;margin-bottom:13px}.catalog-tabs{margin:10px 0}.product-list{display:grid;grid-template-columns:1fr 1fr;max-height:190px;overflow-y:auto;flex:none;gap:3px}.product-button{padding:9px 7px;margin:0;font-size:13px;gap:5px}.product-id{font-size:12px;min-width:22px}.custom-product{margin:12px 4px 0;width:calc(100% - 8px)}.catalog-foot{margin-top:10px;padding:0 4px}.editor{padding:23px 15px 0}.editor h2{font-size:23px}.block{padding:18px}.scene-grid{grid-template-columns:repeat(3,1fr)}.scene-button{padding:9px 7px}.scene-button strong{font-size:13px}.section-label .muted{font-size:12px}.result{margin:0 15px 25px;padding:21px 18px}.control-grid{gap:9px}.prompt-output{height:480px}textarea,input,select{font-size:16px}.topbar .title{font-size:13px}.result h2{font-size:20px}}
+.combination-stats{display:flex;align-items:center;gap:24px;padding:19px 22px;background:#493329;color:#fff5e9;border-radius:10px}.combination-stats>div{flex:1;min-width:0}.combination-stats span{display:block;font-size:25px;line-height:1.2;font-weight:600;font-variant-numeric:tabular-nums}.combination-stats small{display:block;font-size:12px;color:#e1c7b5;margin-top:6px}.combination-stats button{border:1px solid #947769;border-radius:6px;background:transparent;padding:9px 10px;font-size:13px;color:#fff2e7;white-space:nowrap}.count-explanation{font-size:12px;color:var(--muted);margin:9px 0 20px;line-height:1.7}.flavor-grid{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}.flavor-chip{border:1px solid #d8c9bb;background:#fff;padding:5px 9px;border-radius:20px;font-size:14px}.flavor-chip.selected{border-color:var(--red);background:var(--peach);color:var(--red)}.flavor-details{border:0;margin-top:13px;padding-top:0}.scene-grid{max-height:330px;overflow-y:auto;padding:2px;scrollbar-width:thin}@media(max-width:650px){.combination-stats{padding:16px;gap:12px;flex-wrap:wrap}.combination-stats span{font-size:23px}.combination-stats small{font-size:12px}.combination-stats button{width:100%;padding:9px}.scene-grid{max-height:275px}.product-button,.scene-button strong{font-size:14px}}
+/* Visual photography controls, original self-contained SVG diagrams. */
+[hidden]{display:none!important}.workspace{grid-template-columns:220px minmax(500px,1fr) minmax(310px,370px);max-width:1740px}.editor{padding:28px 25px 45px}.intro{margin-bottom:18px}.product-details{margin-top:0;padding:15px 20px}.product-details>summary{font-weight:650;color:var(--ink)}.product-details[open]>.section-label{margin-top:20px}.workspace-tabs{display:flex;gap:5px;background:#e9dfd4;padding:5px;border-radius:10px;margin:22px 0 16px;scroll-margin-top:12px}.workspace-tabs button{flex:1;border:0;border-radius:6px;background:none;font-size:14px;font-weight:600;padding:12px 3px}.workspace-tabs [aria-selected=true]{background:var(--paper);color:var(--red);box-shadow:0 1px 3px #65493612}.block{padding:20px}.scene-groups{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}.scene-groups button{border:1px solid var(--line);background:#fff;border-radius:20px;padding:6px 11px;font-size:12px}.scene-groups button.selected{background:var(--ink);color:#fff;border-color:var(--ink)}.current-choice{padding:10px 12px;font-size:13px;border-left:3px solid var(--red);background:var(--cream);margin:15px 0}.scene-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-height:520px;overflow-y:auto;padding:2px 6px 2px 2px;scrollbar-width:thin}.scene-button{min-height:86px}.scene-button strong{display:block;font-size:14px}.scene-button small{font-size:12px;line-height:1.55;margin-top:5px}.visual-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.visual-card{position:relative;min-width:0;border:1px solid #dfd6cc;background:#fffefa;border-radius:10px;padding:7px 10px 13px;text-align:left;transition:border-color .12s,background .12s}.visual-card:hover{border-color:#bb8170;background:#fcf4eb}.visual-card.selected{border:2px solid var(--red);padding:6px 9px 12px;background:#fff5ed}.visual-card.selected:after{content:'✓';position:absolute;top:9px;right:10px;background:var(--red);border-radius:50%;height:19px;width:19px;line-height:19px;text-align:center;color:white;font-size:12px}.card-diagram{height:105px;margin-bottom:6px;display:flex;align-items:center;justify-content:center}.card-diagram svg{width:100%;height:100%;max-width:220px}.visual-card strong{display:block;font-size:14px;line-height:1.45}.visual-card small{display:block;font-size:12px;color:var(--muted);margin-top:5px;line-height:1.5}.visual-explainer{color:var(--muted);font-size:13px;line-height:1.65;margin:-5px 0 16px}.spaced{margin-top:28px}.step-next{margin-top:23px;border:1px solid #d6b2a4;border-radius:7px;padding:12px 15px;color:var(--red);background:var(--peach);width:100%;font-size:14px;font-weight:550}.live-preview{border:1px solid var(--line);border-radius:9px;padding:12px;margin-bottom:13px;background:#fffcf7}.preview-label{font-size:12px;font-weight:650;display:flex;justify-content:space-between}.preview-label small{font-size:11px;color:var(--muted);font-weight:400}#preview-diagrams{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin-top:8px}#preview-diagrams>div{min-width:0}#preview-diagrams span{font-size:11px;color:var(--muted)}#preview-diagrams svg{width:100%;display:block}#preview-diagrams p{font-size:11px;padding:6px 0;color:var(--muted)}#preview-summary{font-size:11px;color:var(--muted);line-height:1.5;margin-top:5px}.result{padding:28px 18px 18px}.result h2{font-size:20px}.recipe-strip{margin:16px 0 12px;gap:5px}.prompt-output{min-height:160px;font-size:13px;padding:13px}.privacy-note{font-size:11px;margin-top:8px;padding-top:8px}.result-actions{margin-top:12px}.usage{margin-top:10px;font-size:12px}.combination-stats small{font-size:11px}
+@media(min-width:1600px){.visual-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:1150px){.workspace{grid-template-columns:190px minmax(430px,1fr)}.result{grid-column:2;position:static;height:auto;min-height:650px;border-top:1px solid var(--line);border-left:0;margin:0 25px 30px;border-radius:12px}.catalog{grid-row:1/3}.result .prompt-output{min-height:330px}.live-preview{max-width:500px}.editor{padding-bottom:5px}.topnote{display:none}}
+@media(max-width:700px){.topbar{padding:0 16px;height:72px;gap:16px}.title{font-size:14px;padding-left:15px}.brand{font-size:17px}.brand small{font-size:9px}.workspace{display:flex;flex-direction:column}.catalog{position:static;height:auto;max-height:none;padding:20px 14px 12px;border-right:0;border-bottom:1px solid var(--line)}.catalog h1{font-size:22px;margin:4px 0 12px}.catalog-head{padding:0 3px}.catalog-tabs{margin:10px 0}.product-list{max-height:190px;display:grid;grid-template-columns:1fr 1fr;flex:none}.product-button{font-size:12px;padding:9px 6px}.catalog-foot{display:none}.custom-product{margin:10px 3px 0}.editor{padding:22px 14px 4px}.editor h2{font-size:23px}.result{margin:0 14px 25px;padding:20px 15px;min-height:660px}.block{padding:16px}.scene-grid{max-height:410px}.workspace-tabs button{font-size:12px;padding:11px 2px}.visual-grid{gap:9px}.visual-card strong{font-size:13px}.visual-card small{font-size:11px}.card-diagram{height:88px}.control-grid{grid-template-columns:1fr}.combination-stats{flex-wrap:wrap}.combination-stats button{font-size:12px}.section-label>.muted{font-size:11px}.product-details>summary .muted{display:block;margin-top:3px}.visual-card{padding-left:8px;padding-right:8px}.visual-card.selected{padding-left:7px;padding-right:7px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+/* Golden presets and a frozen set for product series. */
+.random-controls{display:flex;gap:6px;align-items:center;margin-left:auto}.random-controls select{width:145px;font-size:12px;min-height:36px;padding:5px;color:var(--ink);background:var(--paper)}.random-controls button{white-space:nowrap}.golden-panel{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:18px 20px;border:1px solid #c8a270;border-radius:12px;background:#fff6e3;margin:20px 0 14px}.golden-panel .eyebrow{color:#82602b;font-size:12px}.golden-panel h3{margin:5px 0;font-size:17px}.golden-panel p{font-size:14px;color:#795f3e;line-height:1.55}.golden-panel small{display:block;margin-top:7px;color:#8b704b;font-size:12px}.golden-panel button{flex-shrink:0;border:1px solid #a17b42;border-radius:7px;background:#fffdf7;padding:10px 13px;color:#6d4d21;font-size:14px}.series-panel{border:1px solid #d2b9ac;background:#fffaf4;border-radius:12px;padding:19px 20px;margin-bottom:17px}.series-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.series-heading h3{font-size:17px}.series-heading p{color:var(--muted);font-size:13px;margin-top:3px}.series-heading button{flex-shrink:0;padding:10px 12px;border:1px solid var(--red);background:var(--red);color:white;border-radius:7px;font-size:14px}.series-heading button[aria-pressed=true]{background:var(--paper);color:var(--red)}.lock-summary{font-size:13px;margin-top:13px;color:#796251;line-height:1.65}.series-panel.is-locked{border:2px solid var(--red);padding:18px 19px}.is-locked .lock-summary{color:var(--red)}button:disabled,select:disabled{cursor:not-allowed;opacity:.5}textarea:disabled,input:disabled{background:#f0ede8;color:#85766a}.batch-toolbar{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.batch-toolbar button,.batch-result button{font-size:13px;border:1px solid #d7c5b8;background:#fff;border-radius:5px;padding:6px 10px}.batch-intro,.batch-foot{font-size:13px;color:var(--muted);line-height:1.65;margin-top:12px}.batch-foot{border-top:1px solid var(--line);padding-top:12px}.batch-products{display:grid;grid-template-columns:1fr 1fr;gap:4px;max-height:230px;overflow:auto;scrollbar-width:thin;background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:8px}.batch-products label{display:flex;gap:8px;align-items:flex-start;font-size:13px;font-weight:400;margin:0;padding:7px 4px;line-height:1.4;cursor:pointer}.batch-products input{width:16px;height:16px;min-width:16px;accent-color:var(--red);margin:2px 0 0;padding:0}.batch-products label:has(input:checked){color:var(--red)}#batch-count{font-size:12px;color:var(--muted);margin-left:5px}#batch-status{font-size:13px;color:var(--red);margin-top:12px}.batch-result{padding:13px 0 0;margin-top:12px}.batch-result summary{font-size:14px;color:var(--ink)}.batch-result textarea{margin:10px 0;height:210px;font-size:13px}.batch-result button{color:var(--red)}.cut-summary{font-size:13px;color:#88634a;margin-top:8px;line-height:1.6}#packaging-name{margin-left:7px}#structure-fields{border-left:3px solid #dfb892;padding-left:12px;margin-top:15px}body.scene-locked .scene-grid,body.scene-locked .visual-grid{opacity:.7}body.scene-locked .golden-panel{opacity:.7}
+@media(max-width:700px){.golden-panel{padding:14px;gap:10px}.golden-panel button{padding:9px;font-size:12px}.series-panel{padding:15px 14px}.series-panel.is-locked{padding:14px 13px}.series-heading{align-items:flex-start}.series-heading button{font-size:12px;padding:9px}.series-heading h3{font-size:16px}.series-heading p{font-size:12px}.batch-products{grid-template-columns:1fr}.random-controls{width:100%;margin-top:8px}.random-controls select{flex:1}.golden-panel h3{font-size:16px}}
+
+</style>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html" aria-label="星起半提示词工具首页"><span class="brand-mark">½</span><span>星起半 <small>HALFDAY BAKERY</small></span></a><div class="title">食品摄影提示词</div><span class="topnote">选场景 · 看示意 · 复制提示词</span></header>
+<main class="workspace">
+<aside class="catalog" aria-label="产品选择"><div class="catalog-head"><div class="eyebrow">01 / 选产品</div><h1>今天拍什么？</h1><label class="sr-only" for="search">搜索名称或编号</label><input id="search" type="search" placeholder="搜索名称 / 编号" autocomplete="off"><div class="catalog-tabs" role="group" aria-label="产品范围"><button data-filter="main" class="selected" aria-pressed="true">菜单 32</button><button data-filter="candidate" aria-pressed="false">候选 32</button></div></div><div id="products" class="product-list"></div><button class="custom-product" id="custom-product">＋ 自定义一款产品</button><p class="catalog-foot">64款产品均可纯文字生成；候选品为可调整的研发设定。</p></aside>
+<section class="editor" aria-label="自由组合提示词"><div class="editor-top"><div><div class="eyebrow">02 / 自由组合</div><h2 id="current-title">经典奶油肉桂卷</h2></div><span id="current-badge" class="badge">NO.20</span></div><p class="intro">产品资料自动填好，直接用文字生图。跟着示意图选机位与光线，每一段文字都可以改。</p>
+<div class="combination-stats"><div><span id="count-product">—</span><small>当前产品 · 可用组合</small></div><div><span id="count-total">—</span><small>全部64款 · 可用组合</small></div><div class="random-controls"><label for="random-mode" class="sr-only">随机方式</label><select id="random-mode"><option value="golden">随机黄金组合</option><option value="free">随机自由探索</option></select><button id="mix-surprise" type="button">换一组 ↻</button></div></div><p class="count-explanation" id="count-explanation"></p>
+<section class="golden-panel" aria-label="本场景黄金组合"><div><span class="eyebrow">每个场景 · 一套黄金组合</span><h3 id="golden-title"></h3><p id="golden-reason"></p><small id="golden-status"></small></div><button type="button" id="apply-golden">套用这组</button></section>
+<section class="series-panel" aria-label="同场景套图"><div class="series-heading"><div><h3>同场景，只换产品</h3><p>固定场景、包装、机位和光线，连续拍一套。</p></div><button type="button" id="lock-scene" aria-pressed="false">锁定当前场景</button></div><p id="lock-summary" class="lock-summary">选好组合后锁定，再点左侧其他产品。</p>
+<details id="batch-panel"><summary>多款一起做 · 批量提示词 <span id="batch-count">0 款</span></summary><p class="batch-intro">勾选后按当前场景生成，每款都有独立提示词。切面会按各款食品结构更新。</p><div class="batch-toolbar"><button type="button" id="batch-menu">选菜单32款</button><button type="button" id="batch-candidates">选候选32款</button><button type="button" id="batch-current">只选当前款</button><button type="button" id="batch-clear">清空</button></div><div id="batch-products" class="batch-products"></div><button type="button" id="batch-generate" class="step-next">锁定并生成这组提示词</button><p id="batch-status" role="status" aria-live="polite"></p><div id="batch-export" class="batch-toolbar" hidden><button type="button" id="batch-copy">复制整组</button><button type="button" id="batch-download">下载 TXT</button></div><div id="batch-results"></div><p class="batch-foot">锁定的是文字设定。需要背景完全一致时，可在支持图片参考的软件中复用首张场景图；单靠文字不能保证逐张完全一致。</p></details></section>
+<details class="block product-details"><summary>产品资料与配方 <span class="muted">已自动填好 · 点开可改</span></summary><div class="section-label"><h3>产品本身</h3><button id="reset-product" class="text-button" type="button">恢复产品默认</button></div><label for="name">产品名称</label><input id="name" type="text"><label for="reference">生成方式</label><select id="reference"><option value="text">纯文字生成 · 默认，无需图片</option><option value="image">图片辅助 · 有需要时再使用</option></select><label for="ingredients">主要组成</label><textarea id="ingredients" rows="3"></textarea><details class="flavor-details"><summary>加一种新风味 <span class="muted">32种，可多选</span></summary><div id="flavors" class="flavor-grid"></div><p class="muted">选中后作为新口味概念加入提示词，基础配方仍可编辑。</p></details><label for="appearance">外观与口感特征</label><textarea id="appearance" rows="4"></textarea><p id="candidate-note" class="note" hidden></p></details>
+<nav class="workspace-tabs" role="tablist" aria-label="摄影设置">
+<button id="tab-scene" role="tab" aria-selected="true" aria-controls="panel-scene" data-tab="scene">01 场景与状态</button><button id="tab-camera" role="tab" aria-selected="false" aria-controls="panel-camera" data-tab="camera" tabindex="-1">02 机位与构图</button><button id="tab-light" role="tab" aria-selected="false" aria-controls="panel-light" data-tab="light" tabindex="-1">03 光线与画面</button></nav>
+<section id="panel-scene" role="tabpanel" aria-labelledby="tab-scene" class="block tab-panel">
+<div class="section-label"><h3>这次在哪里拍？</h3><span class="muted">36 个场景</span></div>
+<div id="scene-groups" class="scene-groups" role="group" aria-label="场景分类"></div>
+<p class="current-choice" id="scene-current"></p><div id="scenes" class="scene-grid"></div>
+<label for="state-select">食物是什么状态？</label><select id="state-select"></select><p id="cut-summary" class="cut-summary"></p>
+<details><summary>编辑场景、道具与动作</summary><label for="scene-text">场景与道具</label><textarea id="scene-text" rows="5"></textarea><label for="state-text">具体状态与动作</label><textarea id="state-text" rows="4"></textarea><div id="structure-fields"><label for="structure-text">切面内部：什么组织、馅在哪里</label><textarea id="structure-text" rows="4"></textarea><label for="cut-avoid">本款切面避免画错的地方</label><textarea id="cut-avoid" rows="3"></textarea><p class="muted">这是根据菜单组成制定的概念结构。若改了配方，请同步修改这里。</p></div></details><details id="packaging-details"><summary>包装结构与摆放 <span id="packaging-name" class="muted"></span></summary><label for="packaging-text">盒型、开口、底托、食品位置</label><textarea id="packaging-text" rows="6"></textarea><p class="muted">每个场景固定一种结构。盒型与背景分开描述，减少临时变成另一种包装。</p></details>
+<p id="combination-note" class="note" hidden></p><button type="button" class="step-next" data-next="camera">下一步：看看拍摄角度 →</button>
+</section>
+<section id="panel-camera" role="tabpanel" aria-labelledby="tab-camera" class="block tab-panel" hidden>
+<div class="section-label"><h3>从哪里看这份点心？</h3><span class="muted">16 种机位</span></div><p class="visual-explainer">小相机代表拍摄位置，虚线表示看向食品的方向。只展示适合当前场景的选项。</p>
+<div id="angle-cards" class="visual-grid" role="group" aria-label="看图选机位"></div>
+<details><summary>机位选择与文字微调</summary><label for="angle-select">拍摄角度</label><select id="angle-select"></select><label for="angle-text">镜头视角</label><textarea id="angle-text" rows="3"></textarea></details>
+<div class="section-label spaced"><h3>主角放在哪儿？</h3><span class="muted">12 种构图</span></div><p class="visual-explainer">棕色形状代表食品，淡色框代表留白。留白用于你后期加字，生图时不生成文字。</p>
+<div id="composition-cards" class="visual-grid" role="group" aria-label="看图选构图"></div>
+<details><summary>构图选择与文字微调</summary><label for="composition-select">画面构图</label><select id="composition-select"></select><label for="composition-text">构图细节</label><textarea id="composition-text" rows="3"></textarea></details>
+<button type="button" class="step-next" data-next="light">下一步：看看光怎么照 →</button>
+</section>
+<section id="panel-light" role="tabpanel" aria-labelledby="tab-light" class="block tab-panel" hidden>
+<div class="section-label"><h3>你喜欢哪一种光？</h3><span class="muted">12 种光线</span></div><p class="visual-explainer">看光从哪边来、影子落在哪儿。图示解释方向与软硬，不代表最终照片效果。</p>
+<div id="light-cards" class="visual-grid" role="group" aria-label="看图选光线"></div>
+<details><summary>光线选择与文字微调</summary><label for="light-select">光线</label><select id="light-select"></select><label for="light-text">光线细节</label><textarea id="light-text" rows="3"></textarea></details>
+<div class="control-grid"><div><label for="ratio">画面比例</label><select id="ratio"><option value="竖幅3:4">3:4 · 竖图</option><option value="方形1:1">1:1 · 方图</option><option value="竖幅9:16">9:16 · 长竖图</option><option value="横幅4:3">4:3 · 横图</option><option value="横幅16:9">16:9 · 宽横图</option></select></div><div><label for="depth-select">背景清楚到什么程度？</label><select id="depth-select"><option value="soft">背景柔和，食品清楚</option><option value="clear">包装和环境也清楚</option><option value="shallow">只突出关键口感</option></select></div></div>
+<p id="depth-hint" class="visual-explainer"></p>
+<label for="palette">环境配色</label><textarea id="palette" rows="2">环境采用奶油白、温暖木色和少量陶土红。品牌色只用于环境与道具，食物保留自然颜色。</textarea><label for="additional">再加一点要求 <span class="muted">可留空</span></label><textarea id="additional" rows="3" placeholder="所有产品共用的要求，例如：只出现一只手；盒子靠左；换成浅灰桌面……"></textarea>
+<details><summary>通用质感要求与避免项</summary><label for="quality">主体与摄影质感</label><textarea id="quality" rows="8"></textarea><label for="avoid">本款避免项</label><textarea id="avoid" rows="3"></textarea><label for="negative">通用避免项</label><textarea id="negative" rows="4"></textarea></details>
+</section>
+</section>
+<aside class="result" aria-label="完整提示词"><div class="result-header"><div><div class="eyebrow">03 / 复制去生图</div><h2>你的完整提示词</h2></div><span class="live-label">实时组合</span></div><div class="recipe-strip"><span id="selection-product">20 肉桂卷</span><span>＋</span><span id="selection-scene">S01 门店打卡</span></div><section class="live-preview" aria-label="当前拍摄示意"><div class="preview-label">当前选择示意 <small>非生成图</small></div><div id="preview-diagrams"></div><p id="preview-summary"></p></section><label for="prompt" class="sr-only">完整提示词，可选中复制</label><textarea id="prompt" class="prompt-output" readonly spellcheck="false"></textarea><div class="result-actions"><span id="word-count" class="muted"></span><button id="copy" class="copy-button">复制完整提示词 <span aria-hidden="true">↗</span></button></div><p class="usage" id="usage-note">复制提示词，直接粘贴到你使用的生图软件中，无需上传白底图。</p><p class="privacy-note">本页负责组合提示词；图片在你选择的生图软件中生成。</p></aside>
+</main><div id="toast" role="status" aria-live="polite"></div>
+<script>
+window.HALFDAY_PRODUCTS = [
+  {
+    "id": "01",
+    "name": "AOP黄油原味可颂",
+    "category": "可颂",
+    "ingredients": "小麦粉、AOP发酵黄油（拟用，实际采购待确定）、牛奶、酵母、糖、海盐、鸡蛋（刷面）",
+    "appearance": "中段饱满、两端渐尖的微弯月形可颂，卷层由中心向两端逐渐收窄。表皮呈自然金黄与浅焦褐色，薄酥层边缘微微翘起，层间有细腻阴影与少量真实碎屑。",
+    "whole": "呈现一只完整、未切开的微弯月形可颂，饱满中段与两端卷尖均可辨认，表面没有夹馅或额外装饰。",
+    "cut": "从较厚处横向切开，切面朝向镜头，表现薄膜状蜂窝组织与层层卷起的酥皮，边缘有少量切落的碎屑。内部为空气与面包组织，不添加馅心。",
+    "macro": "近距离表现卷层交叠处的薄酥片、烘烤色差及断口处轻薄的面包膜。",
+    "finishing": "烘焙师用食品夹将烤好并稍稍冷却的可颂轻放到铺烘焙纸的托盘上，避免夹碎外层。",
+    "handheld": "paper",
+    "avoid": "不添加奶油、糖霜、水果或流心馅，不画成厚实蛋糕组织或均匀塑料条纹。",
+    "recommended": [
+      "S02",
+      "S06"
+    ]
+  },
+  {
+    "id": "02",
+    "name": "开心果覆盆子可颂",
+    "category": "可颂",
+    "ingredients": "小麦粉、黄油、牛奶、酵母、糖、盐、刷面蛋液、开心果酱／碎、覆盆子、奶油",
+    "appearance": "饱满的弯月形金黄可颂，侧面小开口露出少量自然浅绿色开心果馅与莓红覆盆子果馅，顶部只点缀少量开心果碎和两三颗覆盆子。酥皮层次清楚，果馅浓稠，坚果色泽不过分鲜绿。",
+    "whole": "呈现一只完整开心果覆盆子可颂，侧面轻微露馅，顶部覆盆子与开心果碎点缀克制，金黄酥皮仍占主要可见面积。",
+    "cut": "切开较厚的主体，显示酥松卷层、浓稠开心果馅与少量覆盆子夹心的交界。馅料嵌在层内，不将两种馅混成粉绿色浆液。",
+    "macro": "聚焦酥皮断口、开心果馅的细腻颗粒与覆盆子果酱的微润表面。",
+    "finishing": "烘焙师用窄柄糕点铲从底部托起已完成装饰的可颂，轻放在独立烘焙纸上。",
+    "handheld": "paper",
+    "avoid": "不添加草莓、樱桃或白巧，不把开心果画成荧光绿，也不让馅料大面积淹没酥皮。",
+    "recommended": [
+      "S03",
+      "S02"
+    ]
+  },
+  {
+    "id": "03",
+    "name": "榛子黑巧爆浆可颂",
+    "category": "可颂",
+    "ingredients": "小麦粉、黄油、牛奶、酵母、糖、盐、刷面蛋液、榛子酱、榛子碎、黑巧、奶油",
+    "appearance": "微弯月形可颂的两端卷尖清楚，中段饱满；一端局部薄蘸黑巧，点缀少量榛子碎，其余酥皮保持金黄。内部榛子黑巧馅呈自然深棕色与柔和缎面光泽，浓稠而没有镜面塑料反光。",
+    "whole": "一只完整榛子黑巧可颂，保留一端薄巧克力涂层与少量榛子碎，尚未切开时内馅不外流，主体金黄卷层清楚。",
+    "cut": "从中部切开，露出酥松蜂窝组织与榛子黑巧夹心。切口处少量浓稠馅缓慢下垂即可，仍保留面包层次与切面边界。",
+    "macro": "表现浅金色酥皮断层与深棕黑巧夹心的厚薄反差，以及馅料缓慢下垂的圆润边缘。",
+    "finishing": "烘焙师用锯齿面包刀轻切已冷却至适宜操作温度的可颂，另一只手隔着烘焙纸稳住侧面。",
+    "handheld": "paper",
+    "avoid": "不出现巧克力瀑布、无限拉丝或空心硬壳，不把榛子黑巧画成纯黑液体。",
+    "recommended": [
+      "S03",
+      "S06"
+    ]
+  },
+  {
+    "id": "04",
+    "name": "柠檬凝乳可颂",
+    "category": "可颂",
+    "ingredients": "小麦粉、黄油、牛奶、酵母、糖、盐、刷面蛋液、柠檬、蛋、奶油",
+    "appearance": "一只饱满的金黄弯月形可颂，沿上部纵向开一道浅夹口，夹口中有少量柔白奶油与淡黄色柠檬凝乳。两种馅边界清晰、柔润浓稠，装饰高度低于可颂主体高度，酥皮卷层充分露出。",
+    "whole": "呈现一只完成填馅的完整柠檬可颂，顶部浅夹口露出适量奶油与柠檬凝乳，左右卷尖完整，不增加柠檬片或糖粉。",
+    "cut": "横切主体，露出薄酥层及上部夹口内的浓稠柠檬凝乳和少量奶油。凝乳与奶油贴附在夹口内部，表面湿润但不滴成水。",
+    "macro": "突出酥皮薄片、柠檬凝乳的柔滑切口及奶油细致的边缘纹理。",
+    "finishing": "烘焙师用糕点铲托住已完成装饰的可颂底部，平稳移入浅盘，手不遮挡柠檬凝乳。",
+    "handheld": "plate",
+    "avoid": "不添加莓果、蛋白霜或柠檬整片，不把凝乳画成果汁，也不把主体变成柠檬挞。",
+    "recommended": [
+      "S02",
+      "S03"
+    ]
+  },
+  {
+    "id": "05",
+    "name": "罗勒番茄马苏里拉可颂",
+    "category": "可颂",
+    "ingredients": "小麦粉、黄油、牛奶、酵母、糖、盐、刷面蛋液、番茄、罗勒、马苏里拉",
+    "appearance": "金黄弯月形可颂沿中腰横向剖开，轻合的上下包体之间夹入适量番茄片、柔白马苏里拉与少量罗勒叶。酥层、自然红色番茄和罗勒绿层次清楚，夹层薄厚适中，食材微润而不淌汁。",
+    "whole": "呈现一只完整组装的咸口可颂三明治，上下包体自然合拢，侧面适度显露番茄、马苏里拉与罗勒，馅料不撑裂面包。",
+    "cut": "横向切开一份，展示酥皮、番茄、马苏里拉与罗勒的夹层关系。奶酪保持柔软或微融状态，番茄仍有果肉结构，汁水不浸烂面包。",
+    "macro": "聚焦开酥边缘与柔白奶酪、番茄果肉之间的质地反差，保留罗勒叶脉或细碎形态。",
+    "finishing": "烘焙师将制作完成的咸口可颂用糕点铲移到烘焙纸上，保持夹层平稳、食材不滑出。",
+    "handheld": "paper",
+    "avoid": "不添加火腿、培根或甜奶油，不让奶酪形成夸张长拉丝，也不把番茄画成红色果酱。",
+    "recommended": [
+      "S03",
+      "S01"
+    ]
+  },
+  {
+    "id": "06",
+    "name": "德式海盐碱水结",
+    "category": "碱水",
+    "ingredients": "小麦粉、水、酵母、黄油、海盐、食品用碱水处理材料",
+    "appearance": "传统德式结形碱水面包，较粗的下弧与较细的两条交叉臂围出三个不规则孔洞。表皮呈自然栗棕色，下弧有一处浅色烘裂割口与少量海盐颗粒，表面只有轻微烘焙光泽。",
+    "whole": "一只完整碱水结，交叉结构与三个孔洞清楚可见，手工轮廓略不对称，下弧饱满、上方交叉臂较细。",
+    "cut": "切开较粗的一侧，露出浅米白色、细密有弹性的面包组织与薄棕色外皮。切面为实心面包组织，不添加夹馅。",
+    "macro": "特写碱水表皮的细小皱褶、浅色裂口与稀疏海盐颗粒。",
+    "finishing": "烘焙师用食品夹将烤好并稍凉的碱水结从晾架移至烘焙纸，动作轻巧。",
+    "handheld": "paper",
+    "avoid": "不添加糖霜或奶酪馅，不把海盐画成密集白芝麻，不呈现可颂式蜂窝酥层。",
+    "recommended": [
+      "S01",
+      "S06"
+    ]
+  },
+  {
+    "id": "07",
+    "name": "红豆黄油碱水",
+    "category": "碱水",
+    "ingredients": "小麦粉、水、酵母、黄油、糖、盐、食品用碱水处理材料、红豆",
+    "appearance": "一只饱满圆形碱水面包，栗棕色薄皮上部有一道斜向切开的长夹口，露出暗红色红豆馅与一小块厚度适中的浅黄色黄油。红豆颗粒可辨，黄油柔润而有完整切边，浅色面包芯沿夹口少量露出。",
+    "whole": "呈现一只完整红豆黄油碱水包，顶部斜夹口内的红豆馅与一小块黄油朝向镜头，包体保持圆润完整，不额外切半。",
+    "cut": "沿主体横切并将切面转向镜头，表现细密浅色面包、红豆馅与黄油的真实接触关系。红豆浓稠，黄油仍有厚度与形状，不融成满盘液体。",
+    "macro": "聚焦薄亮的碱水表皮、可辨的红豆颗粒与黄油切边的细腻质感。",
+    "finishing": "烘焙师用糕点铲从底部托起组装完成的红豆黄油碱水，轻放在防油纸上，保持黄油位置不变。",
+    "handheld": "paper",
+    "avoid": "不把红豆画成巧克力，不增加奶油裱花，不让黄油完全融化或出现可颂层酥。",
+    "recommended": [
+      "S03",
+      "S06"
+    ]
+  },
+  {
+    "id": "08",
+    "name": "抹茶红豆乳酪碱水",
+    "category": "碱水",
+    "ingredients": "小麦粉、水、酵母、黄油、糖、盐、食品用碱水处理材料、抹茶、红豆、奶油奶酪",
+    "appearance": "饱满圆形碱水面包呈栗棕烤色，顶部斜向开一条浅夹口，暗红豆馅与自然浅茶绿色抹茶乳酪分层填入其中。馅料柔润而不过量，浅色面包芯沿切口少量露出，面包外皮保持棕色。",
+    "whole": "呈现一只完整抹茶红豆乳酪碱水包，顶部夹口适度露出两种馅料，圆润包体完整，不额外撒抹茶粉或堆红豆装饰。",
+    "cut": "切开主体，表现分层填入的抹茶奶油奶酪馅与红豆馅，并保留细密有韧性的碱水面包组织。馅料边界自然，不做人工整齐的彩虹夹层。",
+    "macro": "特写红豆颗粒与抹茶乳酪细腻馅体的自然交界，保留面包切口纤维。",
+    "finishing": "烘焙师用锯齿面包刀切下一份成品，另一只手隔着防油纸轻稳面包，不挤压乳酪馅。",
+    "handheld": "paper",
+    "avoid": "不出现荧光绿色、抹茶饮料或白巧淋面，不把奶油奶酪画成拉丝马苏里拉。",
+    "recommended": [
+      "S03",
+      "S02"
+    ]
+  },
+  {
+    "id": "09",
+    "name": "德式香肠芝士碱水",
+    "category": "碱水",
+    "ingredients": "小麦粉、水、酵母、黄油、糖、盐、食品用碱水处理材料、香肠、芝士",
+    "appearance": "一根熟制德式香肠由碱水面团包卷成短粗长条，两端轻微露出香肠，顶部有少量烤融芝士。栗棕色表皮有自然浅色裂口，香肠呈真实熟肉色，芝士柔软贴附并带少量金黄焦点。",
+    "whole": "呈现一只完整长条香肠芝士碱水包，包卷结构紧实，两端适度露出香肠，顶部薄层烤芝士完整，不改成切开夹肠的热狗餐包。",
+    "cut": "从中段横向切开，使熟香肠截面与包裹它的碱水面包组织一同可见，薄层芝士仍位于顶部。香肠内部细密湿润，面包孔隙细密，芝士柔软贴附。",
+    "macro": "聚焦栗棕色碱水薄皮、香肠切口与芝士微融边缘之间的质感差异。",
+    "finishing": "烘焙师将稍凉的成品从烤盘夹到铺防油纸的托盘上，保持香肠和芝士稳固。",
+    "handheld": "paper",
+    "avoid": "不添加番茄酱、芥末酱或腌黄瓜，不出现未熟香肠切面与夸张芝士长拉丝。",
+    "recommended": [
+      "S01",
+      "S03"
+    ]
+  },
+  {
+    "id": "10",
+    "name": "经典乡村酸面包",
+    "category": "欧包／酸面包",
+    "ingredients": "小麦粉、水、天然酵种、盐",
+    "appearance": "一只椭圆形乡村酸面包，顶部一道自然张开的纵向割口，两端略收拢，外壳为金棕至深褐色。割口边缘薄脆翘起，表皮有自然裂纹和极少量面粉痕迹，朴实而有充分烘焙后的暖色层次。",
+    "whole": "呈现一只完整、未切片的椭圆乡村酸面包，纵向割口朝向镜头，保留手工整形的轻微不对称与自然裂纹。",
+    "cut": "用锯齿刀切出一片厚度适中的面包，旁侧主体露出切面，显示自然大小交错的气孔与有弹性的浅色面包壁。外壳有少量自然切落碎屑。",
+    "macro": "特写割包边缘的烘烤裂纹与切面气孔壁，表现外脆内润的真实反差。",
+    "finishing": "烘焙师在木板上用锯齿面包刀切下一片冷却后的酸面包，切片自然靠在主体旁。",
+    "handheld": "paper",
+    "avoid": "不添加坚果、葡萄干或夹馅，不把气孔做成整齐蜂巢，不用厚厚白面粉遮盖烘烤表皮。",
+    "recommended": [
+      "S03",
+      "S04"
+    ]
+  },
+  {
+    "id": "11",
+    "name": "核桃无花果酸面包",
+    "category": "欧包／酸面包",
+    "ingredients": "小麦粉、水、天然酵种、核桃、无花果干、盐",
+    "appearance": "一只短椭圆形核桃无花果酸面包，深金棕色外壳带一道自然纵向割纹，少量核桃与无花果干可在割口边缘露出。切面中坚果与果干自然嵌入面包组织，坚果边缘清楚，果干柔润、呈深浅棕色。",
+    "whole": "呈现一只完整、未切片的核桃无花果酸面包，外壳金棕，割口自然，不额外用鲜无花果或核桃堆饰顶部。",
+    "cut": "切出一片并使切面朝向镜头，显示分布不规则的核桃块、无花果果肉与天然发酵面包气孔。果料被面包组织包裹，不悬浮也不整齐排成图案。",
+    "macro": "表现核桃断面、无花果细小种籽和柔润面包气孔壁的近距离纹理。",
+    "finishing": "烘焙师用锯齿面包刀切下一片冷却后的面包，轻扶切片并保留少量自然碎屑。",
+    "handheld": "paper",
+    "avoid": "不添加奶油夹层、蔓越莓或鲜无花果顶饰，不把无花果画成紫色流心酱。",
+    "recommended": [
+      "S03",
+      "S04"
+    ]
+  },
+  {
+    "id": "12",
+    "name": "桂圆红枣酸面包",
+    "category": "欧包／酸面包",
+    "ingredients": "小麦粉、水、天然酵种、桂圆干、红枣、盐",
+    "appearance": "一只饱满短椭圆形酸面包，金棕外壳有一道自然烘开的纵向割口。内部桂圆干与去核红枣呈琥珀棕及枣红色，果肉柔润、嵌入浅色面包组织，外皮与面包芯不被整体染红。",
+    "whole": "呈现一只完整桂圆红枣酸面包，外壳与纵向割口清楚，少量果料可在割口边缘自然露出，顶部不堆整颗桂圆或红枣。",
+    "cut": "切开后展示不规则气孔与散布其中的桂圆、去核红枣果肉。果肉柔软且保持颗粒边界，不做果酱夹心或甜蛋糕式致密组织。",
+    "macro": "特写薄面包气孔壁与桂圆、红枣果肉的微润纤维，衬托自然烘焙外壳。",
+    "finishing": "烘焙师将刚切下的面包片平放在烘焙纸上，使果料切面自然朝上。",
+    "handheld": "paper",
+    "avoid": "不添加核桃或葡萄干，不出现红枣核、整颗带壳桂圆或鲜红色果酱夹层。",
+    "recommended": [
+      "S03",
+      "S04"
+    ]
+  },
+  {
+    "id": "13",
+    "name": "海盐迷迭香佛卡夏",
+    "category": "佛卡夏／恰巴塔",
+    "ingredients": "小麦粉、水、酵母、橄榄油、海盐、迷迭香",
+    "appearance": "一块厚度约三至四厘米的长方形佛卡夏，四边切口平直但表面起伏自然。顶部有深浅凹坑与薄薄橄榄油润泽，金黄边缘、稀疏海盐颗粒和少量迷迭香清楚可辨，组织蓬松。",
+    "whole": "呈现一块完整单人份长方形佛卡夏，金黄凹坑顶面朝向镜头，份量清楚，不扩大成整盘或增加表面配料。",
+    "cut": "从单份边缘切开或轻轻掰开，显示不规则大气孔、薄面包壁与金黄底边。组织柔润而有弹性，内部没有馅料。",
+    "macro": "特写表面凹坑里细薄的橄榄油光泽、海盐小颗粒与烤后迷迭香。",
+    "finishing": "烘焙师用平铲将烤好并稍凉的佛卡夏单份移至木板，保持厚度与表面完整。",
+    "handheld": "paper",
+    "avoid": "不添加番茄、奶酪或橄榄，不画成薄脆披萨底，也不出现表面积油水洼。",
+    "recommended": [
+      "S04",
+      "S06"
+    ]
+  },
+  {
+    "id": "14",
+    "name": "番茄罗勒佛卡夏",
+    "category": "佛卡夏／恰巴塔",
+    "ingredients": "小麦粉、水、酵母、橄榄油、小番茄、罗勒、盐",
+    "appearance": "一块厚度约三至四厘米的长方形佛卡夏，金黄顶面有不规则凹坑，嵌入三四枚烤软的小番茄半颗与少量罗勒。番茄微皱而保持果肉形态，罗勒呈自然绿色或烤后深绿，表面油润但无积油。",
+    "whole": "呈现一块完整单人份番茄罗勒佛卡夏，番茄疏密自然、局部嵌入顶面，保留充分金黄面包表面，不铺成满料披萨。",
+    "cut": "切开或从边缘掰开一部分，露出蓬松不规则气孔与表面番茄的嵌入关系。番茄周围略显柔润，其余面包组织保持蓬松，不湿塌。",
+    "macro": "表现烤番茄的微皱果皮、罗勒与金黄凹坑面包表面的油润反差。",
+    "finishing": "烘焙师用平铲将烤好的单份佛卡夏移到铺烘焙纸的浅盘，避免番茄滑落。",
+    "handheld": "paper",
+    "avoid": "不添加芝士、黑橄榄或肉类，不将面包压成薄披萨，不把番茄画成果酱。",
+    "recommended": [
+      "S02",
+      "S04"
+    ]
+  },
+  {
+    "id": "15",
+    "name": "罗勒鸡肉恰巴塔",
+    "category": "佛卡夏／恰巴塔",
+    "ingredients": "小麦粉、水、酵母、盐、橄榄油、鸡肉、罗勒青酱、番茄",
+    "appearance": "一份扁长方形恰巴塔三明治，浅金色薄壳沿中腰水平剖开，内夹熟鸡肉片、薄涂罗勒青酱与番茄片。上下包体轻合，侧面呈清楚但不过厚的夹层；鸡肉保留细腻纤维和微润切面。",
+    "whole": "呈现一份完整罗勒鸡肉恰巴塔三明治，上下包体对齐，侧面适度露出鸡肉、青酱与番茄，面包不被馅料撑裂。",
+    "cut": "切开主体并让切面略朝前，展示熟鸡肉、青酱、番茄与恰巴塔大气孔面包的关系。鸡肉完整熟透、纤维自然，青酱附着食材而不流满盘。",
+    "macro": "聚焦恰巴塔薄壳、大气孔边缘和鸡肉切面纤维，点出少量青酱与番茄的湿润质感。",
+    "finishing": "烘焙师将组装完成的恰巴塔隔着防油纸稳住，用锯齿刀切成便于展示切面的单份。",
+    "handheld": "paper",
+    "avoid": "不添加牛油果、煎蛋或额外奶酪，不画出未熟粉红鸡肉，不把青酱做成荧光绿流体。",
+    "recommended": [
+      "S03",
+      "S01"
+    ]
+  },
+  {
+    "id": "16",
+    "name": "南瓜黑胡椒鸡恰巴塔",
+    "category": "佛卡夏／恰巴塔",
+    "ingredients": "小麦粉、水、酵母、盐、橄榄油、南瓜、鸡肉、黑胡椒",
+    "appearance": "一份扁长方形恰巴塔三明治，浅金色薄壳沿中腰水平剖开，内夹烤软南瓜块与熟鸡肉片，少量黑胡椒细点可见。南瓜呈柔和暖橙色，绵软而仍有块状轮廓；夹馅厚度适中，面包不湿塌。",
+    "whole": "呈现一份完整南瓜黑胡椒鸡恰巴塔三明治，上下包体轻合，南瓜与鸡肉只在侧面夹层适度露出，不额外堆到顶部。",
+    "cut": "切开主体，展示南瓜、熟鸡肉与有不规则气孔的面包组织。南瓜绵软但不化成流心酱，鸡肉纤维细腻，夹层保持合理厚度。",
+    "macro": "特写暖橙色南瓜的细腻纤维、鸡肉微润切口与恰巴塔薄脆表皮。",
+    "finishing": "烘焙师用食品夹辅助将完成切分的恰巴塔轻放到烘焙纸上，让南瓜鸡肉切面自然朝前。",
+    "handheld": "paper",
+    "avoid": "不添加芝士、玉米或罗勒青酱，不出现生鸡肉、过量黑胡椒壳或南瓜泥流满盘。",
+    "recommended": [
+      "S03",
+      "S02"
+    ]
+  },
+  {
+    "id": "17",
+    "name": "梅干菜腊肠恰巴塔",
+    "category": "佛卡夏／恰巴塔",
+    "ingredients": "小麦粉、水、酵母、盐、橄榄油、梅干菜、腊肠。高含水恰巴塔烤熟后切开，夹入炒香并收干多余水分的梅干菜与熟制腊肠小块。",
+    "appearance": "一份扁长方形恰巴塔三明治，自然麦色薄壳沿中腰剖开，表面略有起伏与薄脆气泡。夹层中深色梅干菜有细碎纤维，熟制腊肠小块带真实肉纹及少量油润感，面包底部保持蓬松、清晰的组织。",
+    "whole": "只呈现一份完整梅干菜腊肠恰巴塔三明治，上下包体轻合且对齐，侧面露出适量梅干菜与熟腊肠小块，馅料不超出面包边缘。",
+    "cut": "将一份恰巴塔横向分成两段，前段切口朝向镜头，露出有不规则气孔的浅色面包芯，以及位于上下包体之间的梅干菜腊肠夹馅。馅料相互贴合、不漂浮，面包底部仍保留清晰组织。",
+    "macro": "微距对准切口处的麦色薄皮、不规则气孔与腊肠切面的熟肉纹理，让梅干菜的细碎纤维清楚可辨。",
+    "finishing": "烘焙师用锯齿刀切开已经烤熟并完成填馅的恰巴塔，另一只手隔着防油纸轻扶包体，切口露出梅干菜与熟腊肠。",
+    "handheld": "paper",
+    "avoid": "不添加芝士、生菜、肉松或西式热狗肠，不把梅干菜画成海苔大片，不让馅料像汤汁一样流出。",
+    "recommended": [
+      "S03",
+      "S04"
+    ]
+  },
+  {
+    "id": "18",
+    "name": "香草卡仕达甜甜圈",
+    "category": "甜甜圈",
+    "ingredients": "小麦粉、蛋、牛奶、黄油、糖、酵母、盐、炸制用油、蛋黄、香草、淀粉。布里欧修面团发酵后炸熟，冷却后填入用牛奶、蛋黄、糖、淀粉与香草煮成的卡仕达。",
+    "appearance": "一只圆润、无中心孔的布里欧修注馅甜甜圈，炸制薄皮呈金黄至浅褐色，侧腰留有较浅的一圈炸色。表面薄沾细砂糖，侧面小注馅口露出少量浅奶黄色香草卡仕达，细腻浓稠、柔和湿润。",
+    "whole": "只摆一只完整无孔香草甜甜圈，侧面注馅口轻微可见，细砂糖薄薄附着，不额外增加奶油裱花或其他装饰。",
+    "cut": "将甜甜圈干净切开，两半前后错开摆放，露出柔软细密的发酵面包组织和适量浅黄色香草卡仕达。馅料贴合面包内壁，边缘轻微柔软下垂，不从整个切口大量喷涌。",
+    "macro": "微距表现炸制薄皮的细小起伏、蓬松面包芯与卡仕达细腻的截面，香草籽仅以少量自然细点出现。",
+    "finishing": "烘焙师通过已炸熟并冷却的无孔甜甜圈侧面小孔挤入香草卡仕达，注馅口只留少量馅，表面薄薄的细砂糖保持自然。",
+    "handheld": "paper",
+    "avoid": "不增加巧克力、草莓或彩色糖针，不把卡仕达画成透明流体或高耸的裱花奶油山。",
+    "recommended": [
+      "S03",
+      "S06"
+    ]
+  },
+  {
+    "id": "19",
+    "name": "草莓乳酪甜甜圈",
+    "category": "甜甜圈",
+    "ingredients": "小麦粉、蛋、牛奶、黄油、糖、酵母、盐、炸制用油、草莓、奶油奶酪、奶油。布里欧修甜甜圈炸熟后，填入由草莓果馅、奶油奶酪与奶油调成的馅，点缀少量草莓。",
+    "appearance": "一只圆润无孔的草莓乳酪甜甜圈，外皮呈自然金黄炸色，侧面注馅口露出少量奶白至淡粉色乳酪馅，顶部点缀半颗草莓。草莓有细小籽点，乳酪细腻、果馅带少量果肉感，装饰克制。",
+    "whole": "只呈现一只完整无孔草莓乳酪甜甜圈，侧面小注馅口朝向镜头，顶部半颗草莓由少量乳酪馅承托，面包仍占主要可见面积。",
+    "cut": "将甜甜圈切成两半，一半切口朝前，内部呈柔软浅色面包组织与混合草莓果馅的乳酪馅。馅料为自然淡粉至奶白间带草莓果肉的状态，不凭空增加分层夹心。",
+    "macro": "微距对准草莓果肉、细腻乳酪与柔软面包的交界，让果肉湿润感和面包孔隙同时清晰。",
+    "finishing": "烘焙师将最后半颗草莓放稳在已注好乳酪馅的甜甜圈顶部，草莓由少量乳酪馅承托；只表现摆放草莓这一瞬间，不额外堆高装饰。",
+    "handheld": "paper",
+    "avoid": "不添加开心果、蓝莓或巧克力，不把草莓馅画成荧光粉色，不把混合乳酪馅改成多层果冻。",
+    "recommended": [
+      "S03",
+      "S02"
+    ]
+  },
+  {
+    "id": "20",
+    "name": "经典奶油肉桂卷",
+    "category": "肉桂卷／Babka／安曼",
+    "ingredients": "小麦粉、牛奶、蛋、糖、酵母、盐、黄油、肉桂、奶油。柔软发酵面团抹上黄油与肉桂糖后卷起切段，醒发烘烤，略冷却后加薄薄奶油淋面。",
+    "appearance": "一只圆形直立肉桂卷，顶部螺旋由中心向外自然展开，卷层饱满松软。金黄包体与深浅肉桂棕纹交替，薄薄奶油沿顶部起伏局部附着，仍可看清主要螺旋和层缝，表面柔润而不湿塌。",
+    "whole": "只呈现一只完整肉桂卷，顶部螺旋略朝向镜头，奶油薄薄淋在卷层的局部高处，卷缝仍清楚可见，不增加厚重糖霜或其他装饰。",
+    "cut": "从完整肉桂卷侧面切下一小块，放在主体前方，切口露出柔软发酵面包芯与卷入其中的肉桂黄油糖纹。主体仍保留大部分螺旋形，奶油仅附着在顶部，不变成内部夹心。",
+    "macro": "微距捕捉顶部螺旋的金黄起伏、卷缝内肉桂纹与薄奶油的柔润边缘，保留细小面包组织。",
+    "finishing": "烘焙师用小勺在已烤熟并略冷却的肉桂卷顶部淋一层薄奶油，控制用量，让螺旋纹路仍然清楚可见。",
+    "handheld": "paper",
+    "avoid": "不改成奶油奶酪厚糖霜，不添加水果、坚果或巧克力，不把肉桂馅变成流心酱。",
+    "recommended": [
+      "S01",
+      "S06"
+    ]
+  },
+  {
+    "id": "21",
+    "name": "黑芝麻奶酥Babka",
+    "category": "肉桂卷／Babka／安曼",
+    "ingredients": "小麦粉、蛋、牛奶、黄油、酵母、盐、黑芝麻、糖、奶粉。富油面团涂抹黑芝麻奶酥后卷起，纵切编辫，入模醒发烘烤并冷却切片。",
+    "appearance": "一条小型长方形Babka，顶部为明显的双股扭编结构，金褐面包与深灰黑色芝麻奶酥交错露出。切面为柔润奶白面包芯中的自然弯曲黑芝麻卷纹，细微纤维可辨，馅料贴合卷层。",
+    "whole": "呈现一条完整、未切片的小型黑芝麻奶酥Babka，顶部双股扭编纹理朝向镜头，长方形轮廓与金褐烤边清楚，不额外叠放切片。",
+    "cut": "从小型Babka主体切出一片中等厚度的面包，切片靠在主体前侧，切面朝向镜头。展示奶白面包芯中自然弯曲的深灰黑芝麻奶酥卷纹，仍能辨认面包纤维。",
+    "macro": "微距表现切面上深浅卷纹、细微面包纤维与芝麻奶酥的细颗粒感，凸显编织层次。",
+    "finishing": "烘焙师用锯齿刀切下已经烤熟并冷却的Babka一片，轻扶主体，让新鲜切面自然朝向镜头。",
+    "handheld": "paper",
+    "avoid": "不将黑芝麻馅改成巧克力，不添加核桃或糖霜，不把编织面包画成千层酥皮。",
+    "recommended": [
+      "S03",
+      "S04"
+    ]
+  },
+  {
+    "id": "22",
+    "name": "海盐焦糖安曼卷",
+    "category": "肉桂卷／Babka／安曼",
+    "ingredients": "小麦粉、水、酵母、盐、黄油、糖、海盐。面团包入黄油开酥，折叠时加入糖，折角入模醒发烘烤，使糖与黄油形成焦糖脆壳，最后点缀少量海盐。",
+    "appearance": "一只圆模烤制的单人份安曼卷，外圈轮廓圆润，顶部面团折角向内收拢并在中心错落交叠。薄焦糖壳呈金黄至琥珀褐色，折角处酥层清楚、带稀疏海盐，光泽来自薄糖壳而非厚浇酱。",
+    "whole": "只呈现一只完整安曼卷，内收折角、层叠开酥边缘与薄焦糖脆壳均朝向镜头，圆形底部保持完整。",
+    "cut": "切开一只安曼卷，让一半侧向立起，露出黄油开酥形成的浅金色折叠层与外侧薄焦糖壳。盘面仅散落少量真实酥屑，内部没有奶油夹心。",
+    "macro": "微距突出薄焦糖壳的细小裂纹、烤脆折角与层层黄油酥皮，点状海盐清楚但不过量。",
+    "finishing": "烘焙师把已经烤好并脱模的安曼卷移到晾架上，用夹子轻扶侧边，保留焦糖脆壳和酥层完整。",
+    "handheld": "paper",
+    "avoid": "不添加肉桂、奶油夹心或坚果，不浇厚重焦糖瀑布，不把安曼卷改成柔软肉桂卷。",
+    "recommended": [
+      "S01",
+      "S06"
+    ]
+  },
+  {
+    "id": "23",
+    "name": "法式柠檬挞",
+    "category": "法式挞",
+    "ingredients": "小麦粉、黄油、糖、蛋、柠檬汁与皮屑、蛋白霜。甜挞壳烤熟后填入柠檬凝乳，冷却定形，再挤蛋白霜并轻烤表面。",
+    "appearance": "一只圆形单人份柠檬挞，薄而金黄的直边挞壳内填浅黄色柠檬凝乳，顶部排列一圈低矮蛋白霜小峰，中央留出少量凝乳。蛋白霜尖端轻烤成浅褐色，柔润质感与酥松挞边清楚区分。",
+    "whole": "只摆一只完整圆形单人份柠檬挞，低矮蛋白霜小峰整齐但不机械均匀，少量浅黄凝乳可见，不增加切口或额外装饰。",
+    "cut": "从柠檬挞切出一小角，露出薄而酥松的熟挞壳、细腻浅黄色柠檬凝乳与顶部蛋白霜。凝乳保持浓稠定形，切缘轻微柔润，不像果汁一样流出。",
+    "macro": "微距对准轻烤蛋白霜的柔软表面、柠檬凝乳的细腻切缘与薄挞壳的酥松断口。",
+    "finishing": "烘焙师在已烤熟并填好柠檬凝乳的圆形挞上，用裱花袋补完外圈最后一处低矮蛋白霜小峰，中央仍露出少量凝乳。",
+    "handheld": "plate",
+    "avoid": "不增加草莓或其他鲜果，不把柠檬凝乳画成荧光黄果冻，不增加厚蛋糕底或饼干碎压底。",
+    "recommended": [
+      "S02",
+      "S03"
+    ]
+  },
+  {
+    "id": "24",
+    "name": "草莓香草卡仕达挞",
+    "category": "法式挞",
+    "ingredients": "小麦粉、黄油、糖、蛋、牛奶、淀粉、香草、草莓。甜挞壳烤熟后填入冷却的香草卡仕达，再铺上处理好的新鲜草莓。",
+    "appearance": "一只圆形单人份草莓挞，薄金黄挞壳内填浅奶黄色香草卡仕达，上方用纵切的草莓半颗低低环绕铺放。草莓自然红色、籽点细小、切面湿润，水果不过量堆高，挞边与部分卡仕达可见。",
+    "whole": "只呈现一只完整圆形草莓香草卡仕达挞，草莓半颗低低环绕排列，挞壳底部完整，水果与挞体比例自然。",
+    "cut": "从挞边切下一小角，将切面转向镜头，展示薄酥挞壳、浅奶黄色卡仕达和上方真实草莓果肉。奶馅贴合挞底，没有额外果冻夹层或海绵蛋糕层。",
+    "macro": "微距集中在草莓籽点与果肉切面，并带出下方细腻卡仕达和金黄挞边的酥松质感。",
+    "finishing": "烘焙师用食品夹在已填入卡仕达的熟挞壳上摆稳最后半颗草莓，使其融入低矮环状排列，不额外叠高水果。",
+    "handheld": "plate",
+    "avoid": "不添加蓝莓、开心果、薄荷或巧克力，不给草莓套上过厚透明胶壳，不增加海绵蛋糕夹层。",
+    "recommended": [
+      "S02",
+      "S06"
+    ]
+  },
+  {
+    "id": "25",
+    "name": "抹茶柚子挞",
+    "category": "法式挞",
+    "ingredients": "小麦粉、黄油、糖、蛋、抹茶、柚子果馅、奶油。烤熟的挞壳底部薄铺柚子果馅，上方填入抹茶奶油馅，冷藏定形，顶部仅点缀少量细碎柚子果馅。",
+    "appearance": "一只圆形单人份抹茶柚子挞，金黄薄挞壳内填平滑、自然茶绿色的抹茶奶油馅，顶部中央少量浅黄色柚子果馅点缀。底部柚子夹层在切开时可见，奶馅柔润有细腻光泽，配色不过分鲜亮。",
+    "whole": "只摆一只完整圆形抹茶柚子挞，茶绿色奶油馅顶面低而平整，中央有少量柚子果馅，金黄挞边完整清晰。",
+    "cut": "切下一小角并露出断面，展示最下方薄酥挞壳、贴近挞底的薄柚子果馅层与上方较厚的抹茶奶油馅。果馅浓稠、奶馅细腻，两者贴合，不额外增加夹层。",
+    "macro": "微距聚焦茶绿色抹茶奶油的细腻切面、柚子果馅的轻微果肉感和金黄挞壳的酥松颗粒。",
+    "finishing": "烘焙师用小抹刀整理熟挞壳内抹茶奶油馅的边缘，使顶面低而平整；只表现整理收口这一瞬间，不同时展示其他制作步骤。",
+    "handheld": "plate",
+    "avoid": "不额外加入红豆、奶酪、巧克力或开心果，不把柚子果馅画成大块柠檬片，不增加未设定的夹层。",
+    "recommended": [
+      "S02",
+      "S03"
+    ]
+  },
+  {
+    "id": "26",
+    "name": "栗子黑加仑蒙布朗",
+    "category": "精致甜品",
+    "ingredients": "栗子泥、黑加仑、奶油、糖、蛋、面粉、黄油。以烤熟的蛋糕底承托奶油与黑加仑果馅核心，外层挤栗子泥，冷藏定形。",
+    "appearance": "一只单人份低圆锥形蒙布朗，栗色细条状栗子泥从下至上自然环绕，形成柔软连续的挤纹。外层包住奶油与少量黑加仑果馅核心，底部露出一圈薄蛋糕底，顶部收口克制，没有额外硬质装饰。",
+    "whole": "只呈现一只完整单人份蒙布朗，稳妥放在小甜品盘上，栗子细挤纹与顶部收口完整，手持时从盘底承托。",
+    "cut": "从主体切出一小瓣，断面显示外层栗子泥、内侧奶油与少量深紫红黑加仑果馅，下方为薄蛋糕底。奶油与栗子泥保持柔软立体，果馅只在核心处出现，不流满整个盘子。",
+    "macro": "微距表现栗子泥细密挤纹的柔润起伏，并用局部切口带出奶油与黑加仑果馅的质地反差。",
+    "finishing": "烘焙师用蒙布朗裱花嘴在蛋糕底、奶油与果馅核心外挤出最后一圈细栗子泥，形成低圆锥轮廓和柔软连续的环绕纹理。",
+    "handheld": "plate",
+    "avoid": "不把蛋糕底改成酥挞壳，不加入整颗栗子、金箔或水果顶饰，不用手直接捏住奶油塔。",
+    "recommended": [
+      "S02",
+      "S06"
+    ]
+  },
+  {
+    "id": "27",
+    "name": "桂花乌龙梨慕斯",
+    "category": "精致甜品",
+    "ingredients": "乌龙茶、桂花、梨、奶油、牛奶、糖、吉利丁、蛋、面粉、黄油。乌龙茶浸提奶液并过滤，制成乌龙慕斯，包入梨与少量桂花制成的果心，底部搭配薄蛋糕底，定形后冷藏呈现。",
+    "appearance": "一只单人份矮圆柱形桂花乌龙梨慕斯，顶面平整、边缘轻微圆润，整体呈自然浅茶奶色。表面为细腻哑光质感，底部一层薄蛋糕底若隐若现，顶部仅有零星细碎桂花，不铺整朵花或干茶叶。",
+    "whole": "只呈现一只完整矮圆柱形慕斯，稳放在小甜品盘上，浅茶奶色表面细腻干净，顶部零星桂花可辨，不另加切片或水果块。",
+    "cut": "切出一个清楚可见的断面，表现细腻乌龙奶慕斯、内嵌浅色梨果心和底部薄蛋糕层。梨果心带自然果肉感，桂花点到为止，慕斯切面柔润但能保持形状。",
+    "macro": "微距对准慕斯细腻切面与梨果心的接壤处，显出奶慕斯的柔和细孔和梨肉的自然湿润感。",
+    "finishing": "烘焙师用小蛋糕铲把已经定形并回到冷藏状态的慕斯平稳移到甜品盘上，避免挤压成品侧面。",
+    "handheld": "plate",
+    "avoid": "不增加柠檬、白桃、果冻外壳或未设定的镜面淋面，不堆放整朵桂花和干茶叶，不将慕斯画成冰淇淋或饮品。",
+    "recommended": [
+      "S02",
+      "S03"
+    ]
+  },
+  {
+    "id": "28",
+    "name": "原味流心巴斯克",
+    "category": "巴斯克",
+    "ingredients": "奶油奶酪、奶油、蛋、糖、少量淀粉或面粉。原料拌匀入铺纸模具，烤至表面焦香、中心保留轻晃，冷却冷藏后切块。",
+    "appearance": "一块有一定厚度的三角形原味巴斯克切片，顶部为自然深浅变化的焦褐薄表皮，弧形后缘略微起伏。浅奶油色乳酪切面细密柔润，中心比边缘更软，切缘轻微下垂但保持三角主体形状。",
+    "whole": "只呈现一块完整单人份三角形巴斯克切片，尖端、两侧切面与焦褐顶面清楚，不再从切片取走小块，也不另摆整只圆蛋糕。",
+    "cut": "从当前这一份巴斯克尖端取下一小口，露出浅奶油色细密乳酪组织，中心柔软、切缘轻微下垂。叉取的小块停在盘内或靠近主体，乳酪只少量延展，不形成液体瀑布。",
+    "macro": "微距突出焦烤薄皮与浅奶油色乳酪切面的反差，中心柔润、外缘稍紧实，表面光泽柔和。",
+    "finishing": "烘焙师用擦净的温刀切开已经冷却冷藏的巴斯克，用蛋糕铲轻托切片，使细腻切面朝向镜头。",
+    "handheld": "plate",
+    "avoid": "不增加饼干底、海绵蛋糕层、果酱或水果，不做夸张拉丝、液体瀑布或像生蛋液一样的内芯。",
+    "recommended": [
+      "S03",
+      "S06"
+    ]
+  },
+  {
+    "id": "29",
+    "name": "黑巧巴斯克",
+    "category": "巴斯克",
+    "ingredients": "奶油奶酪、奶油、蛋、糖、少量淀粉、黑巧。融化的黑巧与乳酪、奶油等拌匀，烤至表面焦香，冷却冷藏后切块。",
+    "appearance": "一块厚实的三角形黑巧巴斯克切片，顶部深焦褐色薄皮有自然起伏，内部为均匀融合的可可棕色乳酪。切面细密柔润，弧形后缘与尖端形态清楚，顶部没有独立巧克力淋面层。",
+    "whole": "只呈现一块完整单人份三角形黑巧巴斯克切片，厚度适中，尖端和焦烤顶面完整，不额外摆整只蛋糕或取走一小块。",
+    "cut": "从当前一份黑巧巴斯克前缘切下一小块，切面呈均匀融合的可可棕色乳酪组织，细密、柔润而无多余夹层。小块自然放在盘前，主体不塌陷，不出现额外熔岩黑巧心。",
+    "macro": "微距表现深色焦烤表皮与可可棕乳酪切面的微妙色差，突出细腻柔润的组织和薄表皮。",
+    "finishing": "烘焙师用干净温刀切下一份已冷却冷藏的黑巧巴斯克，再用蛋糕铲把切片转向镜头。",
+    "handheld": "plate",
+    "avoid": "不增加饼干底、独立巧克力熔岩心、巧克力淋面或水果，不把内部画成海绵蛋糕大孔组织。",
+    "recommended": [
+      "S03",
+      "S02"
+    ]
+  },
+  {
+    "id": "30",
+    "name": "香草焦糖泡芙",
+    "category": "小法甜",
+    "ingredients": "小麦粉、黄油、蛋、牛奶、糖、淀粉、香草、奶油、焦糖。烫面拌蛋后挤形烤成泡芙壳，冷却后填入香草馅，并点缀焦糖。",
+    "appearance": "一只圆形单人份泡芙，金褐色轻脆外壳自然起伏，沿上部横切出小顶盖，下方填入适量柔白香草馅后盖回。侧面仅露出一圈低矮奶馅，顶盖薄薄点缀一小片琥珀色焦糖，整体饱满而不高耸。",
+    "whole": "只摆一只组装完整的香草焦糖泡芙，小顶盖自然盖在低矮香草馅上，顶部薄焦糖点缀完整，不额外堆高奶油。",
+    "cut": "把泡芙切成两半，展示薄脆泡芙壳围成的内部空腔与填入其中的香草馅。壳壁厚薄自然，内馅贴合空腔，焦糖只保留在原来的点缀位置。",
+    "macro": "微距对准金褐泡芙壳的自然裂纹、轻薄断口和香草馅的柔润边缘，保留少量焦糖光泽。",
+    "finishing": "烘焙师向已烤熟并冷却、切下顶盖的泡芙壳中挤入适量香草馅，馅只略高出壳口；小顶盖放在旁边等待盖回。",
+    "handheld": "plate",
+    "avoid": "不增加坚果、巧克力或酥菠萝皮，不把泡芙内部画成实心面包，不让焦糖拉出夸张长丝。",
+    "recommended": [
+      "S05",
+      "S03"
+    ]
+  },
+  {
+    "id": "31",
+    "name": "香草朗姆可露丽",
+    "category": "小法甜",
+    "ingredients": "牛奶、蛋、小麦粉、糖、香草、朗姆、黄油。面糊混合后加入朗姆，冷藏静置，再入模分阶段烤至焦香并脱模冷却。",
+    "appearance": "一只小巧直立的圆柱形可露丽，侧面有均匀但不机械的纵向沟槽，顶部略凹。外壳呈深琥珀至焦褐色，薄而有自然烘烤光泽；切开时内部为浅金黄色柔软细密组织，带自然小孔。",
+    "whole": "只呈现一只完整、直立的可露丽，纵向模纹与略凹顶部清楚可见，不添加奶油或水果帽。",
+    "cut": "将可露丽纵向切成两半，一半直立展示切面，另一半保留外壳模纹。切面为熟透的浅金色柔软组织，带自然细孔，上下结构连贯，不出现独立奶油夹心。",
+    "macro": "微距表现模纹边缘的焦糖脆壳、细小烘烤起伏及断口内柔软浅金色组织，外脆内润清楚可见。",
+    "finishing": "烘焙师把烤熟并已脱模的可露丽轻放到晾架上，使完整模纹和焦香外壳朝向镜头。",
+    "handheld": "paper",
+    "avoid": "不增加奶油、果酱、樱桃或巧克力，不把内芯画成生蛋液、布丁流心或夹馅面包。",
+    "recommended": [
+      "S01",
+      "S06"
+    ]
+  },
+  {
+    "id": "32",
+    "name": "开心果费南雪",
+    "category": "小法甜",
+    "ingredients": "蛋白、糖、杏仁粉、面粉、焦化黄油、开心果。蛋白、糖、杏仁粉、面粉与开心果混合，拌入过滤降温的焦化黄油，静置后入小模烘烤。",
+    "appearance": "一只小巧长方形开心果费南雪，四角略圆，顶部轻微隆起并嵌有少量开心果碎。金褐边缘比主体略深，内部为自然浅黄绿色、细密柔润的坚果粉蛋糕组织，带焦化黄油的烘烤质感。",
+    "whole": "只呈现一只完整长方形费南雪，略圆的四角、轻微隆起的顶面与少量开心果碎清楚可见，不加夹馅或厚重顶饰。",
+    "cut": "将费南雪切成两段，前段切口朝向镜头，露出细密、稍湿润的开心果与杏仁粉蛋糕组织。外缘薄而略脆，内部没有奶油层、流心或酥皮片。",
+    "macro": "微距表现焦化黄油带来的金褐边缘、细密坚果粉组织与顶部稀疏开心果碎，保留自然柔润感。",
+    "finishing": "烘焙师用小夹子把刚脱模并冷却的费南雪摆入防油纸托，轻夹侧边，完整保留表面与烘烤边缘。",
+    "handheld": "paper",
+    "avoid": "不添加开心果奶油夹心、厚糖霜或果酱，不把费南雪画成发酵面包或层层酥皮，不使用荧光绿色。",
+    "recommended": [
+      "S01",
+      "S04"
+    ]
+  },
+  {
+    "id": "R01",
+    "name": "开心果玫瑰可颂",
+    "category": "可颂 / 丹麦酥",
+    "original_id": 3,
+    "replace_for": "02 / 04",
+    "ingredients": "建议组成：小麦粉、牛奶、酵母、糖、盐与黄油制成层压可颂面团；以开心果酱、奶油或卡仕达作为夹心，少量食用玫瑰酱调味，表面点缀少量开心果碎与食用玫瑰花瓣。",
+    "appearance": "金黄弯月形可颂，表皮有清楚而不夸张的酥层，开心果夹心为自然浅绿至黄绿色。玫瑰花瓣只作少量点缀，保留面包本身的烘烤色，不将整体染成粉色或荧光绿。",
+    "whole": "一只完整可颂，开口处轻微露出开心果夹心，表面保留少量开心果碎和食用玫瑰花瓣。",
+    "cut": "从中部横向切开一只可颂，两半略微错开，露出蜂窝酥层与适量开心果玫瑰夹心。夹心柔滑地停留在内部，不像饮料般外流。",
+    "macro": "重点拍摄金黄薄酥层、自然浅绿色开心果夹心和一两片玫瑰花瓣之间的材质反差。",
+    "finishing": "烘焙师在已经烘烤并冷却的可颂夹口中挤入开心果玫瑰夹心，裱花嘴与夹口自然接触。",
+    "handheld": "paper",
+    "avoid": "不加入覆盆子、草莓或巧克力，不出现整朵装饰玫瑰、荧光绿奶油或蛋糕式实心截面。",
+    "recommended": [
+      "S02",
+      "S03"
+    ]
+  },
+  {
+    "id": "R02",
+    "name": "杏仁奶油可颂",
+    "category": "可颂 / 丹麦酥",
+    "original_id": 11,
+    "replace_for": "01 / 03",
+    "ingredients": "建议组成：小麦粉、牛奶、酵母、糖、盐与黄油制成可颂面团；杏仁粉、黄油、糖和鸡蛋制成杏仁奶油馅；表面使用杏仁片与少量糖粉。",
+    "appearance": "金黄可颂上覆盖薄层烤香的杏仁奶油和杏仁片，边缘保留松散酥片。糖粉只薄薄点缀，能够看清杏仁片的焦香色差与可颂层次。",
+    "whole": "一只完整杏仁可颂，表面的杏仁片自然疏密分布，旁边只留少量掉落酥屑。",
+    "cut": "中部切开后露出可颂酥层与熟制杏仁奶油馅，内馅呈浅杏黄色、湿润细密的膏状组织。杏仁馅与蜂窝面包组织交错，不表现为白色鲜奶油或液态夹心。",
+    "macro": "近拍薄脆杏仁片、轻薄糖粉和层压面包边缘，保留烤色不均匀的真实细节。",
+    "finishing": "烘焙师在已经烤好并稍冷却的杏仁可颂上轻筛少量糖粉，糖粉落在杏仁片之间。",
+    "handheld": "paper",
+    "avoid": "不加入开心果、巧克力或水果，不出现鲜奶油花、夸张流心或完全被糖粉覆盖的表面。",
+    "recommended": [
+      "S04",
+      "S06"
+    ]
+  },
+  {
+    "id": "R03",
+    "name": "海盐黄油碱水球",
+    "category": "碱水面包",
+    "original_id": 17,
+    "replace_for": "06 / 07",
+    "ingredients": "建议组成：小麦粉、水、酵母、少量糖、盐与发酵黄油制成面团，以食品级碱水进行表面处理后烘烤，表面少量粗海盐，内部包入少量发酵黄油。",
+    "appearance": "小巧饱满的圆形碱水包，栗褐色薄皮上带自然开裂的浅色割口。表面海盐颗粒清楚但稀疏，黄油香气通过柔润的内部组织与烤色表达。",
+    "whole": "一只完整碱水球，割口朝向镜头，保持圆润但不完全对称的手工外形。",
+    "cut": "从中间撕开或切开，露出浅奶油色、有弹性的细密面包组织。黄油烘烤后浸润内部，可出现小空腔，不出现一整块未融化黄油或大面积黄油汤汁。",
+    "macro": "重点表现深栗色薄皮、浅色裂口与少量海盐晶粒，不把表面处理成玻璃般反光。",
+    "finishing": "烘焙师用夹子将刚烤好的碱水球移到晾架，轻托底部，表面海盐与割口保持完整。",
+    "handheld": "paper",
+    "avoid": "不添加红豆、奶酪或糖霜，不画成空心泡芙、可颂层压结构或盛满融化黄油的容器。",
+    "recommended": [
+      "S01",
+      "S03"
+    ]
+  },
+  {
+    "id": "R04",
+    "name": "苹果肉桂碱水",
+    "category": "碱水面包",
+    "original_id": 23,
+    "replace_for": "08 / 09",
+    "ingredients": "建议组成：小麦粉、水、酵母、盐、少量糖与黄油制成碱水面团；苹果丁、肉桂、糖和黄油煮成浓稠苹果馅，加入少量焦糖调味；外皮经食品级碱水处理后烘烤。",
+    "appearance": "栗褐色椭圆碱水包，表面保留一条自然烘开的浅色割口。焦糖苹果丁集中在内部，切开后才见到温暖浅琥珀色果肉与少量肉桂颗粒。",
+    "whole": "一只完整椭圆碱水包，表面简洁，清楚展示自然割口与深浅烤色。",
+    "cut": "斜切成两半，露出弹性面包组织包裹的苹果丁馅，果肉软而保持块状。浓稠肉桂焦糖酱附着在苹果与面包之间，不形成满盘稀薄糖水。",
+    "macro": "重点拍摄切口处柔软苹果丁、薄薄肉桂焦糖酱与紧实碱水表皮的质感差异。",
+    "finishing": "烘焙师在木板上用锯齿面包刀切开一只冷却至适宜切分的苹果肉桂碱水包，另一只手自然固定面包。",
+    "handheld": "paper",
+    "avoid": "不加入葡萄干、奶油奶酪或坚果，不把碱水包画成肉桂卷、苹果派或千层酥。",
+    "recommended": [
+      "S03",
+      "S05"
+    ]
+  },
+  {
+    "id": "R05",
+    "name": "南瓜奶酪酸面包",
+    "category": "欧包 / 酸面包",
+    "original_id": 35,
+    "replace_for": "11 / 12",
+    "ingredients": "建议组成：小麦粉、少量全麦粉、水、天然酵种、盐与南瓜泥制成面团，混入南瓜小块及可烘烤的半硬质奶酪丁。",
+    "appearance": "自然割纹的椭圆酸面包，外壳呈金棕色，表面可以保留少量烘烤面粉痕迹。切面呈柔和浅南瓜黄色，内部气孔不规则，南瓜与奶酪以自然块状分布。",
+    "whole": "一只完整椭圆酸面包，纵向割口朝镜头，保留厚实朴素的手工轮廓。",
+    "cut": "切下一片并靠在主面包旁，展示适度开放的面包气孔、南瓜小块与融入组织的奶酪。奶酪有自然融化痕迹但不拉出长丝，内部保持面包结构。",
+    "macro": "重点呈现焦香割口、浅南瓜黄色气孔组织和局部奶酪的柔润质感。",
+    "finishing": "烘焙师用锯齿面包刀从已充分冷却的酸面包一端切下厚片，刀刃与面包切口位置一致。",
+    "handheld": "plate",
+    "avoid": "不加入南瓜籽、蔓越莓或坚果，不呈现蛋糕组织、荧光橙面团或夸张奶酪拉丝。",
+    "recommended": [
+      "S03",
+      "S04"
+    ]
+  },
+  {
+    "id": "R06",
+    "name": "马兰头香干恰巴塔",
+    "category": "恰巴塔 / 佛卡夏",
+    "original_id": 50,
+    "replace_for": "16 / 17",
+    "ingredients": "建议组成：小麦粉、水、酵母、盐与橄榄油制成高含水恰巴塔面团；焯水挤干后切碎的马兰头与香干丁组成咸口夹馅，以少量油和盐调味。",
+    "appearance": "扁长形恰巴塔外皮为浅金棕色，表面有自然薄粉与细小鼓泡。侧面切口处露出深绿色马兰头碎和米褐色香干丁，馅料清爽，不浸出水分。",
+    "whole": "一份完整夹馅恰巴塔，上下两片面包对齐，侧面适度显露马兰头香干馅。",
+    "cut": "从中部斜切成两份，露出大而不规则的恰巴塔气孔和马兰头香干夹层。香干丁与菜碎可辨认，馅料份量适中，避免挤压成深绿色糊状。",
+    "macro": "重点表现薄脆表皮、开放气孔与切口中的马兰头碎、香干丁之间的层次。",
+    "finishing": "烘焙师用小勺将调好的马兰头香干馅铺入切开的恰巴塔，再将上层面包轻轻合拢。",
+    "handheld": "paper",
+    "avoid": "不加入牛油果、青酱、鸡肉或奶酪，不把马兰头画成大片生菜，也不出现湿透面包的汤汁。",
+    "recommended": [
+      "S01",
+      "S03"
+    ]
+  },
+  {
+    "id": "R07",
+    "name": "开心果奶油甜甜圈",
+    "category": "甜甜圈 / 炸面包",
+    "original_id": 54,
+    "replace_for": "18 / 19",
+    "ingredients": "建议组成：小麦粉、牛奶、鸡蛋、酵母、糖、盐与黄油制成布里欧修面团，经油炸成圆形实心甜甜圈；以开心果酱、卡仕达与奶油制成夹馅，表面薄撒细砂糖。",
+    "appearance": "圆润实心甜甜圈呈自然金棕色，侧面保留较浅的炸制腰线，表面糖粒细小。侧面注馅口轻微露出浅黄绿色开心果奶油，整体饱满但不过度膨胀。",
+    "whole": "一只完整无孔甜甜圈，注馅口朝向镜头，表面糖粒与浅色腰线清晰。",
+    "cut": "切成两半，露出柔软细密的布里欧修组织与居中的开心果奶油馅。夹心厚润且能保持形状，不溢出为大面积稀薄绿酱。",
+    "macro": "近拍细小糖粒、金黄炸皮和注馅口的柔滑开心果奶油，避免油腻反光。",
+    "finishing": "烘焙师将细长裱花嘴从甜甜圈侧面的注馅口插入，向内部注入开心果奶油。",
+    "handheld": "paper",
+    "avoid": "不出现中心圆孔、玫瑰花、覆盆子或白巧克力淋面，不把夹心画成荧光绿色液体。",
+    "recommended": [
+      "S03",
+      "S05"
+    ]
+  },
+  {
+    "id": "R08",
+    "name": "苹果焦糖肉桂卷",
+    "category": "肉桂卷 / 卷类甜面包",
+    "original_id": 61,
+    "replace_for": "20",
+    "ingredients": "建议组成：小麦粉、牛奶、鸡蛋、酵母、糖、盐与黄油制成柔软发酵面团，包卷黄油肉桂糖与炒软的苹果丁，烘烤后薄薄淋上焦糖酱。",
+    "appearance": "圆形肉桂卷呈金黄烤色，螺旋卷层中夹有肉桂纹理和少量苹果丁。焦糖薄而浓稠，只沿卷层局部流动，保留清楚的螺旋结构。",
+    "whole": "一只完整苹果肉桂卷，螺旋正面朝向镜头，表面焦糖覆盖克制。",
+    "cut": "从中心切下一小块，露出柔软面团、肉桂糖纹路与嵌在卷层之间的苹果丁。苹果保持柔软块状，焦糖附着在切面边缘，面包不塌陷。",
+    "macro": "重点拍摄螺旋卷层、苹果丁的柔润果肉与薄焦糖之间的自然光泽差异。",
+    "finishing": "烘焙师用小勺在已烤好的苹果肉桂卷表面淋一条细薄焦糖酱，顺着螺旋局部落下。",
+    "handheld": "plate",
+    "avoid": "不添加核桃、葡萄干或厚奶油霜，不让焦糖覆盖全部纹路，不出现糖浆瀑布或披萨拉丝。",
+    "recommended": [
+      "S02",
+      "S06"
+    ]
+  },
+  {
+    "id": "R09",
+    "name": "无花果蜂蜜挞",
+    "category": "法式挞 / 塔类",
+    "original_id": 76,
+    "replace_for": "24 / 25",
+    "ingredients": "建议组成：小麦粉、黄油、糖与鸡蛋制成酥挞壳，内部为已烤熟的杏仁奶油馅；冷却后铺上新鲜无花果切瓣，轻刷少量蜂蜜。",
+    "appearance": "单人圆形挞壳为金黄薄酥边，表面铺自然紫褐色果皮、玫红色果肉的无花果切瓣。蜂蜜形成很薄的润泽感，能够看清果肉细籽，不做镜面糖壳。",
+    "whole": "一只完整单人无花果挞，果瓣自然叠放，露出部分金黄挞边。",
+    "cut": "切下一小角并略微移开，展示薄酥挞壳、熟制杏仁馅与顶部新鲜无花果。各层比例合理，果瓣与挞身自然接触，不悬空。",
+    "macro": "重点拍摄无花果内部细籽、蜂蜜的薄润反光与金黄酥挞边缘。",
+    "finishing": "烘焙师用软毛刷在已摆好的无花果切瓣上轻刷少量蜂蜜，刷毛与果肉自然接触。",
+    "handheld": "plate",
+    "avoid": "不添加草莓、蓝莓、奶油花或香草荚装饰，不出现厚果冻层、流动蜂蜜池或蛋糕式松软挞壳。",
+    "recommended": [
+      "S02",
+      "S06"
+    ]
+  },
+  {
+    "id": "R10",
+    "name": "白桃茉莉慕斯",
+    "category": "法式甜品 / 慕斯",
+    "original_id": 85,
+    "replace_for": "27",
+    "ingredients": "建议组成：茉莉茶浸香的奶油、牛奶、糖与吉利丁制成慕斯，内部加入白桃果泥与白桃丁制成的果心，底部为薄薄一层杏仁海绵蛋糕，表面点缀一小瓣白桃。",
+    "appearance": "单人圆柱形慕斯为乳白至极浅桃粉色，表面平整但保留柔和真实质感。顶部只有一小瓣白桃，整体清爽细致，颜色来自水果与乳脂而非高饱和染色。",
+    "whole": "一只完整单人圆柱形慕斯放在小甜品托片或低边陶盘上，顶部白桃瓣朝向镜头。",
+    "cut": "切开一半并移出少许距离，展示细腻茉莉奶油慕斯、淡桃色果心及薄杏仁海绵底。果心柔软但能保形，外层慕斯边缘干净而不僵硬。",
+    "macro": "重点拍摄慕斯切面的细腻气孔、白桃果心与薄海绵底之间的柔和层次。",
+    "finishing": "烘焙师用小镊子将一瓣新鲜白桃轻放在已经定型的慕斯顶部，不触碰慕斯侧壁。",
+    "handheld": "plate",
+    "avoid": "不加入乌龙茶、梨、玫瑰或奶酪夹层，不出现大朵花束、厚镜面红淋面或无支撑的悬浮果心。",
+    "recommended": [
+      "S02",
+      "S03"
+    ]
+  },
+  {
+    "id": "R11",
+    "name": "开心果巴斯克",
+    "category": "巴斯克 / 芝士蛋糕",
+    "original_id": 89,
+    "replace_for": "28 / 29",
+    "ingredients": "建议组成：奶油奶酪、奶油、鸡蛋、糖、开心果酱与少量淀粉，采用巴斯克方式高温烘烤。",
+    "appearance": "巴斯克顶部为自然不均匀的焦褐色薄皮，内部乳酪呈柔和浅黄绿色。整体厚实细腻，开心果风味通过切面色泽体现，不需要覆盖一层厚绿酱。",
+    "whole": "一份完整的三角形开心果巴斯克切片，底部由小托片或陶盘稳稳承托，切面朝向镜头。",
+    "cut": "从单份切片的尖端取下一小口，露出细腻柔润的开心果乳酪组织。中心可以比边缘更软，但保留切片形状，不呈液体状流心。",
+    "macro": "近拍焦烤薄皮与浅黄绿色乳酪切面的反差，突出细腻湿润而非油亮的质感。",
+    "finishing": "烘焙师用温热并擦干的刀从冷却后的开心果巴斯克整只蛋糕中切出一块，另一只手固定烘焙纸底托。",
+    "handheld": "plate",
+    "avoid": "不添加抹茶、覆盆子、巧克力或饼干底，不呈现荧光绿色切面、海绵蛋糕组织或大面积绿酱流淌。",
+    "recommended": [
+      "S03",
+      "S06"
+    ]
+  },
+  {
+    "id": "R12",
+    "name": "黑巧榛子闪电泡芙",
+    "category": "泡芙 / 小法甜",
+    "original_id": 96,
+    "replace_for": "30",
+    "ingredients": "建议组成：水或牛奶、黄油、小麦粉与鸡蛋制成泡芙面糊；榛子酱与卡仕达制成夹心，表面覆盖黑巧克力甘纳许，并点缀少量烤榛子碎。",
+    "appearance": "细长闪电泡芙外壳呈金棕色，上方覆盖克制的深巧克力色淋面。少量榛子碎沿顶部自然散落，淋面柔亮，侧边仍能看见薄泡芙壳。",
+    "whole": "一只完整长条闪电泡芙，略微斜放，顶部黑巧克力淋面与少量榛子碎清楚可见。",
+    "cut": "从一端切下一小段并移到前方，露出薄泡芙壳围合的空腔及填入其中的榛子卡仕达。夹心浓稠浅榛色，不出现面包蜂窝或蛋糕分层。",
+    "macro": "重点拍摄黑巧淋面的柔和反光、榛子碎的颗粒与薄泡芙壳之间的材质对比。",
+    "finishing": "烘焙师在已填好馅并完成黑巧淋面的闪电泡芙上轻撒少量烤榛子碎，让装饰集中在顶部。",
+    "handheld": "plate",
+    "avoid": "不添加草莓、开心果、咖啡豆或白巧克力装饰，不把泡芙壳画成面包组织，也不让淋面形成塑料镜面。",
+    "recommended": [
+      "S03",
+      "S05"
+    ]
+  },
+  {
+    "id": "R13",
+    "name": "海盐焦糖黄油可颂",
+    "category": "可颂 / 丹麦酥",
+    "original_id": 5,
+    "replace_for": "03 / 04",
+    "ingredients": "建议组成：小麦粉、牛奶、酵母、糖、盐与黄油制成层压可颂面团；砂糖、奶油、黄油与海盐制成浓稠焦糖夹心，表面点缀少量海盐。",
+    "appearance": "金黄可颂有清楚的酥层与自然烤色，夹口露出少量琥珀棕色焦糖。表面仅局部薄淋焦糖并点少量海盐，保留大部分面包表皮。",
+    "whole": "一只完整可颂，夹口略朝镜头，薄焦糖附着在局部酥层上。",
+    "cut": "从中部切成两半，露出层压蜂窝组织与适量浓稠海盐焦糖夹心。焦糖停留在内部，仅在切口轻微下垂，不形成满盘糖浆。",
+    "macro": "近拍焦糖的柔润光泽、金黄薄酥层与少量海盐晶粒之间的细节。",
+    "finishing": "烘焙师用小勺在已冷却的可颂顶部薄淋一条焦糖，另一只手用托片稳住产品。",
+    "handheld": "plate",
+    "avoid": "不添加坚果、奶油花或巧克力，不出现焦糖瀑布、拉丝奶酪或湿透变形的可颂。",
+    "recommended": [
+      "S02",
+      "S06"
+    ]
+  },
+  {
+    "id": "R14",
+    "name": "抹茶白巧可颂",
+    "category": "可颂 / 丹麦酥",
+    "original_id": 6,
+    "replace_for": "02 / 04",
+    "ingredients": "建议组成：小麦粉、牛奶、酵母、糖、盐与黄油制成可颂面团；抹茶粉、白巧克力与奶油制成抹茶白巧甘纳许夹心，顶部少量白巧克力细线。",
+    "appearance": "可颂主体保留金黄色层压表皮，切口夹心为自然茶绿色。白巧克力细线仅装饰顶部局部，颜色温润乳白，不完全包裹可颂。",
+    "whole": "一只完整可颂，夹口适量显露抹茶夹心，顶部有两三条不规则白巧细线。",
+    "cut": "切开后显示浅金黄色蜂窝酥层和柔润茶绿色夹心。内馅能保持形状，白巧细线留在外表面，不变成一层独立蛋糕夹层。",
+    "macro": "重点拍摄可颂酥层边缘、抹茶甘纳许与细薄白巧线的材质差别。",
+    "finishing": "烘焙师用小裱花袋在已填好夹心的可颂顶部画出少量细白巧线条。",
+    "handheld": "paper",
+    "avoid": "不加入开心果、红豆或草莓，不把整只面包染绿，不出现荧光绿夹心或厚白巧外壳。",
+    "recommended": [
+      "S03",
+      "S05"
+    ]
+  },
+  {
+    "id": "R15",
+    "name": "草莓香草奶油可颂",
+    "category": "可颂 / 丹麦酥",
+    "original_id": 7,
+    "replace_for": "02 / 04",
+    "ingredients": "建议组成：小麦粉、牛奶、酵母、糖、盐与黄油制成可颂面团；牛奶、蛋黄、糖、玉米淀粉与香草籽制成卡仕达，拌入打发奶油作为夹心，加入新鲜草莓切片。",
+    "appearance": "金黄可颂横向剖开，夹入乳白偏浅黄色香草奶油与自然红色草莓切片。草莓果肉湿润可见细籽，奶油厚度适中，面包上盖保持完整。",
+    "whole": "一只完整夹馅可颂，上下两部分自然合拢，侧面露出草莓与奶油。",
+    "cut": "从中部切成两份，显示可颂蜂窝结构、香草奶油夹层及草莓切面。水果嵌在奶油中，奶油不挤出过量，切面仍能稳定直立。",
+    "macro": "近拍草莓细籽与湿润果肉、带细小香草籽的奶油和酥层边缘。",
+    "finishing": "烘焙师把草莓切片整齐而自然地放入已挤好香草奶油的可颂夹口中。",
+    "handheld": "plate",
+    "avoid": "不添加蓝莓、玫瑰或巧克力，不把香草奶油整体染粉，不出现巨量奶油和悬浮草莓。",
+    "recommended": [
+      "S01",
+      "S03"
+    ]
+  },
+  {
+    "id": "R16",
+    "name": "蓝莓乳酪可颂",
+    "category": "可颂 / 丹麦酥",
+    "original_id": 8,
+    "replace_for": "02 / 04",
+    "ingredients": "建议组成：小麦粉、牛奶、酵母、糖、盐与黄油制成可颂面团；奶油奶酪、奶油与少量糖制成乳酪夹心，搭配保留果粒的浓稠蓝莓果酱及少量新鲜蓝莓。",
+    "appearance": "金黄可颂夹口中露出乳白色乳酪和深紫色蓝莓果酱，顶部点缀少量自然带果霜的蓝莓。整体保留清楚的黄、白、深紫层次，果酱不覆盖全部表皮。",
+    "whole": "一只完整夹馅可颂，乳酪夹心与蓝莓果酱集中在夹口，顶部少量蓝莓稳稳落在乳酪点上。",
+    "cut": "中部切开，露出蜂窝酥层、厚润乳酪夹心及局部蓝莓果酱。酱体中有果粒，深紫色只在接触处轻微染入奶酪，不将整个切面染黑。",
+    "macro": "重点表现蓝莓表面的自然果霜、浓稠果酱与乳酪夹心之间的色泽差别。",
+    "finishing": "烘焙师用小勺把少量蓝莓果酱放在已填好的乳酪夹心上，保持夹口整洁。",
+    "handheld": "plate",
+    "avoid": "不加入草莓、紫薯或黑莓，不出现大面积紫色淋浆、过度镜面水果或实心蛋糕切面。",
+    "recommended": [
+      "S02",
+      "S06"
+    ]
+  },
+  {
+    "id": "R17",
+    "name": "栗子朗姆可颂",
+    "category": "可颂 / 丹麦酥",
+    "original_id": 10,
+    "replace_for": "03 / 04",
+    "ingredients": "建议组成：小麦粉、牛奶、酵母、糖、盐与黄油制成可颂面团；熟板栗泥、奶油、少量糖与朗姆酒调成栗子奶油，夹入少量熟板栗小块。",
+    "appearance": "可颂为自然金棕色，夹心呈温暖浅栗色，保留柔软而细密的栗子质感。少量板栗小块从夹口露出，整体装饰克制，没有酒液淋洒的表现。",
+    "whole": "一只完整可颂，横向夹口露出适量栗子奶油与一两块熟板栗。",
+    "cut": "斜切后呈现蜂窝可颂组织、浅栗色奶油与细小板栗块。栗子夹心厚润但不坚硬，朗姆风味不以独立液体夹层表示。",
+    "macro": "近拍栗子奶油的细密纹理、熟栗子切块与金黄酥片之间的软硬反差。",
+    "finishing": "烘焙师用裱花袋将栗子朗姆奶油均匀挤入冷却的可颂夹口，再放入少量熟板栗块。",
+    "handheld": "paper",
+    "avoid": "不加入葡萄干、咖啡、巧克力或坚果，不出现酒瓶、酒杯、流动酒液或整颗带硬壳栗子。",
+    "recommended": [
+      "S03",
+      "S04"
+    ]
+  },
+  {
+    "id": "R18",
+    "name": "黑松露芝士可颂",
+    "category": "可颂 / 丹麦酥",
+    "original_id": 12,
+    "replace_for": "05 / 03",
+    "ingredients": "建议组成：小麦粉、牛奶、酵母、糖、盐与黄油制成可颂面团；黑松露酱、奶油奶酪与帕玛森制成咸口夹心，顶部少量帕玛森烤出薄脆边。",
+    "appearance": "金棕色可颂保留清楚层压结构，局部覆盖浅金色烤芝士薄片。夹口呈乳白色芝士馅，均匀分布细小黑松露颗粒，整体是咸香而非甜点淋面观感。",
+    "whole": "一只完整黑松露芝士可颂，夹口与局部烤芝士表皮朝向镜头。",
+    "cut": "切开后露出蜂窝组织与带黑松露碎粒的芝士夹心。芝士在切口处柔软附着，保留清楚层次，不拉出夸张长丝。",
+    "macro": "重点拍摄局部烤芝士的细小焦点、松露颗粒与可颂薄酥边缘。",
+    "finishing": "烘焙师用烘焙夹将已完成回烤的黑松露芝士可颂移到晾架，避免压坏酥层。",
+    "handheld": "paper",
+    "avoid": "不加入培根、蘑菇或甜味糖霜，不用整颗黑松露堆满画面，不出现披萨式长拉丝。",
+    "recommended": [
+      "S02",
+      "S06"
+    ]
+  },
+  {
+    "id": "R19",
+    "name": "开心果巧克力碱水",
+    "category": "碱水面包",
+    "original_id": 19,
+    "replace_for": "07 / 08",
+    "ingredients": "建议组成：小麦粉、水、酵母、盐、少量糖与黄油制成碱水面团；食品级碱水用于表面处理；黑巧克力与奶油制成内馅，顶部薄刷开心果酱并点缀开心果碎。",
+    "appearance": "栗褐色小型碱水结保留清楚交叠形状，顶部局部薄刷自然浅绿色开心果酱。开心果碎大小不一，黑巧主要在内部，外皮仍是画面中的主要颜色。",
+    "whole": "一只完整开心果巧克力碱水结，三个结孔与交叠面团结构清楚。",
+    "cut": "切开较粗的一段并轻轻移开，露出紧实有弹性的浅色面包组织与居中的黑巧内馅。断面保持碱水面包结构，巧克力浓稠柔软而不流成一滩。",
+    "macro": "重点表现碱水表皮的栗褐色、开心果细碎颗粒及切口中的黑巧夹心。",
+    "finishing": "烘焙师在已冷却的碱水结顶部局部薄刷开心果酱，再轻撒少量开心果碎。",
+    "handheld": "plate",
+    "avoid": "不加入覆盆子、玫瑰或奶油花，不把碱水结画成甜甜圈，不呈现荧光绿厚淋面。",
+    "recommended": [
+      "S03",
+      "S06"
+    ]
+  },
+  {
+    "id": "R20",
+    "name": "栗子黄油碱水",
+    "category": "碱水面包",
+    "original_id": 22,
+    "replace_for": "07 / 08",
+    "ingredients": "建议组成：小麦粉、水、酵母、盐、少量糖与黄油制成碱水面团；食品级碱水用于表面处理；烤后冷却并切口，夹入细腻熟板栗泥与一片咸黄油。",
+    "appearance": "圆润碱水包有深栗褐色外皮和浅色割口，烤后开的夹口露出栗子泥。夹口中央是一片淡黄色咸黄油，黄油边缘自然整齐，与栗子泥的颗粒质感形成区别。",
+    "whole": "一只完整栗子黄油碱水包，展示夹口中的栗子泥与黄油片，黄油保持冷却状态下的形状。",
+    "cut": "从夹口中部纵切成两半，露出细密面包组织、熟板栗泥层与薄黄油片。黄油紧贴夹心，不以烘烤中未融化的黄油块出现。",
+    "macro": "近拍淡黄色咸黄油的柔润边缘、浅栗色板栗泥与深色碱水薄皮。",
+    "finishing": "烘焙师用小抹刀把一片咸黄油放入已冷却并填好栗子泥的碱水包夹口中。",
+    "handheld": "paper",
+    "avoid": "不加入红豆、朗姆或巧克力，不出现黄油汤汁、带硬壳板栗或布满大孔的可颂截面。",
+    "recommended": [
+      "S01",
+      "S03"
+    ]
+  },
+  {
+    "id": "R21",
+    "name": "番茄罗勒碱水",
+    "category": "碱水面包",
+    "original_id": 26,
+    "replace_for": "08 / 09",
+    "ingredients": "建议组成：小麦粉、水、酵母、盐、少量糖与黄油制成碱水面团，拌入沥干油分的油渍番茄碎和罗勒碎；表面经食品级碱水处理后烘烤。",
+    "appearance": "短棍形碱水包有栗褐色外皮和两条浅色斜割口，外形朴素自然。内部番茄碎呈暗红色，罗勒呈自然草绿色小碎片，均匀嵌在面包中。",
+    "whole": "一只完整短棍形碱水包，斜割口朝向镜头，表面不额外堆叠鲜番茄。",
+    "cut": "斜切下一段摆在主体旁，露出细密有弹性的组织与暗红番茄碎、罗勒碎。原料分布自然，面包不因油渍番茄变得油湿或塌陷。",
+    "macro": "重点表现碱水薄皮、浅色割纹与切面中小块番茄和罗勒的分布。",
+    "finishing": "烘焙师用锯齿刀从冷却的短棍碱水包一端斜切下厚片，露出番茄罗勒组织。",
+    "handheld": "paper",
+    "avoid": "不加入芝士、火腿或橄榄，不铺大片生菜，不画成佛卡夏或红色番茄酱夹层面包。",
+    "recommended": [
+      "S03",
+      "S04"
+    ]
+  },
+  {
+    "id": "R22",
+    "name": "肉松咸蛋黄碱水",
+    "category": "碱水面包",
+    "original_id": 27,
+    "replace_for": "07 / 09",
+    "ingredients": "建议组成：小麦粉、水、酵母、盐、少量糖与黄油制成碱水面团；内部包入猪肉松、熟咸鸭蛋黄碎与少量黄油调成的咸口馅，表面经食品级碱水处理后烘烤。",
+    "appearance": "短椭圆碱水包外皮为栗褐色，顶部保留自然浅色割口。切开后露出金黄肉松纤维与橙黄色咸蛋黄碎，馅料湿润但不油腻。",
+    "whole": "一只完整短椭圆肉松咸蛋黄碱水包，表面以自然烤色与割口为主，不额外裹满肉松。",
+    "cut": "从中间切成两半，露出柔韧面包组织和集中在内部的肉松咸蛋黄馅。肉松纤维可辨，蛋黄为细碎沙质颗粒，不是液态鲜鸡蛋黄。",
+    "macro": "近拍肉松纤维、熟咸蛋黄细碎颗粒与栗褐色薄皮之间的细节。",
+    "finishing": "烘焙师用锯齿刀切开已冷却的肉松咸蛋黄碱水包，将两半切面朝前摆正。",
+    "handheld": "paper",
+    "avoid": "不加入海苔、芝士或甜沙拉酱，不出现生鸡蛋、荷包蛋式流黄或液态咸蛋黄瀑布。",
+    "recommended": [
+      "S03",
+      "S06"
+    ]
+  },
+  {
+    "id": "R23",
+    "name": "红酒蔓越莓核桃欧包",
+    "category": "欧包 / 酸面包",
+    "original_id": 30,
+    "replace_for": "11 / 12",
+    "ingredients": "建议组成：小麦粉、全麦粉、水、天然酵种与盐制成欧包面团，加入经红酒浸润并沥干的蔓越莓干和烤香核桃块。",
+    "appearance": "椭圆欧包有自然割口与少量烤后面粉痕迹，表面金棕至深棕。切面略带温暖浅褐色，暗红蔓越莓与不规则核桃块分布自然，不呈鲜红色。",
+    "whole": "一只完整椭圆欧包，割口自然舒展，旁边不摆酒瓶或酒杯。",
+    "cut": "切下一片厚面包靠在主体上，展示适度开放的气孔与嵌入组织的蔓越莓、核桃。果干微润、核桃完整，切面不湿黏。",
+    "macro": "重点拍摄核桃断面的纹理、蔓越莓的深红果肉与粗细不一的面包气孔。",
+    "finishing": "烘焙师从充分冷却的欧包一端切下厚片，用手指轻扶面包背侧。",
+    "handheld": "plate",
+    "avoid": "不加入葡萄、葡萄干或奶酪，不出现红酒液体、酒杯、鲜红面团或浸湿滴水的切面。",
+    "recommended": [
+      "S03",
+      "S04"
+    ]
+  },
+  {
+    "id": "R24",
+    "name": "黑巧橙皮酸面包",
+    "category": "欧包 / 酸面包",
+    "original_id": 33,
+    "replace_for": "11 / 12",
+    "ingredients": "建议组成：小麦粉、全麦粉、水、天然酵种与盐制成酸面包面团，混入黑巧克力碎块与沥干的糖渍橙皮丁。",
+    "appearance": "圆形酸面包外壳焦香呈金棕色，顶部割纹自然张开。内部为浅麦色面包组织，黑巧与橙皮以深棕和半透明橙色的小块点缀。",
+    "whole": "一只完整圆形酸面包，表面只显示自然割纹与少量露出的巧克力斑点。",
+    "cut": "切成半只并取下一片，露出不规则气孔、黑巧小块和糖渍橙皮丁。局部巧克力可以轻微融入组织，但内部仍是面包而非布朗尼。",
+    "macro": "近拍黑巧断面、微透光的糖渍橙皮丁与浅麦色气孔组织。",
+    "finishing": "烘焙师将已冷却切片的黑巧橙皮酸面包错落摆在烘焙纸上，切面清楚朝向镜头。",
+    "handheld": "plate",
+    "avoid": "不加入可可面糊、坚果或橙子鲜果片，不将整只染成黑色，不呈现布朗尼或蛋糕切面。",
+    "recommended": [
+      "S03",
+      "S06"
+    ]
+  },
+  {
+    "id": "R25",
+    "name": "黑芝麻乳酪欧包",
+    "category": "欧包 / 酸面包",
+    "original_id": 34,
+    "replace_for": "11 / 12",
+    "ingredients": "建议组成：小麦粉、少量全麦粉、水、天然酵种、盐与磨细黑芝麻制成欧包面团；奶油奶酪与少量糖调成乳酪夹心。",
+    "appearance": "圆润椭圆欧包外皮呈浅灰褐色并带烘烤色差，细小芝麻颗粒自然可见。割口略露浅色面包组织，乳酪集中在内部，不额外形成表面淋酱。",
+    "whole": "一只完整黑芝麻欧包，简洁浅灰褐色表皮配一道自然割口。",
+    "cut": "从中部切开，露出带细小芝麻颗粒的灰白色面包组织和乳白色奶油奶酪夹心。夹心柔润而能保持形状，气孔适度，不出现千层式分层。",
+    "macro": "重点拍摄芝麻细颗粒、灰白面包气孔与乳白色乳酪切面之间的差别。",
+    "finishing": "烘焙师切开已冷却的黑芝麻乳酪欧包，再用小托片将一半切面朝前摆放。",
+    "handheld": "paper",
+    "avoid": "不加入竹炭、紫薯或红豆，不使用漆黑面团，不表现拉丝芝士、液态芝麻糊或蛋糕组织。",
+    "recommended": [
+      "S03",
+      "S02"
+    ]
+  },
+  {
+    "id": "R26",
+    "name": "黑橄榄迷迭香欧包",
+    "category": "欧包 / 酸面包",
+    "original_id": 36,
+    "replace_for": "10 / 11",
+    "ingredients": "建议组成：小麦粉、全麦粉、水、天然酵种、盐与少量橄榄油制成欧包面团，混入沥干的去核黑橄榄块与少量切碎迷迭香。",
+    "appearance": "长椭圆欧包有深浅自然的金棕烤壳和舒展割口。黑橄榄块以深紫褐色分布在面包内部，迷迭香只是细小草本碎叶，不覆盖成大片绿层。",
+    "whole": "一只完整长椭圆欧包，表面偶尔露出一两处黑橄榄切块，保持朴素轮廓。",
+    "cut": "斜切两片并轻靠主体，展示开放气孔与嵌在组织中的去核黑橄榄块。橄榄水分受控，周围面包保持蓬松，不形成湿塌空洞。",
+    "macro": "近拍黑橄榄切块的柔润表面、稀疏迷迭香碎与焦香面包壳。",
+    "finishing": "烘焙师在充分冷却的欧包上用锯齿刀斜切厚片，展示橄榄与迷迭香的自然分布。",
+    "handheld": "plate",
+    "avoid": "不加入奶酪、番茄或腊肠，不出现带核橄榄、整枝迷迭香嵌满面包或油渍流淌。",
+    "recommended": [
+      "S04",
+      "S06"
+    ]
+  },
+  {
+    "id": "R27",
+    "name": "黑松露菌菇佛卡夏",
+    "category": "恰巴塔 / 佛卡夏",
+    "original_id": 44,
+    "replace_for": "13 / 14",
+    "ingredients": "建议组成：小麦粉、水、酵母、盐与橄榄油制成高含水佛卡夏面团；炒去多余水分的褐蘑菇片与黑松露酱作为表面配料。",
+    "appearance": "长方形厚佛卡夏表面有自然指孔和金黄烤色，蘑菇片略卷边、呈浅棕至深棕。少量黑松露酱落在蘑菇之间，橄榄油带来轻微润泽而非油汪汪表面。",
+    "whole": "一块完整单人份长方形佛卡夏，顶部蘑菇片与指孔清楚，侧壁显示适度厚度。",
+    "cut": "切成两块并让一块切面朝镜头，展示大而不规则的气孔与酥薄底壳。蘑菇和松露主要位于表层，不在内部虚构厚重奶酪夹层。",
+    "macro": "重点拍摄蘑菇片的焦香卷边、松露颗粒与佛卡夏表面的细小油润高光。",
+    "finishing": "烘焙师用宽刃面包刀把已烤好并稍冷却的佛卡夏切成方块，另一只手轻扶边缘。",
+    "handheld": "paper",
+    "avoid": "不加入马苏里拉、培根或奶油酱，不出现生蘑菇大量出水、披萨拉丝或松露整颗堆叠。",
+    "recommended": [
+      "S04",
+      "S06"
+    ]
+  },
+  {
+    "id": "R28",
+    "name": "火腿芝麻菜恰巴塔",
+    "category": "恰巴塔 / 佛卡夏",
+    "original_id": 45,
+    "replace_for": "15 / 16",
+    "ingredients": "建议组成：小麦粉、水、酵母、盐与橄榄油制成恰巴塔面团；夹入薄切熟火腿、沥干的新鲜芝麻菜与马苏里拉奶酪片。",
+    "appearance": "扁长恰巴塔外壳为浅金棕色，侧面显露淡粉色火腿、乳白奶酪片和细长深绿芝麻菜。夹层厚度合理，芝麻菜叶片自然错落，不遮住整个面包。",
+    "whole": "一份完整火腿芝麻菜恰巴塔，面包上下两片对齐，部分火腿薄片自然折叠在夹层中。",
+    "cut": "从中间斜切成两半，显示开放气孔、折叠火腿、马苏里拉片与芝麻菜叶。各层真实压合，奶酪为柔软切片，不表现为热拉丝状态。",
+    "macro": "近拍薄切火腿的自然褶皱、芝麻菜细叶和恰巴塔大孔组织。",
+    "finishing": "烘焙师将沥干的芝麻菜铺在已放好火腿和奶酪片的恰巴塔上，再轻放面包上盖。",
+    "handheld": "paper",
+    "avoid": "不加入番茄、煎蛋或牛油果，不把芝麻菜替换为大片球生菜，不出现热奶酪长拉丝。",
+    "recommended": [
+      "S01",
+      "S03"
+    ]
+  },
+  {
+    "id": "R29",
+    "name": "桂花糖炒栗子恰巴塔",
+    "category": "恰巴塔 / 佛卡夏",
+    "original_id": 51,
+    "replace_for": "17 / 16",
+    "ingredients": "建议组成：小麦粉、水、酵母、盐与橄榄油制成高含水恰巴塔面团；加入剥壳糖炒栗子块和少量糖桂花。",
+    "appearance": "短而扁长的恰巴塔外壳呈金黄烤色，表面有薄粉和自然鼓泡。内部栗子块为暖黄色至浅栗色，桂花只以稀疏细小花粒出现，整体保持面包外观。",
+    "whole": "一只完整短恰巴塔，外皮简洁，局部可见烘烤后露出的栗子小块。",
+    "cut": "切成两段并让断面朝镜头，露出不规则大孔组织与自然嵌入的熟栗子块。桂花糖液已融入组织，不形成独立果冻层或流动糖水。",
+    "macro": "重点拍摄熟栗子块的细密粉糯断面、稀疏桂花粒与恰巴塔开放气孔。",
+    "finishing": "烘焙师用锯齿刀切开已冷却的桂花栗子恰巴塔，将切片错开放在烘焙纸上。",
+    "handheld": "paper",
+    "avoid": "不加入奶油、奶酪或核桃，不出现带壳栗子、整枝桂花、浓稠黄色夹心或糖水浸泡面包。",
+    "recommended": [
+      "S03",
+      "S04"
+    ]
+  },
+  {
+    "id": "R30",
+    "name": "核桃枫糖肉桂卷",
+    "category": "肉桂卷 / 卷类甜面包",
+    "original_id": 62,
+    "replace_for": "20",
+    "ingredients": "建议组成：小麦粉、牛奶、鸡蛋、酵母、糖、盐与黄油制成柔软发酵面团，包卷黄油肉桂糖与烤核桃碎，烤后薄刷枫糖浆并点缀少量核桃块。",
+    "appearance": "圆形肉桂卷有清楚金黄螺旋，卷层之间是自然肉桂棕色纹理。枫糖形成薄薄润泽，核桃块分布克制，不遮住面包螺旋。",
+    "whole": "一只完整核桃枫糖肉桂卷，螺旋面朝镜头，局部核桃碎与薄枫糖光泽可见。",
+    "cut": "切下一小角并略微移开，露出柔软面团、层间肉桂糖与少量核桃碎。切面保持卷层结构，糖浆附着于面包，不大量淌出。",
+    "macro": "近拍核桃表面的自然沟壑、螺旋卷层与薄枫糖产生的小面积高光。",
+    "finishing": "烘焙师用软毛刷将少量枫糖浆薄刷在已烤好的肉桂卷顶部，保留卷层轮廓。",
+    "handheld": "plate",
+    "avoid": "不加入苹果、葡萄干或厚奶油霜，不把核桃换成碧根果，不出现糖浆瀑布或坚果堆满表面。",
+    "recommended": [
+      "S02",
+      "S06"
+    ]
+  },
+  {
+    "id": "R31",
+    "name": "开心果白巧Babka",
+    "category": "肉桂卷 / Babka",
+    "original_id": 64,
+    "replace_for": "21 / 22",
+    "ingredients": "建议组成：小麦粉、牛奶、鸡蛋、酵母、糖、盐与黄油制成柔软布里欧修面团，涂抹开心果酱、白巧克力与黄油调成的馅料，卷起剖开并编绞烘烤，加入少量开心果碎。",
+    "appearance": "长方形编绞面包顶部有自然扭转的金黄纹路，浅黄绿色开心果馅沿卷层展开。白巧融入夹馅，表面只保留少量开心果碎，不另盖厚白色糖衣。",
+    "whole": "一只完整小号长方形Babka，侧前方清楚展示编绞顶部与有支撑感的面包侧壁。",
+    "cut": "从一端切下厚片并靠在主体旁，切面呈不规则卷绕的开心果夹馅纹路。主体是柔软面包组织，白巧融入夹层，不呈千层酥或蛋糕大理石纹。",
+    "macro": "重点拍摄金黄编绞表皮、自然浅绿色夹馅纹路与切面的细密柔软组织。",
+    "finishing": "烘焙师从已冷却的Babka一端切下厚片，用面包刀保持卷层切面完整。",
+    "handheld": "plate",
+    "avoid": "不加入抹茶、覆盆子或黑巧克力，不使用荧光绿夹馅，不画成千层可颂、辫子麻花或实心磅蛋糕。",
+    "recommended": [
+      "S03",
+      "S04"
+    ]
+  },
+  {
+    "id": "R32",
+    "name": "蓝莓柠檬巴斯克",
+    "category": "巴斯克 / 芝士蛋糕",
+    "original_id": 93,
+    "replace_for": "28 / 29",
+    "ingredients": "建议组成：奶油奶酪、奶油、鸡蛋、糖与少量淀粉制成巴斯克乳酪糊，加入细刨柠檬皮屑与少量柠檬汁，轻拌少量蓝莓后高温烘烤。",
+    "appearance": "顶部是自然不均匀的焦褐色薄皮，内部乳酪为浅奶油色。蓝莓嵌在内部，果实周围只有小范围淡紫色晕染，柠檬不改变整体颜色。",
+    "whole": "一份完整三角形蓝莓柠檬巴斯克切片，放在小托片或陶盘上，切面可见几处自然蓝莓果粒。",
+    "cut": "从切片尖端取下一小口，露出细腻乳酪与少量蓝莓果粒。内部柔润而能维持形状，蓝莓微微出色但不形成满盘紫色浆液。",
+    "macro": "近拍焦烤薄皮、浅色乳酪中的蓝莓果粒与自然淡紫晕染，保留细腻真实组织。",
+    "finishing": "烘焙师用温热并擦干的刀从充分冷却的蓝莓柠檬巴斯克中切出一块，切面干净且不压碎果粒。",
+    "handheld": "plate",
+    "avoid": "不加入饼干底、奶油花或整片柠檬夹层，不把整个切片染成深紫色，不出现蛋糕组织和果酱瀑布。",
+    "recommended": [
+      "S03",
+      "S06"
+    ]
+  }
+];
+
+</script><script>
+window.HALFDAY_PRESETS = {
+  "lights": [
+    {
+      "id": "window_soft",
+      "name": "左边亮，右边软阴影",
+      "text": "采用从画面左侧进入的自然窗光，经过薄纱柔化，食品受光面明亮，背光面保留柔和层次与接触阴影。光色自然中性，奶油白保留细节，让烘烤色差、酥层和柔润组织清楚可见。",
+      "hint": "像薄纱窗边，柔和有体积"
+    },
+    {
+      "id": "studio_side",
+      "name": "影棚柔光，细节清楚",
+      "text": "采用单个大型柔光箱从侧前方照明，在另一侧以白色反光板轻补暗部。光线均匀可控，轮廓和接触阴影干净，保留食品立体感与真实色彩，避免正面环形灯造成扁平效果。",
+      "hint": "左前方照亮，对面轻补光"
+    },
+    {
+      "id": "hard_sun",
+      "name": "阳光直射，影子清楚",
+      "text": "采用明亮的单向直射日光，形成清楚、方向一致的实影与有力度的明暗分界。控制曝光，使奶油、糖壳和浅色盘面不过曝，暗部仍能辨认组织；食品表面保留自然高光，不涂成金属或塑料反光。",
+      "hint": "明暗对比强，干净利落"
+    },
+    {
+      "id": "dark_rim",
+      "name": "暗背景，边缘发亮",
+      "text": "采用来自侧后方的集中柔光，突出食品边缘、烘烤表皮和少量自然光泽，背景曝光适度压低。镜头一侧用很弱的反光补亮切面，保留可辨认的食物颜色与组织，不让主体只剩黑色剪影。",
+      "hint": "侧后光勾出轮廓，正面可见"
+    },
+    {
+      "id": "morning_long",
+      "name": "晨光斜照，影子拉长",
+      "text": "采用低角度清晨光线，带轻微暖意，在桌面形成自然延伸的长影。以微弱环境光保留背光面的细节，白色奶油与餐具仍接近自然白，不给整幅画面覆盖浓重橙黄色滤镜。",
+      "hint": "轻微暖意，保留食物原色"
+    },
+    {
+      "id": "overcast",
+      "name": "阴天柔亮，影子很淡",
+      "text": "采用阴天环境中宽广、柔和的漫射自然光，阴影浅而边缘柔软，整体清透平衡。利用食品本身的明暗与微小接触阴影保留体积，准确呈现果肉、乳酪和面包芯的颜色，避免灰蒙或完全无层次。",
+      "hint": "光线分散，颜色柔和准确"
+    },
+    {
+      "id": "backlit_layers",
+      "name": "光从后面透过来",
+      "text": "采用位于食品后方、略偏一侧的柔和光源，在薄酥边缘、薄果片等真实可透光处形成细微透光感。正面以弱反光补亮内部组织；面包主体、乳酪与厚馅料保持不透明，避免全体发光或边缘过曝。",
+      "hint": "薄酥边发亮，正面有补光"
+    },
+    {
+      "id": "window_grid",
+      "name": "桌面上有窗框影子",
+      "text": "采用穿过真实窗格的侧向日光，使有规律的窗框影子落在桌面或背景空处，建立明确的空间感。食品主要表面与切面保持可辨识，窗格暗影不横切关键卖点，投影方向与主体阴影一致。",
+      "hint": "影子落在旁边，避开食物"
+    },
+    {
+      "id": "front_soft",
+      "name": "正面均匀明亮",
+      "hint": "阴影少，适合菜单与原色",
+      "text": "使用靠近镜头上方的大面积柔光，并以微弱侧光保留食品体积。前侧细节清楚、阴影浅，食品原色准确，白色奶油保留纹理；避免全无层次的平涂效果。"
+    },
+    {
+      "id": "top_soft",
+      "name": "上方轻柔照亮",
+      "hint": "影子贴着底部，适合俯拍",
+      "text": "从食品上方略偏左的位置使用大面积柔和光源，顶面明亮，边缘向侧面自然过渡，接触阴影短而柔和。侧面以弱反光保留细节，不让底部黑成一团。"
+    },
+    {
+      "id": "direct_flash",
+      "name": "像手机闪光抓拍",
+      "hint": "短硬影，生活感更直接",
+      "text": "用靠近镜头的单次直闪照亮主体，出现小而明确的反光和向后投落的短硬影，保留自然生活抓拍感。控制闪光强度，奶油不过曝，不把食品拍成塑料，不出现第二个相反方向的影子。"
+    },
+    {
+      "id": "spotlight",
+      "name": "一束光照主角",
+      "hint": "主体亮、四周暗，适合封面",
+      "text": "从侧上方以收窄的定向柔光照亮食品，桌面形成柔边亮区，背景逐渐暗下去。以弱填充光保留暗部和切面，食品自然颜色可辨，光束本身不可见，不添加烟雾。"
+    }
+  ],
+  "compositions": [
+    {
+      "id": "center_whole",
+      "name": "中央完整单品",
+      "text": "将一份食品放在画面中央附近，完整保留食品轮廓，周围留出适量呼吸空间。道具仅作陪衬，食品为唯一明确视觉中心，不在边缘裁掉主体。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close",
+        "sidelow",
+        "dutch",
+        "over_shoulder",
+        "far_scene",
+        "corner_high",
+        "side_cut"
+      ],
+      "hint": "主角在正中，轮廓完整"
+    },
+    {
+      "id": "lower_space",
+      "name": "主体下方 · 上方留白",
+      "text": "将一份食品的重心放在画面下部，完整呈现主体，上方保留约三分之一干净空间供后期加标题。上部留白只保留场景原有材质或柔和背景，不在此处堆放道具，不生成文字。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "sidelow",
+        "dutch",
+        "over_shoulder",
+        "far_scene",
+        "corner_high",
+        "side_cut"
+      ],
+      "hint": "食品在下，上方留标题空间"
+    },
+    {
+      "id": "left_subject",
+      "name": "主体靠左 · 右侧留白",
+      "text": "将一份食品放在画面左侧三分之一附近，完整保留外形，右侧留出连贯、干净的环境空间供后期排版。少量道具靠近主体布置，不抢占右侧留白，不生成文字。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "sidelow",
+        "dutch",
+        "over_shoulder",
+        "far_scene",
+        "corner_high",
+        "side_cut"
+      ],
+      "hint": "食品在左，右边保持干净"
+    },
+    {
+      "id": "right_subject",
+      "name": "主体靠右 · 左侧留白",
+      "text": "将一份食品放在画面右侧三分之一附近，完整保留外形，左侧留出连贯、干净的环境空间供后期排版。少量道具围绕主体收拢，不挤占左侧留白，不生成文字。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "sidelow",
+        "dutch",
+        "over_shoulder",
+        "far_scene",
+        "corner_high",
+        "side_cut"
+      ],
+      "hint": "食品在右，左边保持干净"
+    },
+    {
+      "id": "diagonal_flow",
+      "name": "斜向引导",
+      "text": "让食品自身的长轴、切口朝向或托纸边缘沿画面对角线形成自然引导，主体完整清楚。最多用一件已有道具呼应这一方向，构图有轻微动势，桌面与建筑垂直线不刻意歪斜。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close",
+        "dutch",
+        "over_shoulder",
+        "far_scene",
+        "corner_high",
+        "side_cut"
+      ],
+      "hint": "托纸与食品形成一条斜线"
+    },
+    {
+      "id": "detail_fill",
+      "name": "局部满幅",
+      "text": "只截取最能表达口感的食品局部，让酥层、面包组织、奶油切面或果肉成为画面主体，允许食品外轮廓自然超出画面。减少可见背景，道具不进入关键区域，以材质和组织变化形成视觉层次。",
+      "allowedAngles": [
+        "macro",
+        "top_detail"
+      ],
+      "hint": "看局部口感，允许轮廓出画"
+    },
+    {
+      "id": "horizontal_base",
+      "name": "横向低重心",
+      "text": "利用一份食品的底边、切面或盘沿形成稳定的横向结构，主体重心偏低，保留完整外形与必要厚度。背景保持简洁，不用过高道具打断食品轮廓，使画面呈现安定、精致的陈列感。",
+      "allowedAngles": [
+        "fortyfive",
+        "low",
+        "eye",
+        "diagonal",
+        "close",
+        "sidelow",
+        "dutch",
+        "far_scene",
+        "side_cut"
+      ],
+      "hint": "盘沿放低，画面稳而舒展"
+    },
+    {
+      "id": "vertical_depth",
+      "name": "前后纵深",
+      "text": "让食品位于前景、场景里已有的少量道具位于中景、环境位于后景，沿画面纵向形成自然前后关系。食品关键部位保持清晰，背景逐渐弱化，避免道具相互遮挡或额外复制食品。",
+      "allowedAngles": [
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close",
+        "sidelow",
+        "dutch",
+        "over_shoulder",
+        "far_scene",
+        "corner_high",
+        "side_cut"
+      ],
+      "hint": "主角在前，道具在后"
+    },
+    {
+      "id": "corner_space",
+      "name": "放在右下角",
+      "hint": "左上方留大片排版空间",
+      "text": "食品完整放在画面右下方，左上方留出连续的干净背景供后期排版；画面不生成文字，已有包装或盘托紧贴主体，不扩散成杂物。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "sidelow",
+        "dutch",
+        "over_shoulder",
+        "far_scene",
+        "corner_high",
+        "side_cut"
+      ]
+    },
+    {
+      "id": "package_frame",
+      "name": "用包装围住主体",
+      "hint": "完整保留已有盒子或盘托",
+      "text": "完整呈现本场景已有的盒子、包纸或盘托，以承托物边缘形成框景，食品处在开口最清楚的位置。没有盒子的场景不凭空添加盒子，保持食品与道具的真实比例。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "low",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "dutch",
+        "over_shoulder",
+        "far_scene",
+        "corner_high"
+      ]
+    },
+    {
+      "id": "edge_crop",
+      "name": "大特写，裁一点边",
+      "hint": "让质地贴近镜头",
+      "text": "食品占画面大部分，可在一侧自然裁去少量外轮廓；保留最能识别该产品的关键部位，不裁掉所有形状线索。焦点在真实表皮、夹层或指定切面，避免过度锐化。",
+      "allowedAngles": [
+        "macro",
+        "top_detail"
+      ]
+    },
+    {
+      "id": "small_subject",
+      "name": "小主角，大留白",
+      "hint": "主体约三分之一，空间更松弛",
+      "text": "食品占画面约三分之一，完整保留外形，用克制的环境与干净空间衬托主体。道具只保留场景已指定的少量元素，背景不抢戏，不额外复制食品。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "sidelow",
+        "dutch",
+        "over_shoulder",
+        "far_scene",
+        "corner_high",
+        "side_cut"
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "top",
+      "name": "正上方看花纹",
+      "text": "镜头位于食品正上方，垂直朝下拍摄，清楚呈现顶面形状、卷纹和台面布置；画面保持水平，不把侧面切层当成正对镜头的主要内容。",
+      "hint": "90°，看到顶面和摆放关系"
+    },
+    {
+      "id": "fortyfive",
+      "name": "斜上方看全貌",
+      "text": "镜头从侧前方约45度向下拍摄，同时看见食品顶面与前侧厚度，透视自然，适合完整单品及兼顾切面的呈现。",
+      "hint": "45°，顶面与厚度都看得到"
+    },
+    {
+      "id": "low",
+      "name": "低一点看高度",
+      "text": "镜头从食品前方约25度轻微向下拍摄，以前侧厚度和切面为主，保留少量顶面，体现真实高度，不用广角夸张拉长主体。",
+      "hint": "25°，更突出蓬松厚度"
+    },
+    {
+      "id": "eye",
+      "name": "和点心一样高",
+      "text": "镜头接近食品中部高度，基本水平拍摄，让前侧轮廓、夹层或切面成为重点，只自然露出少量顶部，保持真实尺寸比例。",
+      "hint": "平视，突出侧面夹层"
+    },
+    {
+      "id": "macro",
+      "name": "贴近看质地",
+      "text": "镜头靠近产品最值得展示的质地区域，取景集中在指定的表皮、酥层、馅料或切面局部，允许不显示完整单品。关键组织处于清晰焦平面，景深适中，不把大部分食物虚化成无法辨认的色块。",
+      "hint": "局部放大，突出酥皮或组织"
+    },
+    {
+      "id": "fronttop",
+      "name": "高一点看装饰",
+      "text": "镜头从食品正前方约60度向下拍摄，顶面信息占主导，同时带出前缘与一部分侧面厚度，适合展示顶面装饰与单份轮廓。",
+      "hint": "60°，顶部更多、侧面少一点"
+    },
+    {
+      "id": "overhead",
+      "name": "几乎从上面看",
+      "text": "镜头从略偏一侧的高位约70度向下拍摄，接近俯拍但保留轻微透视，让顶面与台面关系清楚，并在一侧露出少量食品厚度。",
+      "hint": "70°，轻微透视与厚度"
+    },
+    {
+      "id": "diagonal",
+      "name": "沿长边斜着看",
+      "text": "镜头位于食品一端的斜前方，沿其长轴或切片尖端方向观察，从约35度向下拍摄，呈现自然的前后递进与侧边厚度，画面水平线保持正常。",
+      "hint": "35°，前后层次更明显"
+    },
+    {
+      "id": "close",
+      "name": "靠近拍完整一份",
+      "text": "从约40度斜前方靠近拍摄，使一份食品占据较大画面比例，同时完整保留其外轮廓与少量周边空间。关键部位清晰，主体边缘不裁切，不采用手机超广角近距离畸变。",
+      "hint": "40°，主体大、边缘完整"
+    },
+    {
+      "id": "sidelow",
+      "name": "侧边贴近桌面",
+      "text": "镜头移到食品侧面，接近台面高度并轻微向下约10至15度拍摄，重点表现侧边轮廓、厚度及可见层次，保留自然透视，不向上仰拍出夸张体积。",
+      "hint": "10–15°，强调侧边轮廓"
+    },
+    {
+      "id": "dutch",
+      "name": "轻轻倾斜一点",
+      "hint": "倾斜约8°，画面更活泼",
+      "text": "镜头从斜上方约40度观察食品，并让画面轻微倾斜约8度，营造自然随手拍的动势。食品和承托物仍稳固摆放，不让食品倾倒；不用夸张广角。"
+    },
+    {
+      "id": "over_shoulder",
+      "name": "从肩膀旁边看",
+      "hint": "带入人的位置，像正在享用",
+      "text": "镜头位于人物肩侧上方，从约50度向下观察食品和承托物，只让少量衣袖或肩部轮廓进入画面边缘，不露人物面部，不遮挡食品。保持食品为主体。"
+    },
+    {
+      "id": "far_scene",
+      "name": "退后一点带环境",
+      "hint": "完整看到包装与周围环境",
+      "text": "镜头从侧前方约40度稍退后拍摄，食品占画面约三分之一，清楚交代包装、承托物及有限的周围环境。食品仍是清晰的视觉中心，不把场景拍成店面全景。"
+    },
+    {
+      "id": "corner_high",
+      "name": "从桌角斜着看",
+      "hint": "盒子的两条边都有纵深",
+      "text": "镜头位于台面或包装前角上方，从约55度向下拍摄，让包装或盘托的两条边自然向后延伸，同时看到食品顶面与侧面；保持建筑垂直线自然。"
+    },
+    {
+      "id": "side_cut",
+      "name": "镜头对准侧面",
+      "hint": "适合夹层、切面与厚度",
+      "text": "镜头正对食品主要侧面，从约15度轻微向下观察。若指定切开状态，将真实切面朝向镜头；若完整状态，仅展示本款原有的侧面与层次，不额外切开。"
+    },
+    {
+      "id": "top_detail",
+      "name": "从上面靠近看",
+      "hint": "顶面局部，突出糖霜与卷纹",
+      "text": "镜头从食品正上方90度靠近拍摄，以顶面的局部纹理、装饰或露出的馅料为重点，可自然裁去部分外轮廓。只表现文字明确规定的配料，不把侧面切层移到顶面。"
+    }
+  ],
+  "extraScenes": [
+    {
+      "id": "S07",
+      "name": "窗边小坐",
+      "desc": "座位 · 日常松弛",
+      "scene": "产品自然放在街边烘焙店靠窗座位旁的窄木台上，用一张奶油白防油纸或适合该产品的浅盘承托。背景可见木质长椅、亚麻坐垫及少量陶土红靠垫，窗外街景只作环境层次。呈现买好面包后短暂停留的生活片刻，食品周围留出干净空间，不出现其他食品与饮品。",
+      "allowedAngles": [
+        "fortyfive",
+        "eye",
+        "fronttop",
+        "diagonal",
+        "close",
+        "sidelow"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite",
+        "macro"
+      ],
+      "defaultAngle": "fortyfive",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S08",
+      "name": "草地野餐",
+      "desc": "户外 · 周末感",
+      "scene": "在整洁的草地上铺一小块奶油白与低饱和陶土红相间的野餐布，产品放在布中央的烘焙纸或浅盘上。画面边缘仅露出少量草叶与一个素色野餐篮，篮内没有其他可见食品。食品与草地隔开，餐布褶皱自然，保留真实周末野餐的轻松感，不摆饮品、鲜花束或成堆水果。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite",
+        "macro"
+      ],
+      "defaultAngle": "fortyfive",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S09",
+      "name": "外带开盒",
+      "desc": "开箱 · 包装关系",
+      "scene": "一只与产品大小相称的奶油白食品外带盒已经打开，食品自然坐落在盒内折好的食品级防油纸上。盒盖在后侧敞开，盒外只放一小段无字陶土红封口纸和一个不抢主体的素色纸袋。展示刚打开烘焙外带盒的期待感，包装不遮挡主体关键结构，不出现印刷文字、贴牌或额外口味。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "macro"
+      ],
+      "defaultAngle": "fronttop",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S10",
+      "name": "出炉晾架",
+      "desc": "后厨 · 新鲜烘烤",
+      "scene": "食品放在洁净烘焙工作台上的细金属网格晾架中央，需要底托的甜品连同简洁食品底托一起放置；附近仅保留一角使用过的烘焙纸、空烤盘和折叠隔热布。成品状态以产品实际工艺为准：需要冷藏或冷却的食品表现完成冷却后的整理时刻，不制造热蒸汽；产品描述中指定的奶油、鲜果等后加装饰应保持完好。场景强调制作完成后的真实工作痕迹，不堆满其他面包。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "low",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "macro"
+      ],
+      "defaultAngle": "fortyfive",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S11",
+      "name": "玻璃橱窗",
+      "desc": "门店 · 精致陈列",
+      "scene": "产品作为烘焙店玻璃展示柜中的主角，独立摆在与其份量匹配的奶油白浅托盘或食品纸上。柜内为浅木或浅石材底座，背景仅有克制的金属框、玻璃边缘与空托盘的一角。玻璃可带极轻环境反射，但不能遮住食品细节，不加入价签、菜单、促销牌、文字或其他品种。",
+      "allowedAngles": [
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "diagonal",
+        "close",
+        "sidelow"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "macro"
+      ],
+      "defaultAngle": "eye",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S12",
+      "name": "家中早餐",
+      "desc": "居家 · 一人食",
+      "scene": "在安静家居餐桌上摆一份该产品，用奶油白陶盘、浅木餐桌与折叠亚麻餐巾形成简洁早餐位置。根据食品类型只配置一把面包刀或甜品叉，背景露出一小段椅背和居家窗帘，保留有人即将落座的生活感。该产品是唯一食品，不添加鸡蛋、水果、果酱罐、咖啡或其他饮品。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite",
+        "macro"
+      ],
+      "defaultAngle": "diagonal",
+      "defaultState": "bite"
+    },
+    {
+      "id": "S13",
+      "name": "打包时刻",
+      "desc": "服务 · 外带准备",
+      "scene": "场景设在烘焙店整洁的包装台，食品旁放着一张展开的奶油白食品纸，以及一个适合产品形状的素色纸袋或外带盒。工作人员只整理食品纸的外缘或扶住包装盒，食品始终清楚可见；有奶油或脆弱装饰的产品使用带底托的盒子，避免挤压。背景是一小叠平整包装材料与陶土红围裙局部，不印字、不贴标，不进行与该产品无关的加工。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut"
+      ],
+      "defaultAngle": "fronttop",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S14",
+      "name": "深木质感",
+      "desc": "深色环境 · 克制浓郁",
+      "scene": "食品放在深胡桃木餐桌的一只浅米白陶盘上，背景延续干净的可可棕木饰面与少量自然木纹。边缘只露出折起的陶土红餐巾和一把适用餐具，食品周边留有宽松空隙。以深色环境衬托面包的烘烤颜色、奶油或切面层次，木面自然哑光，不做凌乱复古杂物陈列，不添加饮品。",
+      "allowedAngles": [
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "diagonal",
+        "close",
+        "sidelow"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite",
+        "macro"
+      ],
+      "defaultAngle": "sidelow",
+      "defaultState": "cut"
+    },
+    {
+      "id": "S15",
+      "name": "分享之前",
+      "desc": "餐桌 · 两人分享",
+      "scene": "桌上准备两只小份空餐盘和两把适用餐具，食品作为两人即将分享的唯一主角，放在中间的一只较大浅盘或铺食品纸的木板上。奶油白桌布有自然褶皱，局部陶土红布巾把画面连接起来；若选择切开状态，只展示这份产品切分后的部分，不增加其他品种。背景可露出两把空椅的一小部分，传达分享前的期待感，不出现饮品或聚会杂物。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "overhead",
+      "defaultState": "cut"
+    },
+    {
+      "id": "S16",
+      "name": "骑行外带",
+      "desc": "城市出行 · 生活片刻",
+      "scene": "一辆停稳的城市自行车前筐里放着打开的素色外带纸袋，食品由袋内展开的食品纸或小外带盒稳稳承托，露出完整可辨的主体。脆弱甜品必须放在有底托的盒中，不直接接触车筐；产品形状与装饰保持完好。背景只交代一角干净街道、浅色墙面和少量车把结构，奶油白纸袋配克制的陶土红车身细节，不出现人骑车运动、饮品或文字标志。",
+      "allowedAngles": [
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut"
+      ],
+      "defaultAngle": "fronttop",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S17",
+      "name": "拉开抽屉礼盒",
+      "desc": "抽屉拉出，食品和盒套前后错开",
+      "group": "包装与开盒",
+      "scene": "一只适合本产品尺寸的抽屉式点心礼盒放在细纹浅石台面上，内抽屉已充分拉出，外盒套留在后方。食品稳定放在内托中央，底部有食品级防油纸；需要冷藏或质地柔软的点心使用硬质食品底托。奶油白内盒与陶土红外套形成前后关系，拉带自然垂落。镜头中清楚看见食品与包装边界，盒壁不遮挡主要结构；不添加其他口味，不生成印刷文字。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "low",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close",
+        "corner_high",
+        "dutch"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "fortyfive",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S18",
+      "name": "拆下包装腰封",
+      "desc": "纸套放在一旁，露出干净内托",
+      "group": "包装与开盒",
+      "scene": "食品摆在已经抽离纸套的浅食品纸托上，拆下的宽版陶土红纸腰封自然立在旁边，呈空心纸环形状。托纸与食品之间有准确的接触关系，旁边只留一枚揭下的无字封口贴。背景为平整的奶油白包装工作垫，纸套边缘、压痕和折线清楚但不过分锐利。纸套、封口贴不能压住食品，切开状态下各部分仍留在同一托中。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close",
+        "corner_high",
+        "dutch",
+        "top_detail"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "corner_high",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S19",
+      "name": "展开手提点心盒",
+      "desc": "提手向两边展开，食品清楚露出",
+      "group": "包装与开盒",
+      "scene": "一只奶油白手提点心纸盒已解开顶部锁扣，带提手的盖片向两侧自然展开，形成低于食品关键部位的包装边界。食品由与尺寸匹配的干净底托承托，盒内食品纸只包住底部，不遮挡表面。盒子摆在哑光陶土红台面，旁边是一小段拆下的素色封纸。盒体结构可实际折叠制作，提手与盖片关系合理，镜头里不出现第二份食品。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close",
+        "corner_high",
+        "dutch"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "fronttop",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S20",
+      "name": "包纸刚刚打开",
+      "desc": "松开的折痕、纸角和少量碎屑",
+      "group": "包装与开盒",
+      "scene": "奶油白食品防油纸在桌面上自然展开，保留刚拆开时的折痕与翘起的纸角，食品安稳放在纸中央。对有奶油、慕斯或流心组织的点心，在食品与纸之间增加隐蔽而合理的食品底托，纸张不能粘住装饰。旁边仅留一小段松开的棉绳与无字圆形封贴，主体附近有极少量符合本产品质地的碎屑。桌面为浅灰矿物质感，场景呈现准备享用的瞬间。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close",
+        "corner_high",
+        "dutch",
+        "top_detail"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "top",
+      "defaultState": "bite"
+    },
+    {
+      "id": "S21",
+      "name": "手里的一份外带",
+      "desc": "低边小纸托，拍到衣袖与手指",
+      "group": "包装与开盒",
+      "scene": "一双自然的手从底部与侧边稳稳端着适合本产品的低边食品纸托，手指不碰触奶油、馅料或切面。纸托有简洁硬质底部与少量防油纸，奶油类点心不会倾斜或被挤压。背景只交代素色衣袖、局部陶土红围裙或外套，与干净的人行道材质；人物面部不入镜，不出现店铺门头。呈现一份点心刚拿到手的近距离生活感，按选定状态摆放食品及分离的小块。",
+      "allowedAngles": [
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close",
+        "corner_high",
+        "over_shoulder",
+        "dutch"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "over_shoulder",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S22",
+      "name": "长凳上的小点心",
+      "desc": "纸袋靠在旁边，城市散步的停顿",
+      "group": "出门与日常",
+      "scene": "一份食品由打开的食品纸托或浅底托承托，放在干净的户外长凳一端，食品不直接接触公共座面。一只折好口的素色外带纸袋立在旁边，奶油白纸张与可可棕长凳形成材质差别。背景只见少量铺装地面和低矮绿植，不出现可读招牌或路人正脸。气氛是散步中停下来享用点心，产品区域保持整洁，包装不会被风吹动。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close",
+        "corner_high",
+        "far_scene",
+        "dutch"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "corner_high",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S23",
+      "name": "公园石桌小憩",
+      "desc": "浅色石桌、帆布袋和一点树影空间",
+      "group": "出门与日常",
+      "scene": "一份食品放在有食品底托的打开纸盒里，纸盒置于干净的公园浅色石桌上。画面边缘露出折叠的奶油白帆布袋和一小段椅边，远处可有柔和树木层次。食品始终由盒内纸张与底托承托，避免灰尘和叶片接触食物。桌面仅保留自然石材颗粒，不堆餐具、篮子或其他食品；具体光线遵照所选光线设置。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close",
+        "corner_high",
+        "far_scene",
+        "dutch"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "fortyfive",
+      "defaultState": "bite"
+    },
+    {
+      "id": "S24",
+      "name": "旅途窗边小桌",
+      "desc": "车厢小桌上的外带盒，窗外轻轻带过",
+      "group": "出门与日常",
+      "scene": "一份食品由干净底托或低边纸盒承托，放在列车靠窗座位展开的小桌板上。旁边仅露出一角奶油白帆布包与折好的无字纸巾，远处窗框和窗外景物交代旅行环境。桌板固定平稳，食品与包装不会倾倒，窗外只作背景，不遮挡或抢走产品注意力。画面不出现车次、商标、车票文字或其他乘客面部。",
+      "allowedAngles": [
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close",
+        "corner_high",
+        "over_shoulder",
+        "far_scene"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "diagonal",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S25",
+      "name": "办公间隙吃一口",
+      "desc": "记事本合上，点心放在独立小托盘",
+      "group": "出门与日常",
+      "scene": "食品放在一只适合产品的浅盘或纸托中，整个餐位与办公用品保持距离，台面是干净的浅灰书桌。画面边缘只出现合上的素色笔记本、一支笔与少量键盘边缘，屏幕和可读文字不入镜。食品周围有足够净空，桌上没有散乱线缆。场景表现暂停工作享用点心的片刻，构图的视觉重心始终在食物。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close",
+        "corner_high",
+        "over_shoulder",
+        "far_scene"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "over_shoulder",
+      "defaultState": "bite"
+    },
+    {
+      "id": "S26",
+      "name": "家里厨房的点心",
+      "desc": "瓷砖与料理台，保留一点日常痕迹",
+      "group": "出门与日常",
+      "scene": "食品放在家中厨房料理台上的干净浅盘中，台面为浅石材，后方少量奶油白方形瓷砖与一条可可棕勾缝交代空间。附近只放折叠擦手布与一件符合产品的餐具；有切分时使用小砧板或稳定餐盘。保留真实居家的克制使用痕迹，但不出现油污、生肉、堆叠碗碟和其他食品。食品处于可直接享用的状态。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "diagonal",
+        "close",
+        "corner_high",
+        "far_scene",
+        "side_cut"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "fortyfive",
+      "defaultState": "cut"
+    },
+    {
+      "id": "S27",
+      "name": "透明小台上的广告图",
+      "desc": "透明底座、清爽背景，带一点精致反光",
+      "group": "广告与大片",
+      "scene": "一块低矮透明亚克力展示台放在奶油白背景中，食品通过食品级透明底托与亚克力隔开，稳定摆在台面中央。背景边缘只有一块竖立的低饱和陶土红半透明板，带来克制的色彩层次。透明台体边缘和自然折射真实清楚，反射只辅助呈现产品，不复制成第二份食品；装置不会穿过食物，也不让红色污染食品本身颜色。",
+      "allowedAngles": [
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "diagonal",
+        "close",
+        "sidelow",
+        "corner_high",
+        "side_cut",
+        "dutch"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "low",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S28",
+      "name": "不锈钢台面质感照",
+      "desc": "冷静金属底色，衬出暖色烘焙表皮",
+      "group": "广告与大片",
+      "scene": "食品放在一只低边奶油白食品托盘中，托盘置于细拉丝不锈钢台面。后方为同样简洁的金属挡板，边缘仅保留折起的食品纸。拉丝纹理细密，金属反光柔和可控，清楚呈现食品暖色与环境中性色的关系。食品不直接接触未经说明的金属工具，背景不出现工业设备、电线、冷凝水或其他产品。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close",
+        "sidelow",
+        "corner_high",
+        "side_cut",
+        "dutch",
+        "top_detail"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "sidelow",
+      "defaultState": "cut"
+    },
+    {
+      "id": "S29",
+      "name": "折纸背景新品照",
+      "desc": "大张折纸形成背景，主体放低台",
+      "group": "广告与大片",
+      "scene": "一张大幅奶油白厚纸弯折成背景，形成真实、简洁的折面和接缝；食品放在前方低矮展示台上的食品级薄底托中。台侧有一小片陶土红色面，背景纸与食品不直接接触，不被做成包装袋。场景像经过克制布置的烘焙新品摄影，有清楚的纸面层次与充足净空，不放字牌、花束或额外食材。",
+      "allowedAngles": [
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "diagonal",
+        "close",
+        "sidelow",
+        "corner_high",
+        "far_scene",
+        "side_cut",
+        "dutch"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "diagonal",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S30",
+      "name": "小圆台上的主角",
+      "desc": "矮圆台与圆弧背景，适合做封面",
+      "group": "广告与大片",
+      "scene": "食品摆在一只低矮、直径略大于本产品的哑光奶油白圆台上，台面铺有食品级薄底托。后方只有一块偏离中心的浅陶土红圆弧背景板，背景板与产品拉开距离，食品是唯一可食用主体。圆台纹理细腻，比例接近日常点心展示座，不做宏大的建筑装置；场景用简单几何关系突出产品轮廓与厚度。",
+      "allowedAngles": [
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "diagonal",
+        "close",
+        "sidelow",
+        "corner_high",
+        "far_scene",
+        "side_cut",
+        "dutch"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "eye",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S31",
+      "name": "细条纹桌布点心照",
+      "desc": "布纹和盘沿形成轻快节奏",
+      "group": "广告与大片",
+      "scene": "食品放在低边奶油白陶盘中，盘子置于带细窄可可棕条纹的奶油白棉布上。布面仅有少量自然起伏，条纹不密集到干扰食物；盘外一角可露出平整陶土红餐巾。画面里不堆其他器皿，利用布纹、盘沿和食品形状形成自然节奏。产品本身按指定状态呈现，桌布不沾满奶油与碎屑。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close",
+        "corner_high",
+        "dutch",
+        "top_detail"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "top",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S32",
+      "name": "深棕背景招牌照",
+      "desc": "单色深背景，让奶油与切面更突出",
+      "group": "广告与大片",
+      "scene": "食品放在可可棕哑光浅盘中，浅盘与无缝深可可棕影棚背景相连，形成简洁连续的环境。食品边缘与背景之间保持可辨认的色调差异，背景的深色不能改变食品本身的烘烤颜色。只保留符合产品质地的极少量自然碎屑，不使用深木纹、古董餐具、花卉或夸张烟雾。食品表面与切面的细节由选定光线真实呈现。",
+      "allowedAngles": [
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "diagonal",
+        "close",
+        "sidelow",
+        "side_cut",
+        "dutch"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "side_cut",
+      "defaultState": "cut"
+    },
+    {
+      "id": "S33",
+      "name": "成品旁的一小份原料",
+      "desc": "只展示一种关键原料，说明这个口味",
+      "group": "原料与手作",
+      "scene": "食品放在干净浅盘中，旁边只用一只小碟展示主要组成里明确出现的一种辨识度较高的原料，例如坚果、莓果、黄油、奶酪或肉桂，严格按所选产品匹配，不能加入其他口味。原料量明显少于成品，仅作风味提示，成品与原料分别摆放而不发生额外淋浇或插入。对于不适合直接食用的原料，保持在独立小碟内；背景为洁净的浅灰工作垫，不做满桌原料阵列。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close",
+        "corner_high",
+        "dutch",
+        "top_detail"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "corner_high",
+      "defaultState": "cut"
+    },
+    {
+      "id": "S34",
+      "name": "刚切好的试吃份",
+      "desc": "切刀停在旁边，组织和切面清楚",
+      "group": "原料与手作",
+      "scene": "食品在干净的试吃工作区呈现，稳固放在合适的浅餐盘或食品砧板上。按指定切分状态整理好主体与分离部分，旁边只放一把与食品匹配、刀口朝外的小刀或甜品刀，以及极少量真实碎屑或轻微奶油抹痕。刀具不悬浮、不插在食品中，不安排正在切割的手部；浅灰台垫和食品纸只承担衬托作用，让内部组织最容易观察。",
+      "allowedAngles": [
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "diagonal",
+        "close",
+        "sidelow",
+        "side_cut",
+        "corner_high"
+      ],
+      "allowedStates": [
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "side_cut",
+      "defaultState": "cut"
+    },
+    {
+      "id": "S35",
+      "name": "刚端到桌前",
+      "desc": "工作人员端着浅托盘，像真实上桌一刻",
+      "group": "原料与手作",
+      "scene": "工作人员穿奶油白上衣与素色陶土红围裙，双手从边缘稳稳端住一只低边托盘，食品连同适合它的浅盘或食品底托放在托盘中。画面只出现必要衣袖与躯干，不出现人物面部；手部不伸到食品上方，托盘没有其他菜品。背景是一段干净的服务台与近处桌缘，呈现点心即将被放到桌前的片刻，食品始终平稳，按指定状态保留合理形状。",
+      "allowedAngles": [
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "diagonal",
+        "close",
+        "corner_high",
+        "far_scene",
+        "over_shoulder"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "bite"
+      ],
+      "defaultAngle": "low",
+      "defaultState": "whole"
+    },
+    {
+      "id": "S36",
+      "name": "在台上做最后整理",
+      "desc": "转盘与一件工具，呈现真实收尾操作",
+      "group": "原料与手作",
+      "scene": "食品放在专业工作台上的低矮食品转盘或稳定底托中，附近只有一件与所选产品实际收尾工序相符的工具。若状态指定烘焙师操作，就按本款产品描述安排一次真实的整理或装饰动作，手不遮挡关键部位；若状态是静态食品，工具自然搁在边上，画面中不安排加工动作。背景是细哑光浅灰工作台与少量整洁器具边缘，不给本产品额外添加奶油、果酱或粉末。",
+      "allowedAngles": [
+        "top",
+        "fortyfive",
+        "low",
+        "eye",
+        "fronttop",
+        "overhead",
+        "diagonal",
+        "close",
+        "corner_high",
+        "over_shoulder",
+        "side_cut"
+      ],
+      "allowedStates": [
+        "whole",
+        "cut",
+        "finish"
+      ],
+      "defaultAngle": "fortyfive",
+      "defaultState": "finish"
+    }
+  ],
+  "flavors": [
+    {
+      "id": "F01",
+      "name": "开心果",
+      "text": "加入适量开心果酱或碎，表现自然浅黄绿色与坚果颗粒。"
+    },
+    {
+      "id": "F02",
+      "name": "榛子",
+      "text": "加入烤榛子酱或碎，以浅棕坚果香为主。"
+    },
+    {
+      "id": "F03",
+      "name": "核桃",
+      "text": "加入适量核桃小块，表现自然褶皱与真实切面。"
+    },
+    {
+      "id": "F04",
+      "name": "杏仁",
+      "text": "加入杏仁奶油或烤杏仁片，比例克制。"
+    },
+    {
+      "id": "F05",
+      "name": "黑芝麻",
+      "text": "加入黑芝麻馅或碎，保留自然黑灰色与细颗粒。"
+    },
+    {
+      "id": "F06",
+      "name": "花生",
+      "text": "加入少量烤花生酱或碎，色泽浅棕。"
+    },
+    {
+      "id": "F07",
+      "name": "黑巧克力",
+      "text": "加入适量黑巧克力馅或薄淋面，质地浓稠而非流体瀑布。"
+    },
+    {
+      "id": "F08",
+      "name": "白巧克力",
+      "text": "加入薄层白巧克力或白巧馅，保留乳白色与轻微光泽。"
+    },
+    {
+      "id": "F09",
+      "name": "海盐焦糖",
+      "text": "加入少量海盐焦糖，呈自然琥珀色与浓稠柔亮质地。"
+    },
+    {
+      "id": "F10",
+      "name": "肉桂",
+      "text": "加入肉桂糖或肉桂香馅，不在表面铺满干粉。"
+    },
+    {
+      "id": "F11",
+      "name": "香草",
+      "text": "加入少量香草籽或香草奶油，黑色籽点细小。"
+    },
+    {
+      "id": "F12",
+      "name": "枫糖",
+      "text": "加入少量枫糖调味，只保留克制的琥珀色光泽。"
+    },
+    {
+      "id": "F13",
+      "name": "抹茶",
+      "text": "加入抹茶馅或调味，色泽自然偏黄绿，不使用荧光绿色。"
+    },
+    {
+      "id": "F14",
+      "name": "乌龙茶",
+      "text": "以乌龙茶浸提液调味奶馅或面糊，不把整片干茶叶铺在食品上。"
+    },
+    {
+      "id": "F15",
+      "name": "茉莉茶",
+      "text": "以茉莉茶浸提液调味，不默认插入整束鲜花。"
+    },
+    {
+      "id": "F16",
+      "name": "桂花",
+      "text": "加入少量食用桂花或桂花酱，点缀轻盈。"
+    },
+    {
+      "id": "F17",
+      "name": "玫瑰",
+      "text": "加入少量食用玫瑰酱与可食用花瓣，不添加整朵花。"
+    },
+    {
+      "id": "F18",
+      "name": "草莓",
+      "text": "加入适量草莓果馅或鲜果片，保持果肉与籽的真实细节。"
+    },
+    {
+      "id": "F19",
+      "name": "覆盆子",
+      "text": "加入适量覆盆子果馅或莓果，果色自然有深浅。"
+    },
+    {
+      "id": "F20",
+      "name": "蓝莓",
+      "text": "加入适量蓝莓或蓝莓果馅，保留自然蓝紫色与轻微果粉。"
+    },
+    {
+      "id": "F21",
+      "name": "柠檬",
+      "text": "加入柠檬凝乳或少量皮屑，呈清爽浅黄色。"
+    },
+    {
+      "id": "F22",
+      "name": "柚子",
+      "text": "加入适量柚子果馅与少量果皮细屑。"
+    },
+    {
+      "id": "F23",
+      "name": "橙皮",
+      "text": "加入切小的糖渍橙皮，颗粒克制。"
+    },
+    {
+      "id": "F24",
+      "name": "白桃",
+      "text": "加入适量白桃果肉或浓稠果馅，保持自然浅粉米白色。"
+    },
+    {
+      "id": "F25",
+      "name": "无花果",
+      "text": "加入适量无花果小块，表现果肉纤维与细籽。"
+    },
+    {
+      "id": "F26",
+      "name": "栗子",
+      "text": "加入细腻栗子泥或熟栗子小块，不添加生栗壳。"
+    },
+    {
+      "id": "F27",
+      "name": "红豆",
+      "text": "加入保留少量颗粒的红豆馅，呈自然暗红棕色。"
+    },
+    {
+      "id": "F28",
+      "name": "南瓜",
+      "text": "加入烤熟的南瓜或南瓜泥，保持柔和暖橙色。"
+    },
+    {
+      "id": "F29",
+      "name": "奶油奶酪",
+      "text": "加入适量奶油奶酪馅，质地柔润，不生成芝士长拉丝。"
+    },
+    {
+      "id": "F30",
+      "name": "罗勒番茄",
+      "text": "加入熟制番茄与少量罗勒，保持自然蔬菜质地。"
+    },
+    {
+      "id": "F31",
+      "name": "黑松露菌菇",
+      "text": "加入熟制菌菇与少量黑松露调味，不堆放整颗松露。"
+    },
+    {
+      "id": "F32",
+      "name": "芝士",
+      "text": "加入适量适合该品类的芝士，是否融化根据食品状态决定。"
+    }
+  ]
+};
+
+</script><script>
+window.HALFDAY_GUIDANCE = {
+  "goldens": {
+    "S01": {
+      "sceneId": "S01",
+      "angle": "close",
+      "state": "whole",
+      "light": "window_soft",
+      "composition": "center_whole",
+      "ratio": "竖幅3:4",
+      "depth": "soft",
+      "why": "靠近保留完整食品，窗光照清表面，店内背景轻柔退后",
+      "label": "刚拿到手的好味"
+    },
+    "S02": {
+      "sceneId": "S02",
+      "angle": "low",
+      "state": "whole",
+      "light": "studio_side",
+      "composition": "lower_space",
+      "ratio": "竖幅3:4",
+      "depth": "soft",
+      "why": "低机位突出厚度，上方留白便于后期排标题",
+      "label": "留白里的招牌款"
+    },
+    "S03": {
+      "sceneId": "S03",
+      "angle": "fortyfive",
+      "state": "cut",
+      "light": "window_soft",
+      "composition": "center_whole",
+      "ratio": "方形1:1",
+      "depth": "clear",
+      "why": "45°兼顾表皮与切面，让内部组织和盘中切分关系清楚",
+      "label": "一眼看清真切面"
+    },
+    "S04": {
+      "sceneId": "S04",
+      "angle": "top",
+      "state": "whole",
+      "light": "top_soft",
+      "composition": "diagonal_flow",
+      "ratio": "横幅4:3",
+      "depth": "clear",
+      "why": "俯拍交代烘焙纸与工具，斜向纸边让工作台布置更自然",
+      "label": "纸上刚完成的一份"
+    },
+    "S05": {
+      "sceneId": "S05",
+      "angle": "fortyfive",
+      "state": "finish",
+      "light": "studio_side",
+      "composition": "center_whole",
+      "ratio": "横幅4:3",
+      "depth": "clear",
+      "why": "45°看清手、工具与食品的接触，横幅为一个动作留空间",
+      "label": "看清最后一道手作"
+    },
+    "S06": {
+      "sceneId": "S06",
+      "angle": "macro",
+      "state": "macro",
+      "light": "studio_side",
+      "composition": "detail_fill",
+      "ratio": "方形1:1",
+      "depth": "shallow",
+      "why": "贴近关键质地，侧面柔光显示细小起伏，焦点集中在口感区域",
+      "label": "贴近真实的口感"
+    },
+    "S07": {
+      "sceneId": "S07",
+      "angle": "fortyfive",
+      "state": "whole",
+      "light": "window_soft",
+      "composition": "vertical_depth",
+      "ratio": "竖幅3:4",
+      "depth": "soft",
+      "why": "食品在前、座位在后，侧窗柔光保留安静的小坐氛围",
+      "label": "窗边的一小段闲暇"
+    },
+    "S08": {
+      "sceneId": "S08",
+      "angle": "overhead",
+      "state": "whole",
+      "light": "overcast",
+      "composition": "center_whole",
+      "ratio": "横幅4:3",
+      "depth": "clear",
+      "why": "高位呈现餐布与草地边缘，漫射光让食品颜色自然清楚",
+      "label": "草地上的轻松一份"
+    },
+    "S09": {
+      "sceneId": "S09",
+      "angle": "fortyfive",
+      "state": "whole",
+      "light": "window_soft",
+      "composition": "package_frame",
+      "ratio": "竖幅3:4",
+      "depth": "clear",
+      "why": "45°同时看清食品与盒型，窗边柔光保留纸纹",
+      "label": "打开盒子的期待"
+    },
+    "S10": {
+      "sceneId": "S10",
+      "angle": "diagonal",
+      "state": "whole",
+      "light": "window_soft",
+      "composition": "horizontal_base",
+      "ratio": "横幅4:3",
+      "depth": "clear",
+      "why": "斜看食品厚度与晾架网格，低重心让完成后的摆放稳定清楚",
+      "label": "晾架上的成品时刻"
+    },
+    "S11": {
+      "sceneId": "S11",
+      "angle": "low",
+      "state": "whole",
+      "light": "front_soft",
+      "composition": "horizontal_base",
+      "ratio": "横幅4:3",
+      "depth": "soft",
+      "why": "低机位突出橱窗中的食品厚度，正面柔光照清主要特征",
+      "label": "橱窗里的一眼心动"
+    },
+    "S12": {
+      "sceneId": "S12",
+      "angle": "fronttop",
+      "state": "whole",
+      "light": "morning_long",
+      "composition": "center_whole",
+      "ratio": "竖幅3:4",
+      "depth": "soft",
+      "why": "高位看清盘中顶面，晨光长影带出家中早餐的时间感",
+      "label": "晨光照到早餐桌"
+    },
+    "S13": {
+      "sceneId": "S13",
+      "angle": "fronttop",
+      "state": "whole",
+      "light": "studio_side",
+      "composition": "package_frame",
+      "ratio": "横幅4:3",
+      "depth": "clear",
+      "why": "高位看清食品与包装边缘，横幅为整理包纸的手部留空间",
+      "label": "打包前的完整一份"
+    },
+    "S14": {
+      "sceneId": "S14",
+      "angle": "eye",
+      "state": "whole",
+      "light": "dark_rim",
+      "composition": "left_subject",
+      "ratio": "横幅4:3",
+      "depth": "soft",
+      "why": "平视突出侧面轮廓，侧后柔光让食品从深木背景中显现",
+      "label": "深木衬出的暖色"
+    },
+    "S15": {
+      "sceneId": "S15",
+      "angle": "top",
+      "state": "whole",
+      "light": "overcast",
+      "composition": "center_whole",
+      "ratio": "横幅4:3",
+      "depth": "clear",
+      "why": "俯拍同时交代中间食品与两只空盘，完整一份保留分享前的期待",
+      "label": "两人分享前的一刻"
+    },
+    "S16": {
+      "sceneId": "S16",
+      "angle": "fronttop",
+      "state": "whole",
+      "light": "overcast",
+      "composition": "package_frame",
+      "ratio": "竖幅3:4",
+      "depth": "clear",
+      "why": "高位越过盒沿看清完整食品，柔和天光呈现车筐与承托关系",
+      "label": "车筐里稳稳的外带"
+    },
+    "S17": {
+      "sceneId": "S17",
+      "angle": "corner_high",
+      "state": "whole",
+      "light": "studio_side",
+      "composition": "package_frame",
+      "ratio": "竖幅3:4",
+      "depth": "clear",
+      "why": "从盒角看清内抽屉与外盒套的前后关系，柔光保留折线细节",
+      "label": "拉开抽屉见点心"
+    },
+    "S18": {
+      "sceneId": "S18",
+      "angle": "overhead",
+      "state": "whole",
+      "light": "top_soft",
+      "composition": "diagonal_flow",
+      "ratio": "方形1:1",
+      "depth": "clear",
+      "why": "高位看清食品与拆下纸环，托纸斜向摆放让两者自然连贯",
+      "label": "纸套拆下的瞬间"
+    },
+    "S19": {
+      "sceneId": "S19",
+      "angle": "corner_high",
+      "state": "whole",
+      "light": "window_soft",
+      "composition": "package_frame",
+      "ratio": "横幅4:3",
+      "depth": "clear",
+      "why": "从盒角看清顶面与盒壁，横幅容纳两侧展开的盖片",
+      "label": "点心盒向两侧展开"
+    },
+    "S20": {
+      "sceneId": "S20",
+      "angle": "top",
+      "state": "whole",
+      "light": "window_soft",
+      "composition": "package_frame",
+      "ratio": "方形1:1",
+      "depth": "clear",
+      "why": "俯拍完整呈现食品和展开包纸，侧窗光显出纸角与折痕",
+      "label": "刚拆开的纸上点心"
+    },
+    "S21": {
+      "sceneId": "S21",
+      "angle": "fortyfive",
+      "state": "whole",
+      "light": "overcast",
+      "composition": "center_whole",
+      "ratio": "竖幅3:4",
+      "depth": "soft",
+      "why": "45°同时看清食品和手中纸托，柔和天光减少手部硬影",
+      "label": "双手稳稳端住一份"
+    },
+    "S22": {
+      "sceneId": "S22",
+      "angle": "far_scene",
+      "state": "whole",
+      "light": "morning_long",
+      "composition": "left_subject",
+      "ratio": "横幅4:3",
+      "depth": "soft",
+      "why": "稍退后交代长凳与纸袋，晨光沿空处延伸出散步小憩的氛围",
+      "label": "长凳上的散步小憩"
+    },
+    "S23": {
+      "sceneId": "S23",
+      "angle": "fortyfive",
+      "state": "whole",
+      "light": "overcast",
+      "composition": "vertical_depth",
+      "ratio": "横幅4:3",
+      "depth": "soft",
+      "why": "前景食品清楚，石桌与远处树木逐层退后，阴天光保留原色",
+      "label": "石桌旁的一刻清闲"
+    },
+    "S24": {
+      "sceneId": "S24",
+      "angle": "corner_high",
+      "state": "whole",
+      "light": "window_soft",
+      "composition": "vertical_depth",
+      "ratio": "竖幅3:4",
+      "depth": "soft",
+      "why": "从桌角看清食品承托与小桌板，窗景退到后方交代旅途",
+      "label": "旅途中靠窗的一份"
+    },
+    "S25": {
+      "sceneId": "S25",
+      "angle": "fortyfive",
+      "state": "bite",
+      "light": "window_soft",
+      "composition": "right_subject",
+      "ratio": "横幅4:3",
+      "depth": "clear",
+      "why": "取下一小块交代休息片刻，45°看清食品及旁边小块的关系",
+      "label": "工作间隙尝一小口"
+    },
+    "S26": {
+      "sceneId": "S26",
+      "angle": "fronttop",
+      "state": "whole",
+      "light": "window_soft",
+      "composition": "vertical_depth",
+      "ratio": "竖幅3:4",
+      "depth": "soft",
+      "why": "高位兼顾顶面与盘沿，后方瓷砖轻柔退后保留居家厨房感",
+      "label": "家中料理台的点心"
+    },
+    "S27": {
+      "sceneId": "S27",
+      "angle": "low",
+      "state": "whole",
+      "light": "studio_side",
+      "composition": "lower_space",
+      "ratio": "竖幅3:4",
+      "depth": "clear",
+      "why": "低机位呈现食品厚度与透明台边，上方留出干净广告空间",
+      "label": "透明小台上的新品"
+    },
+    "S28": {
+      "sceneId": "S28",
+      "angle": "fortyfive",
+      "state": "whole",
+      "light": "studio_side",
+      "composition": "horizontal_base",
+      "ratio": "横幅4:3",
+      "depth": "clear",
+      "why": "45°同时看清食品与托盘，柔光抑制金属强反光并保留拉丝纹理",
+      "label": "金属台面的温暖主角"
+    },
+    "S29": {
+      "sceneId": "S29",
+      "angle": "fortyfive",
+      "state": "whole",
+      "light": "studio_side",
+      "composition": "left_subject",
+      "ratio": "横幅16:9",
+      "depth": "clear",
+      "why": "食品靠左保留立体全貌，右侧纸面折光形成连续排版空间",
+      "label": "折纸光影里的新品"
+    },
+    "S30": {
+      "sceneId": "S30",
+      "angle": "eye",
+      "state": "whole",
+      "light": "studio_side",
+      "composition": "center_whole",
+      "ratio": "方形1:1",
+      "depth": "clear",
+      "why": "平视突出食品高度，居中方幅让圆台与背景弧线关系简洁",
+      "label": "圆台中央的招牌款"
+    },
+    "S31": {
+      "sceneId": "S31",
+      "angle": "top",
+      "state": "whole",
+      "light": "top_soft",
+      "composition": "corner_space",
+      "ratio": "竖幅3:4",
+      "depth": "clear",
+      "why": "俯拍看清顶面与细条纹，食品靠右下为左上保留排版空间",
+      "label": "细条纹上的小留白"
+    },
+    "S32": {
+      "sceneId": "S32",
+      "angle": "low",
+      "state": "whole",
+      "light": "spotlight",
+      "composition": "lower_space",
+      "ratio": "竖幅3:4",
+      "depth": "soft",
+      "why": "定向柔光聚焦食品厚度，深棕背景与上方净空适合作为封面",
+      "label": "深棕背景里的主角"
+    },
+    "S33": {
+      "sceneId": "S33",
+      "angle": "overhead",
+      "state": "whole",
+      "light": "overcast",
+      "composition": "right_subject",
+      "ratio": "横幅4:3",
+      "depth": "clear",
+      "why": "高位同时看清成品和一小碟原料，柔和光线保留真实配料颜色",
+      "label": "用一小碟说明风味"
+    },
+    "S34": {
+      "sceneId": "S34",
+      "angle": "side_cut",
+      "state": "cut",
+      "light": "studio_side",
+      "composition": "horizontal_base",
+      "ratio": "横幅4:3",
+      "depth": "clear",
+      "why": "镜头对准真实切面，柔光保留内部层次与旁边分离部分的细节",
+      "label": "刚切好的真实组织"
+    },
+    "S35": {
+      "sceneId": "S35",
+      "angle": "low",
+      "state": "whole",
+      "light": "front_soft",
+      "composition": "center_whole",
+      "ratio": "竖幅3:4",
+      "depth": "clear",
+      "why": "低机位突出托盘中的食品厚度，正面柔光看清承托与手部位置",
+      "label": "刚端上来的好滋味"
+    },
+    "S36": {
+      "sceneId": "S36",
+      "angle": "fronttop",
+      "state": "whole",
+      "light": "studio_side",
+      "composition": "vertical_depth",
+      "ratio": "竖幅3:4",
+      "depth": "clear",
+      "why": "高位看清完成后的顶面，转盘和旁边工具交代收尾后的工作现场",
+      "label": "最后整理后的成品"
+    }
+  },
+  "cuts": {
+    "01": {
+      "id": "01",
+      "cut": "以两端卷尖连线为长轴，在一只可颂的饱满中段垂直于长轴、由顶到底切成两半。画面仅有来自同一只的两个半只，前半切面朝镜头，后半稍后错开，均由原底部稳定支撑。",
+      "structure": "外缘是金黄至浅焦褐的薄酥片，内部为浅金色、由不规则孔隙与薄面包膜构成的层压发酵组织；气孔受卷制与发酵影响，不是规则六角蜂巢，也不是满截面平行千层。原味内部只有面包膜和空气，不含馅料。",
+      "avoidCut": "不生成整只加两半的三件组合，不把外部卷层复制成规则年轮或蛋糕夹层，不把所有气孔灌满馅。不出现奶油、黄油块或夹心。",
+      "preferredAngle": "切面正前方略偏侧、向下约20–30°，同时看清完整截面与上方外皮卷层。"
+    },
+    "02": {
+      "id": "02",
+      "cut": "以两端卷尖连线为长轴，在一只可颂的饱满中段垂直于长轴、由顶到底切成两半。画面仅有来自同一只的两个半只，前半切面朝镜头，后半稍后错开，均由原底部稳定支撑。",
+      "structure": "外缘是金黄至浅焦褐的薄酥片，内部为浅金色、由不规则孔隙与薄面包膜构成的层压发酵组织；气孔受卷制与发酵影响，不是规则六角蜂巢，也不是满截面平行千层。自然浅黄绿色开心果馅与少量莓红覆盆子果馅集中于原侧面填馅处，二者相邻、界面轻微接触；其余截面保留可辨面包组织。顶部只保留原有开心果碎和两三颗覆盆子。",
+      "avoidCut": "不生成整只加两半的三件组合，不把外部卷层复制成规则年轮或蛋糕夹层，不把所有气孔灌满馅。不混成粉绿色浆液，不虚构整齐水平三层。",
+      "preferredAngle": "切面正前方略偏侧、向下约20–30°，同时看清完整截面与上方外皮卷层。"
+    },
+    "03": {
+      "id": "03",
+      "cut": "以两端卷尖连线为长轴，在一只可颂的饱满中段垂直于长轴、由顶到底切成两半。画面仅有来自同一只的两个半只，前半切面朝镜头，后半稍后错开，均由原底部稳定支撑。",
+      "structure": "外缘是金黄至浅焦褐的薄酥片，内部为浅金色、由不规则孔隙与薄面包膜构成的层压发酵组织；气孔受卷制与发酵影响，不是规则六角蜂巢，也不是满截面平行千层。局部填馅区为浓稠深棕色榛子黑巧馅，缎面微润，切缘最多轻微圆润下垂且仍贴附面包；一端原有薄黑巧涂层与榛子碎留在外表。",
+      "avoidCut": "不生成整只加两半的三件组合，不把外部卷层复制成规则年轮或蛋糕夹层，不把所有气孔灌满馅。不制造喷浆、巧克力瀑布、长拉丝或空心硬壳。",
+      "preferredAngle": "切面正前方略偏侧、向下约20–30°，同时看清完整截面与上方外皮卷层。"
+    },
+    "04": {
+      "id": "04",
+      "cut": "以两端卷尖连线为长轴，在一只可颂的饱满中段垂直于长轴、由顶到底切成两半。画面仅有来自同一只的两个半只，前半切面朝镜头，后半稍后错开，均由原底部稳定支撑。",
+      "structure": "外缘是金黄至浅焦褐的薄酥片，内部为浅金色、由不规则孔隙与薄面包膜构成的层压发酵组织；气孔受卷制与发酵影响，不是规则六角蜂巢，也不是满截面平行千层。既有上部纵向浅夹口被横断，淡黄色柠檬凝乳与少量柔白奶油只填在该浅槽内；下半部仍是连续可颂面包组织，凝乳浓稠定形。",
+      "avoidCut": "不生成整只加两半的三件组合，不把外部卷层复制成规则年轮或蛋糕夹层，不把所有气孔灌满馅。不把浅夹口画成贯穿底部的巨大空腔，不把凝乳画成液体。",
+      "preferredAngle": "切面正前方略偏侧、向下约20–30°，同时看清完整截面与上方外皮卷层。"
+    },
+    "05": {
+      "id": "05",
+      "cut": "将已沿中腰水平剖开并合拢的整只可颂三明治，在饱满中段垂直贯穿上下包体与夹馅切成两份。画面仅两份组装完整的半只，前份切面朝前，后份稍后错开；每份上盖仍落在自己的夹馅上。",
+      "structure": "上下包体均保留可颂薄酥外缘与不规则孔隙；原中腰夹口内为番茄片、柔白马苏里拉和少量罗勒，顺序遵循自然组装、不强求多重整齐层。番茄可见果皮、果肉与小量籽腔；奶酪是柔软实体。",
+      "avoidCut": "不再次水平分离为四片面包，不增加顶盖或第三份，不画番茄酱、奶油夹心或夸张奶酪拉丝。",
+      "preferredAngle": "切面正前方略偏侧、向下约20–30°，同时看清完整截面与上方外皮卷层。"
+    },
+    "06": {
+      "id": "06",
+      "cut": "在一只碱水结下方粗弧、远离交叉臂的位置，以两道相邻切口横断粗弧，取出一小段。画面仅缺一小段的结形主体与该小段，主体后放并保留交叉臂，小段前放、一个新截面朝镜头。",
+      "structure": "切面为浅米白色、细密有弹性的实心发酵面包，外周一圈薄栗棕表皮；仅有自然细小气孔，顶部稀疏海盐与浅色割口仍在原处。",
+      "avoidCut": "不以单刀凭空取下一段闭合面包环，不把结形完全拆散，不出现夹馅、酥皮或大型可颂孔洞。",
+      "preferredAngle": "前方约30–40°俯视，既能读出交叉结形与原孔洞位置，也能看清前方小段截面。"
+    },
+    "07": {
+      "id": "07",
+      "cut": "将一只已夹红豆与黄油的圆碱水包，在斜长夹口中点处、横跨夹口方向由顶到底垂直切成两半。画面仅两半，前半切面朝前，后半略后错开，黄油留在原夹口内。",
+      "structure": "栗棕薄皮包围浅色细密面包芯；原上部斜夹口中局部为暗红颗粒红豆馅和浅黄色黄油片，黄油有完整截边，下方仍是连续面包芯。",
+      "avoidCut": "不在底部虚构夹层，不将黄油画成烤前内包的未融大块，不添加流淌油液或巧克力馅。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "08": {
+      "id": "08",
+      "cut": "将一只已填好抹茶红豆馅的圆碱水包，在原斜夹口的中段横跨夹口、垂直贯穿顶到底切成两半。仅摆这两半，前半切面朝前，后半稍后错开。",
+      "structure": "细密浅色面包芯外围为栗棕薄皮；原上部夹口内有暗红颗粒红豆与自然浅茶绿色抹茶奶油奶酪，相邻填入、界面柔和，下方连续面包芯清楚。",
+      "avoidCut": "不把整个面包染成绿色，不生成贯穿全截面的彩虹夹层，不出现拉丝奶酪或液态抹茶。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "09": {
+      "id": "09",
+      "cut": "在一根完整香肠芝士碱水包中点、垂直于长轴由顶到底切成两段，同时切断中心香肠。仅两段前后错开放置，前段圆形香肠截面朝镜头，后段保留原露肠端。",
+      "structure": "中心为一根熟香肠的实心圆或略椭圆截面，细密熟肉组织被一圈细密浅色面包包裹，外缘为栗棕薄皮；少量烤融芝士仅贴在顶部。",
+      "avoidCut": "不把包卷结构改成水平夹肠热狗，不增生多根香肠，不画生肉、空心肠或长拉丝。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "10": {
+      "id": "10",
+      "cut": "从一只充分冷却的整面包一端，垂直于长轴切下一片中等厚度的端片。画面仅剩余主体与这一片，主体后放、端片稍前倾靠其侧，端片的新鲜切面朝镜头，保留少量真实面包屑。",
+      "structure": "金棕至深褐外壳包围浅麦色面包芯，孔隙大小不一、方向自然，有完整而富弹性的面包壁；无果料、坚果或夹心。",
+      "avoidCut": "不出现多余半只或重复切片，不复制规则蜂窝，不把整块组织掏成巨大空洞。",
+      "preferredAngle": "切面前方斜侧约25–35°俯视，主切面清楚，顶部主要特征仍可见。"
+    },
+    "11": {
+      "id": "11",
+      "cut": "从一只充分冷却的整面包一端，垂直于长轴切下一片中等厚度的端片。画面仅剩余主体与这一片，主体后放、端片稍前倾靠其侧，端片的新鲜切面朝镜头，保留少量真实面包屑。",
+      "structure": "浅麦色酸面包组织中自然散布核桃块与深浅棕色无花果干，核桃断面不规则，无花果可见细小种籽；果料与坚果嵌入面包壁，孔隙随其分布变化。",
+      "avoidCut": "不添加鲜无花果顶饰，不把无花果画成紫色流心夹层，不让果料悬空或整齐排图案。",
+      "preferredAngle": "切面前方斜侧约25–35°俯视，主切面清楚，顶部主要特征仍可见。"
+    },
+    "12": {
+      "id": "12",
+      "cut": "从一只充分冷却的整面包一端，垂直于长轴切下一片中等厚度的端片。画面仅剩余主体与这一片，主体后放、端片稍前倾靠其侧，端片的新鲜切面朝镜头，保留少量真实面包屑。",
+      "structure": "浅麦色酸面包芯有自然不规则气孔，散布琥珀棕桂圆干与枣红色去核红枣果肉；果肉呈小块及纤维状，柔润有界限。",
+      "avoidCut": "不出现枣核、带壳桂圆、整齐果酱层、核桃或鲜红染色面包。",
+      "preferredAngle": "切面前方斜侧约25–35°俯视，主切面清楚，顶部主要特征仍可见。"
+    },
+    "13": {
+      "id": "13",
+      "cut": "将原有一块单人份长方形佛卡夏，在长边中点垂直于长轴由顶到底切成两块。画面仅这两块，前块新切面朝镜头，后块保持顶面朝上并稍后错开，不再增加整盘面包。",
+      "structure": "厚度约三至四厘米，薄金黄顶皮与底边之间为柔润、蓬松的不规则开孔面包芯；海盐和迷迭香只在原有凹坑顶面，内部不含馅。",
+      "avoidCut": "只用刀切，不同时撕开；不出现可颂层压、内部迷迭香厚层、积油或披萨薄底。",
+      "preferredAngle": "切面前方斜侧约25–35°俯视，主切面清楚，顶部主要特征仍可见。"
+    },
+    "14": {
+      "id": "14",
+      "cut": "将原有一块单人份长方形佛卡夏，在长边中点垂直于长轴由顶到底切成两块。画面仅这两块，前块新切面朝镜头，后块保持顶面朝上并稍后错开，不再增加整盘面包。",
+      "structure": "厚而蓬松的不规则开孔芯体上方保留原有烤软小番茄半颗与罗勒；切线经过的番茄只露局部果肉，番茄部分嵌入顶面，周围略湿润，底部仍完整蓬松。",
+      "avoidCut": "不把番茄变为内部果酱夹层，不加芝士、不画披萨薄底；不同时刀切与手撕。",
+      "preferredAngle": "切面前方斜侧约25–35°俯视，主切面清楚，顶部主要特征仍可见。"
+    },
+    "15": {
+      "id": "15",
+      "cut": "将一份已沿中腰水平剖开并合拢的长方形恰巴塔三明治，在长度中点由顶到底垂直横切成两段。画面仅两段组装完整的三明治，前段切面朝镜头，后段略后错开；各自上盖保持自然合拢。",
+      "structure": "上下恰巴塔包体都有浅金薄壳与大小不规则的开放气孔，原中腰夹口容纳夹馅，底部面包仍保留厚度与清楚孔隙。熟鸡肉片有完整熟肉纤维和微润浅色断面，番茄保留果皮果肉，薄层罗勒青酱只贴附夹口和食材。",
+      "avoidCut": "不把两段拆成四片裸面包，不增加整份三明治，不将夹馅掺成面团内部颗粒或整齐蛋糕夹层。不出现生鸡肉、未声明奶酪或满盘青酱。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "16": {
+      "id": "16",
+      "cut": "将一份已沿中腰水平剖开并合拢的长方形恰巴塔三明治，在长度中点由顶到底垂直横切成两段。画面仅两段组装完整的三明治，前段切面朝镜头，后段略后错开；各自上盖保持自然合拢。",
+      "structure": "上下恰巴塔包体都有浅金薄壳与大小不规则的开放气孔，原中腰夹口容纳夹馅，底部面包仍保留厚度与清楚孔隙。暖橙色烤南瓜块与熟鸡肉片自然压合，南瓜软而保留块状边界，鸡肉纤维细腻，少量黑胡椒细点分散。",
+      "avoidCut": "不把两段拆成四片裸面包，不增加整份三明治，不将夹馅掺成面团内部颗粒或整齐蛋糕夹层。不把南瓜画成流心酱或马苏里拉拉丝。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "17": {
+      "id": "17",
+      "cut": "将一份已沿中腰水平剖开并合拢的长方形恰巴塔三明治，在长度中点由顶到底垂直横切成两段。画面仅两段组装完整的三明治，前段切面朝镜头，后段略后错开；各自上盖保持自然合拢。",
+      "structure": "上下恰巴塔包体都有浅金薄壳与大小不规则的开放气孔，原中腰夹口容纳夹馅，底部面包仍保留厚度与清楚孔隙。夹口内为收干水分的深色梅干菜细碎纤维和熟制腊肠小块；馅料相互贴合，腊肠有熟肉纹和少量油润，面包底部不浸湿。",
+      "avoidCut": "不把两段拆成四片裸面包，不增加整份三明治，不将夹馅掺成面团内部颗粒或整齐蛋糕夹层。不把梅干菜变为绿色鲜叶或流动黑酱，不增生奶酪。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "18": {
+      "id": "18",
+      "cut": "将一只无中心孔的注馅甜甜圈沿经过圆心的竖直平面，由顶到底切成两半。画面仅这两半，前半以原底部着地且竖直切面朝镜头，后半稍后错开；不是沿腰线分成上下盖。",
+      "structure": "薄金黄炸皮包围柔软浅色布里欧修面包芯，气孔细密、面包纤维轻柔；中央注馅形成局部填馅区，周围仍有足够面包厚度。浅奶黄色香草卡仕达浓稠顺滑，贴合内壁，切缘柔软而留在原位；表面细砂糖与较浅腰线仍可见。",
+      "avoidCut": "不生成有洞甜甜圈，不把卡仕达画成瀑布、半生蛋液或泡芙式空壳，不增加独立奶油层。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "19": {
+      "id": "19",
+      "cut": "将一只无中心孔的注馅甜甜圈沿经过圆心的竖直平面，由顶到底切成两半。画面仅这两半，前半以原底部着地且竖直切面朝镜头，后半稍后错开；不是沿腰线分成上下盖。",
+      "structure": "薄金黄炸皮包围柔软浅色布里欧修面包芯，气孔细密、面包纤维轻柔；中央注馅形成局部填馅区，周围仍有足够面包厚度。草莓果馅、奶油奶酪与奶油为混合夹心，奶白至淡粉色中可有草莓果肉与轻微自然色差；原顶部半颗草莓留在所在的半只上。",
+      "avoidCut": "不将混合乳酪馅拆成红白两条整齐夹层，不复制成两颗顶饰，不让草莓汁大量外流。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "20": {
+      "id": "20",
+      "cut": "在一只直立圆形肉桂卷上，以卷心为起点作两道相邻径向竖切，均从顶到底，取下一块约六分之一的扇形。画面仅有保留大部分顶面螺旋的主体与这一块，扇形放在缺口前方，竖直切面朝镜头。",
+      "structure": "主体为柔软发酵面包，浅色面包带之间是薄肉桂黄油糖纹；顶面保留由中心向外的盘卷螺旋，径向竖切面则是卷入的间隔糖纹与柔软面包芯，不是同一个顶面螺旋的复制。薄奶油淋面只附着于原有顶面起伏，不作为内部填馅。",
+      "avoidCut": "不从封闭中心凭空取出方块，不把竖切面画成完整同心圆，不画酥皮蜂窝、厚奶油夹心或未声明奶酪糖霜。",
+      "preferredAngle": "由扇形缺口前方约35–45°俯视，同时展示主体顶面螺旋和两处竖直新切面。"
+    },
+    "21": {
+      "id": "21",
+      "cut": "从一条已冷却的小型长方形Babka一端，垂直于长轴由顶到底切下一片中等厚度的端片。画面仅一条剩余主体与这一片，主体稍后摆放，切片前倾靠于其前侧，新切面朝镜头。",
+      "structure": "富油柔软面包芯为奶白色，有细密纤维；深灰黑芝麻奶酥随卷起、纵剖和双股扭编形成不规则弯曲带纹，贴合面包，不是均匀平行层。主体顶部保留双股扭编。",
+      "avoidCut": "不画可颂蜂窝、千层酥、规则年轮或可流动黑芝麻浆；不新增奶油夹心。",
+      "preferredAngle": "切面前方斜侧约25–35°俯视，主切面清楚，顶部主要特征仍可见。"
+    },
+    "22": {
+      "id": "22",
+      "cut": "将一只圆模安曼卷沿经过中心的竖直平面由顶到底切成两半。画面仅两半，前半以原底部稳定支撑、截面朝前，后半略后错开并保留顶部折角。",
+      "structure": "外缘为金黄至琥珀褐色薄焦糖脆壳，内部是黄油开酥面团经折角后形成方向变化的浅金层片与不规则孔隙；顶部为向内叠合的折角，不是肉桂螺旋。",
+      "avoidCut": "不添加奶油馅、流动焦糖心或厚焦糖淋面，不画成直立肉桂卷或完全平行千层。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "23": {
+      "id": "23",
+      "cut": "在一只原有单人份圆挞上作两道从圆心到外缘、贯穿顶饰和挞底的径向竖切，取出约六分之一小扇形。画面仅缺一角的挞主体与该小角，小角移到缺口前方，切面朝镜头；不出现另一只完整挞。",
+      "structure": "从下到上为薄金黄熟甜挞壳底、单一较厚的浅黄色柠檬凝乳、原顶部低矮蛋白霜小峰；挞壳侧壁仅围在外弧，蛋白霜位于外圈，其尖端浅褐。凝乳冷却定形，切缘柔润。",
+      "avoidCut": "不增加海绵底、白奶油夹层或果冻层，不把蛋白霜当整层饼底，不出现柠檬汁流淌。",
+      "preferredAngle": "缺口正前方约25–35°俯视，切缘从顶饰到挞底完整可见。"
+    },
+    "24": {
+      "id": "24",
+      "cut": "在一只原有单人份圆挞上作两道从圆心到外缘、贯穿顶饰和挞底的径向竖切，取出约六分之一小扇形。画面仅缺一角的挞主体与该小角，小角移到缺口前方，切面朝镜头；不出现另一只完整挞。",
+      "structure": "从下到上为薄金黄熟甜挞壳底、贴合挞底的浅奶黄色香草卡仕达、新鲜草莓半颗；草莓是顶部果实，切线经过处有真实红色果肉与细籽。挞壳侧壁只在外弧。",
+      "avoidCut": "不新增海绵蛋糕、果冻、杏仁馅或独立白奶油层；不复制多只挞，不让卡仕达液化。",
+      "preferredAngle": "缺口正前方约25–35°俯视，切缘从顶饰到挞底完整可见。"
+    },
+    "25": {
+      "id": "25",
+      "cut": "在一只原有单人份圆挞上作两道从圆心到外缘、贯穿顶饰和挞底的径向竖切，取出约六分之一小扇形。画面仅缺一角的挞主体与该小角，小角移到缺口前方，切面朝镜头；不出现另一只完整挞。",
+      "structure": "由底向上恰为薄金黄熟挞壳、贴底的一层薄浅黄色柚子果馅、较厚且平滑的自然茶绿色抹茶奶油馅。顶部中央原有少量柚子碎点缀，果馅浓稠、奶馅冷藏定形，挞壳侧壁只围外弧。",
+      "avoidCut": "不颠倒柚子与抹茶位置，不新增蛋糕、白巧、饼干或果冻层，不让茶绿馅流出。",
+      "preferredAngle": "缺口正前方约25–35°俯视，切缘从顶饰到挞底完整可见。"
+    },
+    "26": {
+      "id": "26",
+      "cut": "在一只低圆锥形蒙布朗上作两道从中心向外缘的径向竖切，贯穿栗子外层至蛋糕底，取出约四分之一小瓣。仅主体与该小瓣两件，小瓣稍前移，主体缺口朝镜头。",
+      "structure": "薄熟蛋糕底承托柔白奶油核心，少量深紫红黑加仑果馅局限于奶油内的中心区域；外侧栗色栗子泥细条包覆奶油。截面按外栗子泥、内奶油和局部果心、底部薄蛋糕读取，不是多层横纹蛋糕。",
+      "avoidCut": "不将果心扩成通体紫色夹层，不加挞壳、蛋白饼、巧克力或硬装饰，不让栗子条与奶油坍塌流淌。",
+      "preferredAngle": "缺口前方约25–35°俯视，完整读出薄蛋糕底、内部果心和外侧栗子挤纹。"
+    },
+    "27": {
+      "id": "27",
+      "cut": "将一只已冷藏定形的矮圆柱慕斯，沿通过中心的竖直平面从平顶切到底部蛋糕，分成两个半圆柱。仅两半，前半切面朝前，后半略后错开，以原底部站稳。",
+      "structure": "主体是自然浅茶奶色乌龙慕斯；内部中央嵌入浅色梨果心，果心含梨果肉和极少桂花，四周由慕斯包围；底部只有一层薄蛋糕。表面哑光，顶部零星桂花，不增加独立桂花层。",
+      "avoidCut": "不把果心画成贯穿外壁的水平水果层，不增添镜面淋面、脆底或多层海绵，不出现融化慕斯或梨汁外流。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "28": {
+      "id": "28",
+      "cut": "以现有一块三角巴斯克切片为唯一来源，在尖端后方作一道垂直贯穿顶皮到底部的横切，取下一小口三角块。画面仅原切片剩余主体与这一小口，小块置于尖端前方，二者的新切面均可辨，不再出现整圆蛋糕。",
+      "structure": "顶部只有自然不均匀的焦褐薄烤皮，内部是细密柔润、连贯的烤乳酪组织，底部仍是同一乳酪体，没有饼干壳或海绵底。浅奶油色中心比外缘更软，可有极轻微切缘下垂，但冷藏后的主体和小块均保持轮廓，不主动表现流淌。",
+      "avoidCut": "不因品名“流心”生成熔岩瀑布，不添加饼干底、奶油层或液体池，不用叉子额外挖出第二小口。",
+      "preferredAngle": "切片新切面前方约20–30°俯视，焦顶、柔软中心与底部连续组织同时可见。"
+    },
+    "29": {
+      "id": "29",
+      "cut": "以现有一块三角巴斯克切片为唯一来源，在尖端后方作一道垂直贯穿顶皮到底部的横切，取下一小口三角块。画面仅原切片剩余主体与这一小口，小块置于尖端前方，二者的新切面均可辨，不再出现整圆蛋糕。",
+      "structure": "顶部只有自然不均匀的焦褐薄烤皮，内部是细密柔润、连贯的烤乳酪组织，底部仍是同一乳酪体，没有饼干壳或海绵底。黑巧融入乳酪使内部均匀呈可可棕色，质地细密，焦顶色更深；黑巧不是独立甘纳许、淋面或夹心。",
+      "avoidCut": "不添加黑巧熔岩芯、饼干底、巧克力顶层或多色分层，不让切片塌陷。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "30": {
+      "id": "30",
+      "cut": "将一只已盖回小顶盖的圆泡芙沿中心由顶到底竖直切成两半，同时切开顶盖、香草馅和底壳。画面仅两个半只，前半切面朝镜头，后半稍后错开；两半各自的半顶盖仍落在原馅上。",
+      "structure": "金褐轻薄泡芙壳围成不规则空腔，香草馅在腔内柔润厚实、贴合壳壁；壳内只留自然薄膜和少量空隙，不是发酵面包芯。原顶部一小片薄焦糖只保留在其所在位置。",
+      "avoidCut": "不增加第三个完整顶盖，不把泡芙画成布里欧修蜂窝、海绵蛋糕或酥菠萝壳，不让香草馅喷涌。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "31": {
+      "id": "31",
+      "cut": "将一只直立可露丽沿圆心由凹顶到平底竖直切成两半。画面仅两半，前半以原平底站立、截面朝镜头，后半略转外侧露出纵向模纹。",
+      "structure": "外周及顶部为深琥珀至焦褐烤壳，内芯连续呈浅金黄色，柔软湿润、带不规则细小孔隙；它是烤熟面糊形成的组织，没有注馅腔或独立夹层。",
+      "avoidCut": "不出现生蛋液、布丁流心、奶油核心、面包酥层或额外顶饰。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "32": {
+      "id": "32",
+      "cut": "将一只长方形费南雪在长边中点垂直于长轴由顶到底切成两段。画面仅两段，前段切面朝镜头，后段略后错开、顶部开心果碎仍在原位。",
+      "structure": "自然浅黄绿色坚果粉蛋糕组织细密、略湿润，颗粒感细微均匀；周边为较深金褐烤边，内部没有发酵大孔、酥片或夹馅。",
+      "avoidCut": "不生成开心果奶油心、层压酥皮、果酱层或荧光绿组织，不将两段复制成完整两只。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "R01": {
+      "id": "R01",
+      "cut": "以两端卷尖连线为长轴，在一只可颂的饱满中段垂直于长轴、由顶到底切成两半。画面仅有来自同一只的两个半只，前半切面朝镜头，后半稍后错开，均由原底部稳定支撑。",
+      "structure": "外缘是金黄至浅焦褐的薄酥片，内部为浅金色、由不规则孔隙与薄面包膜构成的层压发酵组织；气孔受卷制与发酵影响，不是规则六角蜂巢，也不是满截面平行千层。局部夹心为浅绿至黄绿色开心果玫瑰奶馅；奶油或卡仕达作为同一馅体的载体，不另拆分两层，玫瑰酱少量融入调味。原表面少量开心果碎与食用花瓣保留。",
+      "avoidCut": "不生成整只加两半的三件组合，不把外部卷层复制成规则年轮或蛋糕夹层，不把所有气孔灌满馅。不虚构粉色玫瑰夹层、整朵玫瑰或莓果馅。",
+      "preferredAngle": "切面正前方略偏侧、向下约20–30°，同时看清完整截面与上方外皮卷层。"
+    },
+    "R02": {
+      "id": "R02",
+      "cut": "以两端卷尖连线为长轴，在一只可颂的饱满中段垂直于长轴、由顶到底切成两半。画面仅有来自同一只的两个半只，前半切面朝镜头，后半稍后错开，均由原底部稳定支撑。",
+      "structure": "外缘是金黄至浅焦褐的薄酥片，内部为浅金色、由不规则孔隙与薄面包膜构成的层压发酵组织；气孔受卷制与发酵影响，不是规则六角蜂巢，也不是满截面平行千层。夹口内的杏仁奶油经烤熟后呈浅杏黄色、湿润细密、能保持形状的杏仁馅，压实区与周边可颂组织相接；顶部原有烤杏仁奶油薄层、杏仁片和少量糖粉。",
+      "avoidCut": "不生成整只加两半的三件组合，不把外部卷层复制成规则年轮或蛋糕夹层，不把所有气孔灌满馅。不把熟杏仁馅画成白色打发奶油、液体或生面糊。",
+      "preferredAngle": "切面正前方略偏侧、向下约20–30°，同时看清完整截面与上方外皮卷层。"
+    },
+    "R03": {
+      "id": "R03",
+      "cut": "将一只圆形海盐黄油碱水球沿中心竖直切成两半。画面仅两半，前半切面朝前，后半略后错开并保留顶部浅割口。",
+      "structure": "栗褐薄皮包围浅奶油色细密有弹性的面包芯；预包黄油已在烘烤中融化并浸润局部组织，中心只留少量不规则小空隙和微润面包壁。",
+      "avoidCut": "不同时撕开与刀切，不出现烤后仍完整的黄油块、巨型空心壳或黄油汤汁。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "R04": {
+      "id": "R04",
+      "cut": "将一只椭圆苹果肉桂碱水包在长度中点以竖直斜切面贯穿顶到底，分成两个半只。仅两半，前半切面朝镜头，后半稍后错开。",
+      "structure": "栗褐薄皮内是浅色细密弹性面包；内包苹果馅集中成局部填馅区，浅琥珀苹果丁煮软但有块状边界，浓稠肉桂焦糖少量附着在果肉间。",
+      "avoidCut": "不把苹果画成整片生苹果或流动糖水，不添加乳酪层、酥层或肉桂螺旋。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "R05": {
+      "id": "R05",
+      "cut": "从一只充分冷却的整面包一端，垂直于长轴切下一片中等厚度的端片。画面仅剩余主体与这一片，主体后放、端片稍前倾靠其侧，端片的新鲜切面朝镜头，保留少量真实面包屑。",
+      "structure": "金棕外壳内的面包芯因南瓜泥呈柔和浅南瓜黄；自然不规则气孔间嵌有南瓜小块与半硬质奶酪丁，烤后奶酪局部柔融并贴附组织，仍能辨认少量凝固块状痕迹。",
+      "avoidCut": "不出现南瓜泥水平夹层、大片空心奶酪池或长拉丝，不把组织画成蛋糕。",
+      "preferredAngle": "切面前方斜侧约25–35°俯视，主切面清楚，顶部主要特征仍可见。"
+    },
+    "R06": {
+      "id": "R06",
+      "cut": "将一份已沿中腰水平剖开并合拢的长方形恰巴塔三明治，在长度中点由顶到底垂直横切成两段。画面仅两段组装完整的三明治，前段切面朝镜头，后段略后错开；各自上盖保持自然合拢。",
+      "structure": "上下恰巴塔包体都有浅金薄壳与大小不规则的开放气孔，原中腰夹口容纳夹馅，底部面包仍保留厚度与清楚孔隙。原夹口内为挤干后切碎的深绿色马兰头和米褐色香干丁，碎叶与豆干块可分别辨认，彼此自然压合且不出水。",
+      "avoidCut": "不把两段拆成四片裸面包，不增加整份三明治，不将夹馅掺成面团内部颗粒或整齐蛋糕夹层。不把马兰头画成深绿糊酱，不将香干误画成奶酪或鸡肉。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "R07": {
+      "id": "R07",
+      "cut": "将一只无中心孔的注馅甜甜圈沿经过圆心的竖直平面，由顶到底切成两半。画面仅这两半，前半以原底部着地且竖直切面朝镜头，后半稍后错开；不是沿腰线分成上下盖。",
+      "structure": "薄金黄炸皮包围柔软浅色布里欧修面包芯，气孔细密、面包纤维轻柔；中央注馅形成局部填馅区，周围仍有足够面包厚度。局部填馅区为开心果酱、卡仕达和奶油混合成的浅黄绿色奶馅，细腻厚润而能保形；三种原料构成一个馅体，不是三层。",
+      "avoidCut": "不出现有孔甜甜圈、独立绿色液体层、分层奶油蛋糕或大面积溢出的绿酱。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "R08": {
+      "id": "R08",
+      "cut": "在一只直立圆形肉桂卷上，以卷心为起点作两道相邻径向竖切，均从顶到底，取下一块约六分之一的扇形。画面仅有保留大部分顶面螺旋的主体与这一块，扇形放在缺口前方，竖直切面朝镜头。",
+      "structure": "主体为柔软发酵面包，浅色面包带之间是薄肉桂黄油糖纹；顶面保留由中心向外的盘卷螺旋，径向竖切面则是卷入的间隔糖纹与柔软面包芯，不是同一个顶面螺旋的复制。少量炒软苹果丁嵌在卷层之间，呈暖黄果肉块；烤后焦糖只薄附原顶面及自然触及的边缘，不是另一个内部流心。",
+      "avoidCut": "不从中心凭空拔出方块，不在竖切面复制完整同心螺旋，不加奶油霜或焦糖瀑布。",
+      "preferredAngle": "缺口前方约35–45°俯视，让顶面螺旋、内部苹果丁和竖切面同时可辨。"
+    },
+    "R09": {
+      "id": "R09",
+      "cut": "在一只原有单人份圆挞上作两道从圆心到外缘、贯穿顶饰和挞底的径向竖切，取出约六分之一小扇形。画面仅缺一角的挞主体与该小角，小角移到缺口前方，切面朝镜头；不出现另一只完整挞。",
+      "structure": "自底向上为薄金黄熟酥挞壳、湿润细密且已烤熟的浅杏黄色杏仁馅、顶部新鲜无花果切瓣；紫褐果皮包围玫红果肉和细籽，蜂蜜仅形成薄润泽。",
+      "avoidCut": "不添加卡仕达、蛋糕、果冻或独立蜂蜜层，不把无花果画成果酱流心。",
+      "preferredAngle": "缺口正前方约25–35°俯视，切缘从顶饰到挞底完整可见。"
+    },
+    "R10": {
+      "id": "R10",
+      "cut": "将一只冷藏定形的圆柱白桃茉莉慕斯沿通过中心的竖直平面由顶到底切成两半。仅两个半圆柱，前半切面朝前，后半稍后错开，顶部原有一小瓣白桃只留在所属半边。",
+      "structure": "外体是乳白至极浅桃粉色的细腻茉莉奶慕斯，中央包入由白桃果泥与果丁形成的淡桃色果心，四周有慕斯包围；最底部只有一层薄杏仁海绵蛋糕，果心软而保形。",
+      "avoidCut": "不复制两份白桃顶饰，不加镜面淋面、脆底、果冻层或多层蛋糕，不把桃果心扩大为通体横层。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "R11": {
+      "id": "R11",
+      "cut": "以现有一块三角巴斯克切片为唯一来源，在尖端后方作一道垂直贯穿顶皮到底部的横切，取下一小口三角块。画面仅原切片剩余主体与这一小口，小块置于尖端前方，二者的新切面均可辨，不再出现整圆蛋糕。",
+      "structure": "顶部只有自然不均匀的焦褐薄烤皮，内部是细密柔润、连贯的烤乳酪组织，底部仍是同一乳酪体，没有饼干壳或海绵底。开心果酱已混入乳酪，内部整体是柔和浅黄绿色，细密柔润且保形；中心可稍软，顶部仍是焦褐烤皮。",
+      "avoidCut": "不加独立厚绿酱、开心果流心、饼干底或奶油层，不让切面液化。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "R12": {
+      "id": "R12",
+      "cut": "在一只细长闪电泡芙的一端，垂直于长轴由顶到底切下一小段。画面仅剩余长条主体与这一端段，端段放在前方、截面朝镜头，主体保持水平。",
+      "structure": "截面为金棕薄泡芙壳围合的不规则空腔，腔内填浓稠浅榛色榛子卡仕达；黑巧甘纳许只在顶部形成原有薄淋面，少量榛子碎留在顶部。",
+      "avoidCut": "不画发酵面包气孔、蛋糕夹层或奶油外溢，不把顶部黑巧变为独立黑巧内芯。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "R13": {
+      "id": "R13",
+      "cut": "以两端卷尖连线为长轴，在一只可颂的饱满中段垂直于长轴、由顶到底切成两半。画面仅有来自同一只的两个半只，前半切面朝镜头，后半稍后错开，均由原底部稳定支撑。",
+      "structure": "外缘是金黄至浅焦褐的薄酥片，内部为浅金色、由不规则孔隙与薄面包膜构成的层压发酵组织；气孔受卷制与发酵影响，不是规则六角蜂巢，也不是满截面平行千层。局部填馅区为适量浓稠琥珀棕海盐焦糖，贴附内壁，切口最多轻微软垂；顶部只保留原有局部薄焦糖与稀疏海盐。",
+      "avoidCut": "不生成整只加两半的三件组合，不把外部卷层复制成规则年轮或蛋糕夹层，不把所有气孔灌满馅。不生成焦糖池、稀糖浆、奶油夹层或白色糖霜。",
+      "preferredAngle": "切面正前方略偏侧、向下约20–30°，同时看清完整截面与上方外皮卷层。"
+    },
+    "R14": {
+      "id": "R14",
+      "cut": "以两端卷尖连线为长轴，在一只可颂的饱满中段垂直于长轴、由顶到底切成两半。画面仅有来自同一只的两个半只，前半切面朝镜头，后半稍后错开，均由原底部稳定支撑。",
+      "structure": "外缘是金黄至浅焦褐的薄酥片，内部为浅金色、由不规则孔隙与薄面包膜构成的层压发酵组织；气孔受卷制与发酵影响，不是规则六角蜂巢，也不是满截面平行千层。自然茶绿色抹茶白巧甘纳许形成一个柔润、可保形的局部馅体；白巧已融入馅料，原顶部乳白细线只在外表面。",
+      "avoidCut": "不生成整只加两半的三件组合，不把外部卷层复制成规则年轮或蛋糕夹层，不把所有气孔灌满馅。不把白巧另拆成白色内部横层，不生成荧光绿流心或抹茶面包外皮。",
+      "preferredAngle": "切面正前方略偏侧、向下约20–30°，同时看清完整截面与上方外皮卷层。"
+    },
+    "R15": {
+      "id": "R15",
+      "cut": "将一只已沿中腰水平剖开并合拢的草莓香草奶油可颂，在饱满中段垂直贯穿上下包体和夹馅切成两份。仅两份组装完整的半只，前份切面朝镜头，后份略后错开，上盖分别自然落在各自夹馅上。",
+      "structure": "外缘是金黄至浅焦褐的薄酥片，内部为浅金色、由不规则孔隙与薄面包膜构成的层压发酵组织；气孔受卷制与发酵影响，不是规则六角蜂巢，也不是满截面平行千层。原中腰夹口内为乳白偏浅黄的卡仕达与打发奶油混合馅，新鲜草莓切片嵌在这一馅体中，切面可见果肉与细籽；不是卡仕达和奶油两条独立层。",
+      "avoidCut": "不将原有水平夹口再次拆成四片面包，不添加莓酱或第三层奶油，不挤出大堆馅。",
+      "preferredAngle": "切面正前方略偏侧、向下约20–30°，同时看清完整截面与上方外皮卷层。"
+    },
+    "R16": {
+      "id": "R16",
+      "cut": "以两端卷尖连线为长轴，在一只可颂的饱满中段垂直于长轴、由顶到底切成两半。画面仅有来自同一只的两个半只，前半切面朝镜头，后半稍后错开，均由原底部稳定支撑。",
+      "structure": "外缘是金黄至浅焦褐的薄酥片，内部为浅金色、由不规则孔隙与薄面包膜构成的层压发酵组织；气孔受卷制与发酵影响，不是规则六角蜂巢，也不是满截面平行千层。原夹口内有乳白色厚润乳酪馅和局部深紫蓝莓果酱，果酱带果粒，只在接触处轻微染色；原顶部少量蓝莓保留。",
+      "avoidCut": "不生成整只加两半的三件组合，不把外部卷层复制成规则年轮或蛋糕夹层，不把所有气孔灌满馅。不混成整截面黑紫色，不把蓝莓酱扩成多层果冻或满盘浆液。",
+      "preferredAngle": "切面正前方略偏侧、向下约20–30°，同时看清完整截面与上方外皮卷层。"
+    },
+    "R17": {
+      "id": "R17",
+      "cut": "以两端卷尖连线为长轴，在一只可颂的饱满中段垂直于长轴、由顶到底切成两半。画面仅有来自同一只的两个半只，前半切面朝镜头，后半稍后错开，均由原底部稳定支撑。",
+      "structure": "外缘是金黄至浅焦褐的薄酥片，内部为浅金色、由不规则孔隙与薄面包膜构成的层压发酵组织；气孔受卷制与发酵影响，不是规则六角蜂巢，也不是满截面平行千层。局部浅栗色栗子奶油细密厚润，内含少量熟板栗小块；朗姆只是混入调味，不产生可见独立酒液层。",
+      "avoidCut": "不生成整只加两半的三件组合，不把外部卷层复制成规则年轮或蛋糕夹层，不把所有气孔灌满馅。不新增整颗带壳栗子、朗姆液池或白色奶油第二层。",
+      "preferredAngle": "切面正前方略偏侧、向下约20–30°，同时看清完整截面与上方外皮卷层。"
+    },
+    "R18": {
+      "id": "R18",
+      "cut": "以两端卷尖连线为长轴，在一只可颂的饱满中段垂直于长轴、由顶到底切成两半。画面仅有来自同一只的两个半只，前半切面朝镜头，后半稍后错开，均由原底部稳定支撑。",
+      "structure": "外缘是金黄至浅焦褐的薄酥片，内部为浅金色、由不规则孔隙与薄面包膜构成的层压发酵组织；气孔受卷制与发酵影响，不是规则六角蜂巢，也不是满截面平行千层。局部乳白色咸口芝士馅中散布细小黑松露颗粒，柔软贴附面包；帕玛森原表面薄烤层只在顶部形成浅金脆边。",
+      "avoidCut": "不生成整只加两半的三件组合，不把外部卷层复制成规则年轮或蛋糕夹层，不把所有气孔灌满馅。不表现为甜奶油、巧克力碎或马苏里拉长拉丝，不增加菌菇片。",
+      "preferredAngle": "切面正前方略偏侧、向下约20–30°，同时看清完整截面与上方外皮卷层。"
+    },
+    "R19": {
+      "id": "R19",
+      "cut": "在一只小型碱水结下方较粗、含黑巧馅的弧段上，用两道相邻横断切口取出一小段。仅缺一段的结形主体与该小段两件，主体后放并保留交叠，小段前放且新截面朝镜头。",
+      "structure": "栗褐薄皮内为细密有弹性的浅色面包芯，粗弧内部的局部黑巧奶油馅浓稠柔软；浅绿色开心果酱与碎粒仅在原有顶部薄涂区域。",
+      "avoidCut": "不以一刀凭空取下一段闭合面包环，不虚构绿色开心果内部夹层，不出现巧克力瀑布、可颂酥层或多余整只。",
+      "preferredAngle": "前方约30–40°俯视，结形交叠、表面浅绿薄涂和小段黑巧截面均可辨。"
+    },
+    "R20": {
+      "id": "R20",
+      "cut": "将一只烤后已夹栗子泥与咸黄油的圆碱水包，在原夹口中点横跨夹口方向、由顶到底竖直切成两半。仅两半前后错开，前半切面朝镜头，黄油仍贴在原夹口内。",
+      "structure": "栗褐薄皮包围细密浅色面包芯；上部原夹口内为细腻浅栗色熟栗泥与一片淡黄色咸黄油，下方仍是连续面包体。黄油是烤后夹入，有可辨薄片厚度与整齐切边。",
+      "avoidCut": "不将烤后黄油误画成烤前夹入而未融的大块，不添加流动黄油池、红豆或可颂层酥。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "R21": {
+      "id": "R21",
+      "cut": "从一只短棍番茄罗勒碱水包一端，以竖直斜切面切下一小段。仅剩余主体与这一小段，主体后放，小段前放并把新截面转向镜头。",
+      "structure": "栗褐薄皮包围浅色细密弹性面包芯，沥干的暗红油渍番茄碎与自然草绿色罗勒碎直接分散嵌在面包中，无中腰夹口和独立馅区。",
+      "avoidCut": "不把番茄罗勒改成三明治夹层，不新增奶酪或番茄酱，不画油湿塌陷切面。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "R22": {
+      "id": "R22",
+      "cut": "将一只短椭圆肉松咸蛋黄碱水包在长度中点垂直于长轴切成两半。仅两半，前半切面朝镜头，后半略后错开，保持原底部着地。",
+      "structure": "栗褐薄皮内为细密柔韧浅色面包，内部局部集中金黄肉松纤维与橙黄色熟咸蛋黄碎，少量黄油调和使馅稍润；蛋黄为细碎沙质熟组织。",
+      "avoidCut": "不出现流动鲜鸡蛋黄、整颗生蛋、奶酪拉丝或新增沙拉酱层，不把肉松变成肉肠截面。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "R23": {
+      "id": "R23",
+      "cut": "从一只充分冷却的整面包一端，垂直于长轴切下一片中等厚度的端片。画面仅剩余主体与这一片，主体后放、端片稍前倾靠其侧，端片的新鲜切面朝镜头，保留少量真实面包屑。",
+      "structure": "金棕外壳包围温暖浅褐色麦香面包芯，自然气孔间有暗红蔓越莓干和不规则核桃块；酒浸果干已沥干，微润但不滴酒。",
+      "avoidCut": "不画鲜红面包、独立红酒液层、葡萄或乳酪夹心，不让果干悬浮。",
+      "preferredAngle": "切面前方斜侧约25–35°俯视，主切面清楚，顶部主要特征仍可见。"
+    },
+    "R24": {
+      "id": "R24",
+      "cut": "从一只圆形黑巧橙皮酸面包的一侧，竖直切下一片中等厚度端片。仅剩余大主体与这一片，主体后放，端片稍前倾靠其侧，新切面朝镜头；不先另切成两半。",
+      "structure": "金棕焦香外壳包围浅麦色发酵面包芯，不规则气孔中嵌有深棕黑巧小块和半透明橙色糖渍橙皮丁，局部黑巧只轻微融染相邻组织。",
+      "avoidCut": "不额外生成两个半只加一片，不画通体巧克力蛋糕、布朗尼、黑巧流心或完整橙瓣夹层。",
+      "preferredAngle": "切面前方斜侧约25–35°俯视，主切面清楚，顶部主要特征仍可见。"
+    },
+    "R25": {
+      "id": "R25",
+      "cut": "将一只椭圆黑芝麻乳酪欧包在长度中点由顶到底横断成两半。仅两半，前半切面朝镜头，后半稍后错开，原割口仍可辨。",
+      "structure": "灰褐烤壳内是带细小黑芝麻颗粒的灰白色面包芯，气孔适度且不规则；乳白色奶油奶酪集中在内部局部馅区，柔润保形，周围仍有足够面包厚度。",
+      "avoidCut": "不画黑芝麻螺旋Babka、千层酥或整齐横层，不添加黑芝麻流心或奶酪拉丝。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "R26": {
+      "id": "R26",
+      "cut": "从一只充分冷却的整面包一端，垂直于长轴切下一片中等厚度的端片。画面仅剩余主体与这一片，主体后放、端片稍前倾靠其侧，端片的新鲜切面朝镜头，保留少量真实面包屑。",
+      "structure": "金棕外壳包围自然麦色开放气孔面包芯，去核黑橄榄小块呈深紫褐色、嵌在面包壁间，少量迷迭香碎叶分散点缀；橄榄周围微润但不湿塌。",
+      "avoidCut": "不再另切第二片，不出现橄榄核、整片绿色夹层、奶酪或积油空洞。",
+      "preferredAngle": "切面前方斜侧约25–35°俯视，主切面清楚，顶部主要特征仍可见。"
+    },
+    "R27": {
+      "id": "R27",
+      "cut": "将原有一块单人份长方形佛卡夏，在长边中点垂直于长轴由顶到底切成两块。画面仅这两块，前块新切面朝镜头，后块保持顶面朝上并稍后错开，不再增加整盘面包。",
+      "structure": "厚而蓬松的面包芯含大小不一的开放气孔，底壳薄；炒干水分的褐蘑菇片与少量黑松露酱主要停留在原凹坑顶面，仅局部轻嵌表层。",
+      "avoidCut": "不新增内部厚奶酪、奶油或松露横层，不把蘑菇变为生白圆片，不画薄披萨。",
+      "preferredAngle": "切面前方斜侧约25–35°俯视，主切面清楚，顶部主要特征仍可见。"
+    },
+    "R28": {
+      "id": "R28",
+      "cut": "将一份已沿中腰水平剖开并合拢的长方形恰巴塔三明治，在长度中点由顶到底垂直横切成两段。画面仅两段组装完整的三明治，前段切面朝镜头，后段略后错开；各自上盖保持自然合拢。",
+      "structure": "上下恰巴塔包体都有浅金薄壳与大小不规则的开放气孔，原中腰夹口容纳夹馅，底部面包仍保留厚度与清楚孔隙。原夹口内自然压合薄切熟火腿、柔软马苏里拉片与沥干芝麻菜；火腿淡粉、可自然折叠，奶酪乳白、完整成片，叶片细长深绿。",
+      "avoidCut": "不把两段拆成四片裸面包，不增加整份三明治，不将夹馅掺成面团内部颗粒或整齐蛋糕夹层。不加番茄、青酱或热融奶酪拉丝，不将芝麻菜画成厚绿泥。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "R29": {
+      "id": "R29",
+      "cut": "将一只短扁长的桂花栗子恰巴塔在长度中点垂直于长轴、由顶到底切成两段。仅两段面包，前段切面朝镜头，后段稍后错开；不打开水平夹口。",
+      "structure": "浅金薄壳内为不规则开放气孔面包芯，暖黄色至浅栗色熟栗子块直接嵌入面团组织，稀疏细小桂花粒散布其中；少量糖桂花已融入组织。",
+      "avoidCut": "不误画成栗子奶油三明治，不增加水平夹层、果冻或流动桂花糖水，不出现带壳栗子。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    },
+    "R30": {
+      "id": "R30",
+      "cut": "在一只直立圆形肉桂卷上，以卷心为起点作两道相邻径向竖切，均从顶到底，取下一块约六分之一的扇形。画面仅有保留大部分顶面螺旋的主体与这一块，扇形放在缺口前方，竖直切面朝镜头。",
+      "structure": "主体为柔软发酵面包，浅色面包带之间是薄肉桂黄油糖纹；顶面保留由中心向外的盘卷螺旋，径向竖切面则是卷入的间隔糖纹与柔软面包芯，不是同一个顶面螺旋的复制。少量烤核桃碎位于卷层之间，原顶部的核桃块仍自然附着，枫糖浆仅薄刷顶面形成润泽。",
+      "avoidCut": "不把竖切面画成完整同心螺旋，不增加奶油糖霜或独立枫糖流心，不令核桃填满所有面包层。",
+      "preferredAngle": "缺口前方约35–45°俯视，同时看到顶面螺旋、卷层内核桃碎和新竖切面。"
+    },
+    "R31": {
+      "id": "R31",
+      "cut": "从一条已冷却的长方形开心果白巧Babka一端，垂直于长轴由顶到底切下一片中等厚度端片。仅剩余主体与该片，切片在前并轻靠主体，新切面朝镜头，后方主体保留编绞顶部。",
+      "structure": "柔软奶白布里欧修组织中穿插自然弯曲、不均匀的浅黄绿色开心果馅带，来自卷起、剖开和编绞；白巧与黄油融入同一馅体，少量开心果碎留在声明位置。",
+      "avoidCut": "不出现可颂蜂窝、千层酥、规则年轮或蛋糕大理石纹，不另加白巧夹层或厚糖衣。",
+      "preferredAngle": "切面前方斜侧约25–35°俯视，主切面清楚，顶部主要特征仍可见。"
+    },
+    "R32": {
+      "id": "R32",
+      "cut": "以现有一块三角巴斯克切片为唯一来源，在尖端后方作一道垂直贯穿顶皮到底部的横切，取下一小口三角块。画面仅原切片剩余主体与这一小口，小块置于尖端前方，二者的新切面均可辨，不再出现整圆蛋糕。",
+      "structure": "顶部只有自然不均匀的焦褐薄烤皮，内部是细密柔润、连贯的烤乳酪组织，底部仍是同一乳酪体，没有饼干壳或海绵底。浅奶油色乳酪中散布少量经烘烤的蓝莓果粒，果实周围局部淡紫晕染；细刨柠檬皮屑与少量柠檬汁混入乳酪，不形成可见柠檬夹层。",
+      "avoidCut": "不加蓝莓酱顶层、紫色流心、柠檬凝乳层、饼干底或海绵底，不出现整片柠檬。",
+      "preferredAngle": "切面正前方略俯视约20–30°，完整截面、底部及顶部主要特征同框可辨。"
+    }
+  },
+  "packaging": {
+    "S09": {
+      "name": "外带开盒",
+      "spec": "浅色石台面上只有一只长方形一体翻盖纸盒，哑光奶油白内侧、陶土红外侧。盒底连四面等高直壁，盒体净高使闭盖时与最高装饰间留8—15毫米空隙；盒盖沿后壁上缘连接，向后打开110度，始终位于食品后方。盒内一张平整防油纸承托本次一份食品，软质食品另垫硬质食品卡；分切各块同留盒内，四周留窄缝，不叠放。镜头按所选俯看机位越过盒沿，看清顶部及自然露出的切面。盒外右侧仅有一段无字封纸。",
+      "openState": "后铰链翻盖开启110度，盖与盒底不断开。",
+      "container": "单只长方形一体翻盖纸盒；四壁等高，闭盖净空高于食品最高点8—15毫米。",
+      "consistency": "锁定石台、盒型、内外颜色及后开盖方向；按本份食品外廓调整容量，并保留闭盖净空。"
+    },
+    "S13": {
+      "name": "打包时刻",
+      "spec": "食品已放入烘焙店浅木包装台上的一只长方形一体翻盖纸盒，盒外哑光奶油白、盒内本白。四面直壁等高，闭盖净空高于食品最高装饰8—15毫米；盒盖连接后壁上缘并向后开至110度。盒底一张平整防油纸，软质食品加硬质食品卡；仅装本次一份及其分切各块。工作人员左手扶盒外侧，右手只将右侧纸缘压平，不碰食品、不盖盒。镜头按所选俯看机位越过盒沿看见食品。后方仅一叠奶油白平纸与陶土红围裙局部。",
+      "openState": "盒已完全打开；动作仅整理一处纸缘，不同时折盒或封口。",
+      "container": "单只奶油白长方形翻盖纸盒，后缘连接；正常四壁，闭盖时最高食品上方留8—15毫米。",
+      "consistency": "锁定浅木包装台、奶油白盒、后开盖结构、围裙颜色及单一整理动作。"
+    },
+    "S16": {
+      "name": "骑行外带",
+      "spec": "停稳的陶土红城市自行车前方装浅棕藤编筐，筐底水平放一只长方形奶油白一体翻盖纸盒，盒底完整受支撑，前缘靠筐前侧。四面盒壁等高，闭盖时与食品最高装饰间留8—15毫米；后壁连接的纸盖向车把方向打开110度。盒内铺一张防油纸，软质食品加硬质食品卡，只放本次一份及其分切各块，食品不接触车筐。镜头按所选俯看机位越过筐沿和盒沿看见食品。背景为浅色街墙和局部车把，包装静止，无外袋或塑料罩。",
+      "openState": "后侧翻盖向车把方向打开110度，自行车静止。",
+      "container": "一只正常高度的奶油白翻盖纸盒放在浅棕藤筐内，闭盖净空高于食品8—15毫米。",
+      "consistency": "锁定藤筐、陶土红车身、浅色街墙、盒在筐底及向车把开盖的空间关系。"
+    },
+    "S17": {
+      "name": "拉开抽屉礼盒",
+      "spec": "细纹浅石台面上一只抽屉礼盒由两件组成：陶土红外套为前后贯通的长方形硬纸筒，奶油白内抽屉有平底与四面等高低壁。外套内部高度使装入抽屉及食品后，顶面高于最高装饰8—15毫米。抽屉完全抽出，平放在外套正前方，两件间留窄缝，长轴一致，不另加翻盖。抽屉铺一张防油纸，软质食品加硬质食品卡，只装本次一份及其分切各块。食品四周留窄缝；短奶油白拉带固定于抽屉前壁中央并垂落，后方空套筒内没有食品。",
+      "openState": "内抽屉完全取出并置于套筒前方；套筒没有铰链盖。",
+      "container": "两件式抽屉盒：陶土红贯通高套筒加奶油白低边内抽屉；装入后食品顶部仍有8—15毫米净空。",
+      "consistency": "锁定前方内抽屉、后方套筒、共同长轴、拉带位置与奶油白及陶土红配色。"
+    },
+    "S18": {
+      "name": "拆下包装腰封",
+      "spec": "奶油白包装工作垫上放一只本白长方形硬纸浅托，托底平整，四面直壁高度一致且低于食品主体三分之一；食品与托底间铺一张平整防油纸，软质食品加食品级硬底卡。本次一份食品及切下的各块全部留在同一托内。陶土红宽纸腰封已完整向右抽离，保持有四条清楚折线的空心长方形纸环，独立平放在托盘右侧，环口朝前后，既不套住食品也不压住浅托。旁边仅留一枚揭下的无字圆封贴；腰封没有底板、盒盖或提手。",
+      "openState": "纸腰封完全抽离浅托，折线与长方形环状截面保持完整。",
+      "container": "一个本白低边纸托加一个独立陶土红长方形环状腰封。",
+      "consistency": "锁定奶油白工作垫、托在左腰封在右、腰封环口方向、配色和无盖结构。"
+    },
+    "S19": {
+      "name": "展开手提点心盒",
+      "spec": "哑光陶土红台面上只有一只奶油白长方形手提纸盒。平底连四面直壁，左右壁各连一片带圆角提孔的顶盖，前后壁各连短折舌；盒内净高和顶盖折线允许闭合后高于食品最高装饰8—15毫米。锁扣已解开，左右提手盖分别向外翻开，前后短舌外翻，四片仍与原壁相连。盒内一张防油纸承托一份食品及其分切各块，软质食品加硬质食品卡。镜头按所选俯看机位越过盒沿看见食品；每片提手盖只有一个提孔，无额外提绳或透明盖。",
+      "openState": "左右提手盖向左右外翻，前后短舌外翻平，四片均不脱离盒体。",
+      "container": "一个可闭合的硬纸手提盒，两个带孔提手盖及两个短折舌一体连接，闭合顶面不碰食品。",
+      "consistency": "锁定奶油白盒、陶土红台面、左右双提孔和四片开合方向；容量随食品变化，闭合净空固定为8—15毫米。"
+    },
+    "S20": {
+      "name": "包纸刚刚打开",
+      "spec": "浅灰细颗粒矿物桌面上展开一张正方形奶油白防油纸，纸中央平贴桌面，四角向外摊开，仅最外缘轻微翘起，原来的纵横包折痕仍可见。食品放在纸中央，只有本次一份；切下的各块相邻平放，边缘不重叠，均不越出纸面。软质或带奶油食品下仅加一张与食品外廓相称的硬质食品底卡，使重量由平底承托，纸张不粘住装饰和切面。左后方一小段松开的棉绳，右侧一枚无字圆形封贴；近处仅少量真实碎屑，不出现折成盒壁的纸边、盒盖或纸袋。",
+      "openState": "单张包纸四角全部打开，中央平铺，无包裹动作。",
+      "container": "一张正方形防油纸；软质食品仅加一张平底食品卡，不变成盒子。",
+      "consistency": "锁定浅灰桌面、奶油白单张纸、四角摊开、棉绳左后及封贴右侧。"
+    },
+    "S21": {
+      "name": "手里的一份外带",
+      "spec": "穿奶油白衣袖与陶土红外套的人站在人行道旁，双手从底部托住同一只本白长方形硬纸浅托，托底保持水平；左右手分别支撑底部两侧，手指只接触外壁，脸在画面外。浅托平底连四面等高直壁，盒壁低于食品主体三分之一，没有盒盖、把手或外袋。托内铺一张平整防油纸，柔软点心加食品级硬底卡，只承托本次一份食品及其分切各块，各块相邻平放、不堆叠、不悬空。镜头中保留纸托四角与手掌的接触关系，背景仅为干净浅灰铺装地面。",
+      "openState": "无盖浅托完整敞口，水平端持，包装结构不展开或收拢。",
+      "container": "一只本白硬纸长方形低边托，单张内衬纸，双手托底。",
+      "consistency": "锁定无盖托形、双手支撑位置、衣袖与外套颜色及浅灰人行道背景。"
+    },
+    "S22": {
+      "name": "长凳上的小点心",
+      "spec": "可可棕木条长凳的平整座面一端放着一只奶油白长方形硬纸浅托，托底横跨木条并稳定落在座面上，不悬在缝隙中。四面低直壁高度一致，没有盒盖；底部铺一张防油纸，软质食品加硬质食品卡。一份食品及同份分切块全部平放托内，食品不接触公共座面。托盘右后方立一只本白方底纸袋，袋口向下折两道并压平，袋内不露出任何食品。背景只交代浅灰铺装地面与一小片低矮绿植；纸袋、托纸与食品静止，没有被风吹起的纸角。",
+      "openState": "食品浅托无盖敞口，旁边纸袋袋口折两道闭合。",
+      "container": "一个奶油白低边硬纸托；右后方一个闭合本白方底纸袋。",
+      "consistency": "锁定可可棕木凳、浅托左前纸袋右后、闭袋状态、地面和低矮绿植。"
+    },
+    "S23": {
+      "name": "公园石桌小憩",
+      "spec": "公园浅灰石桌上平放一只长方形奶油白一体翻盖纸盒。盒底连四面等高直壁，闭盖时与食品最高装饰间留8—15毫米；后盖沿后壁上缘连接，向后打开110度，位于食品与远处树木之间。内衬一张平整防油纸，软质食品加硬质食品卡，仅装本次一份及其分切各块。镜头按所选俯看机位越过盒沿，展示顶部和自然露出的切面。左后方一角折叠本白帆布袋，右缘一小段木椅边，远景为树木；食品不接触桌面、落叶或盒盖。",
+      "openState": "后侧一体翻盖打开110度，盒底与盖始终相连。",
+      "container": "一只奶油白长方形一体翻盖盒，四壁等高，闭盖净空高于最高食品8—15毫米。",
+      "consistency": "锁定浅灰公园石桌、奶油白盒、后开盖、左后帆布袋及右侧木椅边。"
+    },
+    "S24": {
+      "name": "旅途窗边小桌",
+      "spec": "列车靠窗座位的浅灰折叠小桌板已放平并固定，一只奶油白长方形硬纸浅托水平落在桌板中央，四角均受桌面支撑。浅托由平底与四面等高低直壁组成，无盒盖、提手或抽屉；壁高不超过食品主体三分之一。底部只有一张防油纸，软质食品加硬质食品卡，一份食品及其分切各块相邻平放托内，不靠窗也不碰座椅。托盘左后方露出奶油白帆布包一角，右前方放一张折成方形的本白无字纸巾；远处仅见窗框和柔化景物，不增加车票、餐具或其他食品。",
+      "openState": "无盖浅托始终敞口；桌板放平固定，食品与包装保持静止。",
+      "container": "一只奶油白长方形低边硬纸托，单张防油纸与必要的平底卡。",
+      "consistency": "锁定列车窗边浅灰桌板、无盖纸托、左后帆布包和右前方形纸巾。"
+    }
+  }
+};
+
+</script><script>
+(function(root){
+'use strict';
+const scenes=[
+{id:'S01',name:'门店打卡',desc:'手持 · 窗边',angle:'第一人称视角，从斜上方约35度近距离拍摄，食物占画面约一半。主体完整可辨，手部不遮挡食品主要特征，店铺背景适度虚化。',scene:(p,state)=>{const paper=p.handheld==='paper'&&(state==='auto'||state==='whole');return (paper?'一只自然的手隔着奶油白防油纸从底部托住食品，纸张有真实褶皱，手指不遮住主体。':'一只自然的手从底部端住一只奶油白小陶盘，食品稳定放在盘中，手不直接触碰奶油、果馅或切面。')+'背景为精致的街边烘焙店窗边，温暖木质窗框、局部陶土红细节，玻璃有轻微街景反射。只出现本款食品，呈现刚买到点心的自然生活感。';}},
+{id:'S02',name:'广告静物',desc:'精致 · 留白',angle:'从侧前方约30度拍摄，主体放在画面偏下位置，保留约四分之一的干净上方空间供后期排版。食品主要轮廓完整，关键结构清晰，背景轻微虚化。',scene:()=> '食品放在低边奶油白陶盘上，陶盘置于温暖浅色石材台面。背景为干净的浅色墙面，边缘只露出一角陶土红餐巾。道具克制、有清楚的前后关系，产品是唯一主角。'},
+{id:'S03',name:'切面食欲',desc:'内部 · 近摄',angle:'从斜上方约45度近距离拍摄，主要切面朝向镜头，保证表皮与内部关键结构同时清晰。保留有意义的切面范围，背景柔和虚化。',scene:()=> '食品放在浅奶油色低边陶盘中，置于温暖木桌上，旁边只放一把小甜品叉或一把适合该食品的餐刀。盘边有少量符合食品质地的碎屑或抹痕，不制造满桌杂乱。'},
+{id:'S04',name:'工作台俯拍',desc:'烘焙纸 · 平铺',angle:'镜头垂直向下，90度俯拍。用食品、烘焙纸和少量工具形成自然的疏密关系，主体占主要区域，桌面排列清楚，避免重复堆满同款产品。',scene:()=> '一份本款食品摆在铺有烘焙纸的整洁烘焙工作台上，旁边有折叠麻布与一把合适的小工具。纸张略有褶皱，桌面保留极少量自然碎屑，呈现烘焙完成后的工作现场。不要把所有配料摆成原料展示阵列。'},
+{id:'S05',name:'烘焙师操作',desc:'双手 · 制作瞬间',angle:'从侧前方约45度拍摄食品与必要的操作手部，构图聚焦正在发生的动作。手指、工具和食品的接触关系清楚，人物面部在画面外，工作台背景自然虚化。',scene:()=> '整洁的专业烘焙工作台，少量合适的工具放在边缘，烘焙师衣袖以奶油白为主。根据指定动作安排必要的手部与工具，只有一个清楚的操作瞬间，不将多个制作步骤拼在一起。'},
+{id:'S06',name:'材质微距',desc:'表皮 · 组织',angle:'近距离微距拍摄，镜头接近食品主要质地所在平面，允许主体局部超出画面边缘。关键纹理区域清晰，前后适度虚化，不把食物拍成难以识别的抽象色块。',scene:()=> '食品置于简单的浅色陶盘或防油纸上，道具退到画面边缘，背景只保留柔和色调。画面专注食品自身的质地与细节，不添加装饰原料。'}
+];
+const angles={top:'镜头垂直向下，90度俯拍，画面布局平整清楚，食品表面及露出的内部为视觉中心。保持自然比例，不使用广角畸变。',fortyfive:'从斜上方约45度拍摄，兼顾食品顶部、侧面与切面。主要结构清晰，背景适度虚化。',low:'从侧前方约25度低机位近距离拍摄，突出食品高度、侧面与朝向镜头的内部层次，背景适度虚化。',eye:'镜头与食品主体基本平视，从侧面近距离拍摄，突出轮廓厚度和侧面层次，避免顶部视角同时出现。',macro:'采用近距离微距视角，局部可超出画面，焦点落在最能表现本产品口感的细节上，其他区域逐渐虚化。'};
+const lights={window:'柔和自然光从窗侧照入，光线有清楚方向，形成自然的明暗过渡与接触阴影。浅色奶油不过曝，深色烤皮仍有细节，不加整片橙黄色滤镜。',studio:'采用大面积柔光从侧上方照亮主体，对侧轻柔补光。保留食品自然起伏和接触阴影，亮面反光小而柔和，背景干净，不将表面照成均匀塑料质感。',sun:'晴天日光斜射进场景，食品表皮有明亮但不过曝的高光，桌面有明确的自然投影。暗部保留食品组织，不使用全画面过度暖黄滤镜。',moody:'背景略暗，侧后方柔光勾出食品轮廓和质地，正面少量补光使主体细节仍然可辨。保持食品本身的自然颜色，暗调不等于烤焦或脏灰。'};
+const quality='根据指定的新场景与视角表现同一款食品，建立合理的透视、光照和接触阴影。食物是视觉中心，按本款特征呈现真实表皮、酥层、柔软组织或细腻奶油，保留自然烘烤色差、细小孔隙和轻微不规则。摄影质感细致、有食欲，不因强调细节而过度锐化。具体场景已指定的材质和背景色优先，通用配色只补充未指定的环境部分。配料描述用于说明食品组成，不代表需要把所有原料摆在桌上；只出现明确指定的馅料和装饰。包装与承托以本次包装段落为准，产品描述中的盘托用语不构成新增容器；分切食品只在同一承托物内摆放。';
+const negative='不出现咖啡、饮品、水印、自动生成的文字或Logo；不添加额外口味、夸张蒸汽、无依据的拉丝或流浆、悬浮食材；不出现插画描边、水彩笔触、塑料光泽、手指畸形或拼图分格。';
+const presets=root.HALFDAY_PRESETS, guidance=root.HALFDAY_GUIDANCE;
+const metadata={
+S01:{allowedAngles:['fortyfive','low','eye','fronttop','diagonal','close'],allowedStates:['whole','cut','bite'],defaultAngle:'fortyfive',defaultState:'whole'},
+S02:{allowedAngles:['top','fortyfive','low','eye','fronttop','overhead','diagonal','close','sidelow'],allowedStates:['whole','cut','bite'],defaultAngle:'low',defaultState:'whole'},
+S03:{allowedAngles:['fortyfive','low','eye','diagonal','close','sidelow'],allowedStates:['cut','bite'],defaultAngle:'fortyfive',defaultState:'cut'},
+S04:{allowedAngles:['top','fortyfive','fronttop','overhead','diagonal','close'],allowedStates:['whole','cut','bite'],defaultAngle:'top',defaultState:'whole'},
+S05:{allowedAngles:['top','fortyfive','low','eye','fronttop','overhead','diagonal','close'],allowedStates:['finish','whole','cut'],defaultAngle:'fortyfive',defaultState:'finish'},
+S06:{allowedAngles:['macro'],allowedStates:['macro','cut','bite'],defaultAngle:'macro',defaultState:'macro'}
+};
+scenes.forEach(s=>Object.assign(s,metadata[s.id]));
+presets.extraScenes.forEach(s=>scenes.push({...s,scene:()=>s.scene}));
+const states=[{id:'whole',name:'完整单份'},{id:'cut',name:'切开 / 展示切面'},{id:'bite',name:'取下一小块'},{id:'finish',name:'烘焙师操作'},{id:'macro',name:'局部质地'}];
+const allLightIds=presets.lights.map(x=>x.id);
+for(const s of scenes){s.allowedLights=allLightIds.slice();if(['S08','S16','S21','S22','S23'].includes(s.id))s.allowedLights=['hard_sun','morning_long','overcast','backlit_layers'];}
+const groups={S01:'出门与日常',S02:'广告与大片',S03:'原料与手作',S04:'原料与手作',S05:'原料与手作',S06:'原料与手作',S07:'出门与日常',S08:'出门与日常',S09:'包装与开盒',S10:'原料与手作',S11:'广告与大片',S12:'出门与日常',S13:'包装与开盒',S14:'广告与大片',S15:'出门与日常',S16:'出门与日常'};
+for(const s of scenes){s.group=s.group||groups[s.id];if(s.id==='S24')s.allowedLights=['window_soft','hard_sun','morning_long','overcast','backlit_layers'];}
+for(const s of scenes)if(['S09','S13','S16','S19','S23'].includes(s.id))s.allowedAngles=s.allowedAngles.filter(a=>['top','fortyfive','fronttop','overhead','corner_high','over_shoulder'].includes(a));
+function getScene(id){return scenes.find(s=>s.id===id)||scenes[0];}
+function compatibleStates(s){return s.allowedStates.filter(k=>k!=='macro'||s.allowedAngles.some(a=>['macro','top_detail'].includes(a)));}
+function compatibleCompositions(angle){return presets.compositions.filter(c=>c.allowedAngles.includes(angle));}
+function combinationCount(){let count=0;for(const s of scenes)for(const a of s.allowedAngles)for(const st of compatibleStates(s)){if(st==='macro'&&!['macro','top_detail'].includes(a))continue;count+=s.allowedLights.length*compatibleCompositions(a).length;}return count;}
+function cutProfile(p){return guidance.cuts[p.id]||{cut:p.cut,structure:'切面仅呈现主要组成中已经明确的面包组织与馅料，不新增未说明的夹层、饼干底或果冻芯。',avoidCut:'不把切口画成外贴剖面，不重复复制食品，不凭空添加夹层。'};}
+function structureFor(p,key){return ['cut','bite'].includes(key)?cutProfile(p).structure:'';}
+function cutAvoidFor(p,key){return ['cut','bite'].includes(key)?cutProfile(p).avoidCut:'';}
+function presentationOnly(text){return text.replace('稳妥放在小甜品盘上，','').replace('，手持时从盘底承托','').replace('稳放在小甜品盘上，','').replace('放在小甜品托片或低边陶盘上','').replace('，底部由小托片或陶盘稳稳承托','').replace('，放在小托片或陶盘上','');}
+function stateFor(p,sceneId,key){if(key==='custom')return '';if(key==='whole')return presentationOnly(p.whole);if(key==='cut')return cutProfile(p).cut;if(key==='bite')return '从本次一份食品边缘取下一个小于主体十分之一的小块，只保留带缺口的主体与这一小块，两者都放在同一承托物中，相隔约1厘米，不再出现第二份完整食品。'+(p.handheld==='plate'?'使用符合本款质地的甜品叉或刀切取，不用手撕奶油或慕斯。':'以小刀切取，保留真实断口，不强行拉丝。')+'内部按下方结构设定呈现。';return presentationOnly(p.whole);}
+const sceneEnvironments={S01:'精致的街边烘焙店窗边，浅木窗框位于画面后方，局部陶土红墙面，玻璃带轻微街景反射。一只穿奶油白衣袖的手从底部稳稳托住食品纸托，食品与手指不直接接触，人物面部不入镜。',S09:'一份食品置于浅色石台面上的外带纸盒内，背景为奶油白墙面。食品、盒子和右侧封纸的位置按包装结构说明固定。',S13:'整洁的浅木包装台，后方一小叠奶油白平纸与陶土红围裙局部。双手只进行包装说明中指定的一次纸缘整理动作。',S16:'停稳的陶土红自行车靠在浅色街墙旁，浅棕藤编前筐稳固；食品连包装放在车筐底部，局部车把入镜。',S17:'细纹浅石台面与奶油白背景，食品抽屉在前、空外套在后，两者前后轴向对齐。',S18:'奶油白包装工作垫，食品纸托在左、取下的陶土红腰封在右，旁边一枚无字封贴。',S19:'哑光陶土红台面与奶油白背景，一只手提纸盒打开后静置，盒右侧一小段无字封纸。',S20:'浅灰细颗粒矿物桌面，展开的奶油白防油纸居中，棉绳在左后方，圆封贴在右侧。',S21:'穿奶油白衣袖与陶土红外套的人静止站在人行道旁，双手端同一食品纸托，背景是浅灰铺装地面；面部不入镜。',S22:'可可棕木条长凳一端，食品浅托位于左前，闭合纸袋在右后；背景为浅灰铺装与一小片低矮绿植。',S23:'公园浅灰石桌，打开的食品盒居中，左后方一角本白帆布袋，右侧一小段木椅边，远处为树木。',S24:'列车靠窗座位的浅灰小桌板已放平固定，食品浅托居中，左后帆布包、右前无字方纸巾，窗外只有柔化景物。'};
+for(const s of scenes)if(sceneEnvironments[s.id])s.scene=()=>sceneEnvironments[s.id];
+function packagingFor(id){if(guidance.packaging[id])return guidance.packaging[id].spec;if(id==='S01')return '固定使用一只奶油白长方形低边硬纸食品托，无盖无提手，托内一张平整防油纸和一张薄食品底卡，纸托保持水平。食品置于托中心，手从底部支撑，四周留少量间隙；完整或切分状态都只有本次一份。不要改成纸袋、陶盘或手抓食品。';return '沿用场景明确指定的承托物，不额外增加礼盒、纸袋、透明罩或第二套餐盘。食品保持一份，切分后的所有部分来自这一份；底部接触真实，柔软食品使用一张薄食品底卡稳固承托。';}
+function buildPrompt(f){const image=f.reference==='image';const opening=image?'以我上传的白底食品图为产品外观参考，为烘焙品牌“星起半 HALFDAY BAKERY”创作一张具有真实摄影质感的食品场景宣传图。':'根据以下产品与场景设定，为烘焙品牌“星起半 HALFDAY BAKERY”创作一张具有真实摄影质感的食品场景概念图。';const ref=image?'保留参考食品的品种特征、外形比例、烘烤颜色、表面装饰和配料关系；按本次明确指定的状态、切口与角度变换。参考图用于确定食品本身，原有白底、餐具和阴影可按本次场景替换，避免白底产品直接贴在背景上的拼贴感。':'以文字中的组成和外观建立一款结构合理的真实食品，食品与环境在同一镜头中自然呈现；未说明的配料与装饰不要自行添加。';const sections=[opening,'【产品名称】\n'+f.name,'【主要组成】\n'+f.ingredients,'【外观与口感特征】\n'+f.appearance,'【呈现状态与动作】\n'+f.state,...(f.structure?['【本款切面内部结构】\n'+f.structure]:[]),...(f.cutAvoid?['【切面防错约束】\n'+f.cutAvoid]:[]),'【场景与道具】\n'+f.scene,...(f.packaging?['【包装结构与承托】\n'+f.packaging]:[]),'【拍摄角度】\n'+f.angle,'【光线】\n'+f.light,'【环境配色】\n'+f.palette,ref,f.quality,'【画面规格】\n'+f.ratio+'，单张完整照片。'];if(f.additional.trim())sections.push('【额外要求】\n'+f.additional.trim());if(f.avoid.trim())sections.push('【本款避免项】\n'+f.avoid.trim());if(f.negative.trim())sections.push('【通用避免项】\n'+f.negative.trim());if(f.series)sections.push('【同场景系列固定要求】\n'+f.series);return sections.join('\n\n');}
+function actualState(p,sceneId,key){const s=getScene(sceneId);const k=key==='auto'?s.defaultState:key;if(k==='finish')return p.finishing;if(k==='macro')return p.macro;return stateFor(p,sceneId,k);}
+function composedPrompt(f){let prompt=buildPrompt(f);if(f.depth)prompt=prompt.replace('【环境配色】','【景深与清晰范围】\n'+f.depth+' 景深按本段设置执行；上文对背景虚化的通用描述相应调整。\n\n【环境配色】');const marker='【光线】';if(f.composition)prompt=prompt.replace(marker,'【画面构图】\n'+f.composition+'\n\n'+marker);if(f.flavors?.length){const flavorText='【本次新增风味设定】\n这次制作原产品的新口味概念：'+f.flavors.map(x=>x.name).join('、')+'。保留本产品的基本形态与组织，新增配料按以下说明适量加入。基础产品描述决定形态与组织，新增风味按本段更新表面或内部；基础描述中如有与新增风味冲突的限制，以本段为准。\n'+f.flavors.map(x=>x.text).join('\n');prompt=prompt.replace('【呈现状态与动作】',flavorText+'\n\n【呈现状态与动作】');}return prompt;}
+root.HalfdayEngine={guidance,cutProfile,structureFor,cutAvoidFor,packagingFor,scenes,angleList:presets.angles,lightList:presets.lights,compositions:presets.compositions,flavors:presets.flavors,states,quality,negative,getScene,stateFor:actualState,buildPrompt:composedPrompt,compatibleStates,compatibleCompositions,combinationCount};
+})(typeof window!=='undefined'?window:globalThis);
+
+</script><script>
+(function(root){
+  'use strict';
+  const c={cream:'#FFF4E9',red:'#B8543F',brown:'#4D322C',pale:'#E7BEB1',line:'#BBA69B',paper:'#FFFCF8'};
+  const svg=body=>`<svg viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="180" height="100" rx="9" fill="${c.cream}"/>${body}</svg>`;
+  const txt=(x,y,t,size=9,fill=c.brown)=>`<text x="${x}" y="${y}" font-size="${size}" font-family="system-ui,sans-serif" text-anchor="middle" fill="${fill}">${t}</text>`;
+  function arrow(x1,y1,x2,y2,color=c.red,dash=false,width=1.7){
+    const a=Math.atan2(y2-y1,x2-x1),l=5,spread=.5;
+    return `<path d="M${x1} ${y1}L${x2} ${y2}" fill="none" stroke="${color}" stroke-width="${width}"${dash?' stroke-dasharray="3 3"':''}/><path d="M${x2} ${y2}L${x2-l*Math.cos(a-spread)} ${y2-l*Math.sin(a-spread)}L${x2-l*Math.cos(a+spread)} ${y2-l*Math.sin(a+spread)}Z" fill="${color}"/>`;
+  }
+  const loaf=(x=90,y=70,s=1,rot=0)=>`<g transform="translate(${x} ${y}) rotate(${rot}) scale(${s})"><ellipse cx="0" cy="7" rx="23" ry="6" fill="${c.brown}" opacity=".1"/><path d="M-22 3Q-24-14-10-19Q4-24 18-12Q24-6 22 3Q0 13-22 3Z" fill="${c.pale}" stroke="${c.brown}" stroke-width="1.5"/><path d="M-10-13l-5 9M0-17l-5 10M10-13 5-4" fill="none" stroke="${c.red}" stroke-width="2" stroke-linecap="round"/></g>`;
+  const table=(y=80)=>`<path d="M15 ${y}H165M35 ${y}v10M150 ${y}v10" fill="none" stroke="${c.line}" stroke-width="1.4"/>`;
+  function camera(x,y,tx,ty,extra=0){
+    const a=Math.atan2(ty-y,tx-x)*180/Math.PI+extra;
+    return `<g transform="translate(${x} ${y}) rotate(${a})"><rect x="-12" y="-7" width="16" height="14" rx="2" fill="${c.brown}"/><path d="M4-4l7-3V7L4 4Z" fill="${c.red}"/><path d="M-9-7v-3h7v3" fill="none" stroke="${c.brown}" stroke-width="2"/><circle cx="-5" cy="0" r="3" fill="${c.cream}"/></g>`;
+  }
+  const topLoaf=(x=90,y=55,s=1)=>`<g transform="translate(${x} ${y}) scale(${s})"><ellipse rx="25" ry="17" fill="${c.pale}" stroke="${c.brown}" stroke-width="1.5"/><path d="M-10-8l-5 12M1-10l-5 17M12-7 7 7" stroke="${c.red}" stroke-width="2" fill="none" stroke-linecap="round"/></g>`;
+  function angle(id){
+    const p={top:[90,20,'90°'],fortyfive:[44,27,'45°'],low:[27,51,'25°'],eye:[24,68,'0°'],fronttop:[65,22,'60°'],overhead:[74,19,'70°'],diagonal:[32,35,'35° · 斜侧'],close:[47,42,'靠近 · 全貌'],sidelow:[155,61,'10–15° · 侧面'],dutch:[37,30,'镜头微倾'],far_scene:[20,20,'后退 · 带环境'],corner_high:[142,22,'从桌角向下']}[id];
+    if(p){
+      const small=id==='far_scene', x=small?113:96,y=small?72:70, scale=small?.65:1;
+      const floor=id==='corner_high'?`<path d="M24 63L108 48 166 69 83 90Z" fill="${c.paper}" stroke="${c.line}"/>`:table();
+      const line=arrow(p[0]+(x-p[0])*.23,p[1]+(y-p[1])*.23,x,y-9,c.red,true);
+      const extra=id==='dutch'?`<path d="M20 17l30 12M26 12l27 23" stroke="${c.line}" stroke-dasharray="2 2"/><path d="M22 27q2-11 14-12" fill="none" stroke="${c.red}"/>`:'';
+      const env=small?`<path d="M71 14h77v62M126 14v48M72 62h76" fill="none" stroke="${c.line}"/>`:'';
+      return svg(env+floor+loaf(x,y,scale)+line+extra+camera(p[0],p[1],x,y,id==='dutch'?-15:0)+txt(93,95,p[2],8));
+    }
+    if(id==='macro')return svg(table()+loaf(113,71,1.15)+camera(61,52,105,63)+arrow(74,56,96,63)+`<circle cx="115" cy="50" r="12" fill="none" stroke="${c.red}" stroke-dasharray="3 2"/>`+txt(88,18,'很近，只拍局部',9));
+    if(id==='over_shoulder')return svg(`<path d="M13 96V56q12-18 26 0l5 40" fill="${c.pale}"/><circle cx="26" cy="37" r="12" fill="${c.pale}" stroke="${c.line}"/><path d="M40 64l28 14" stroke="${c.line}" stroke-width="8" stroke-linecap="round"/>`+table(83)+loaf(119,73,.86)+arrow(61,34,114,63,c.red,true)+camera(52,28,117,63)+txt(117,18,'越过肩膀',9));
+    if(id==='side_cut')return svg(table()+`<g transform="translate(105 68)"><path d="M-26 8V-6q0-20 22-20t23 20V8Z" fill="${c.cream}" stroke="${c.brown}" stroke-width="2"/><path d="M-27 8V-7q0-22 23-21l10 5q-21-1-21 19V8" fill="${c.pale}"/><g fill="${c.pale}"><circle cx="-3" cy="-8" r="3"/><circle cx="9" cy="1" r="2.5"/><circle cx="7" cy="-13" r="2"/><circle cx="-9" cy="1" r="2"/></g></g>`+camera(28,65,92,65)+arrow(44,65,83,65,c.red,true)+txt(107,20,'切面正对镜头',9));
+    if(id==='top_detail')return svg(`<rect x="45" y="35" width="101" height="51" rx="3" fill="${c.paper}" stroke="${c.line}"/>`+topLoaf(113,62,.85)+camera(78,17,112,57)+arrow(88,28,105,45,c.red,true)+`<rect x="101" y="46" width="24" height="28" rx="2" fill="none" stroke="${c.red}" stroke-dasharray="3 2"/>`+txt(38,95,'从上方看细节',8));
+    return angle('fortyfive');
+  }
+  const sun=(x,y)=>`<g stroke="${c.red}" stroke-width="1.4"><circle cx="${x}" cy="${y}" r="7" fill="${c.pale}"/>${Array.from({length:8},(_,i)=>{let a=i*Math.PI/4;return `<path d="M${x+Math.cos(a)*10} ${y+Math.sin(a)*10}l${Math.cos(a)*4} ${Math.sin(a)*4}"/>`;}).join('')}</g>`;
+  const box=(x,y,w=17,h=27)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="2" fill="${c.paper}" stroke="${c.red}" stroke-width="1.5"/><path d="M${x+2} ${y+4}h${w-4}M${x+2} ${y+h/2}h${w-4}M${x+2} ${y+h-4}h${w-4}" stroke="${c.pale}"/>`;
+  const shadow=(cx,cy,rx,ry,op=.22)=>`<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${c.brown}" opacity="${op}"/>`;
+  function light(id){
+    let art='', shade=shadow(108,78,23,5,.14),caption='';
+    if(id==='window_soft'){art=box(15,17,17,37)+`<path d="M37 13q-5 15 0 44" fill="none" stroke="${c.line}"/>`+arrow(41,37,76,58,c.red,true)+arrow(42,49,73,67,c.red,true);caption='窗边薄纱 · 软影';}
+    else if(id==='studio_side'){art=box(17,20,21,29)+`<path d="M28 49v20m-9 0h18M145 41l-8 30" stroke="${c.line}" stroke-width="2"/>`+arrow(43,35,79,58)+arrow(140,55,113,67,c.line,true);caption='侧面大灯 · 另一侧补光';}
+    else if(id==='hard_sun'){art=sun(29,20)+arrow(45,31,80,58)+arrow(54,24,99,53);shade=`<path d="M75 74l45 0 38 9-40 4Z" fill="${c.brown}" opacity=".35"/>`;caption='直射日光 · 边缘清楚';}
+    else if(id==='dark_rim'){art=`<rect x="6" y="7" width="168" height="81" rx="7" fill="${c.brown}" opacity=".11"/>`+box(137,16,19,28)+arrow(132,35,107,54)+arrow(28,62,68,69,c.line,true);shade=shadow(74,80,33,6,.3);caption='侧后方来光 · 背景偏暗';}
+    else if(id==='morning_long'){art=sun(19,52)+arrow(35,55,73,63);shade=`<path d="M78 74l29 0 61 6-30 6Z" fill="${c.brown}" opacity=".27"/>`;caption='低处来光 · 影子拉长';}
+    else if(id==='overcast'){art=`<path d="M40 28q-6-15 8-20 12-9 22 2 18-7 25 8 15-7 24 7 13-1 16 12H39q-6-4 1-9Z" fill="${c.paper}" stroke="${c.line}"/>`+arrow(59,42,75,58,c.line,true)+arrow(89,42,89,55,c.line,true)+arrow(119,42,107,58,c.line,true);shade=shadow(92,78,28,7,.08);caption='阴天 · 浅浅软影';}
+    else if(id==='backlit_layers'){art=box(76,8,30,15)+arrow(91,28,91,46)+`<path d="M64 61q5-25 28-27t29 27" fill="none" stroke="${c.red}" stroke-width="2" opacity=".6"/>`;shade=shadow(88,84,25,7,.2);caption='从后方来光 · 边缘透亮';}
+    else if(id==='window_grid'){art=box(12,13,29,32)+`<path d="M26 14v30M13 28h26" stroke="${c.brown}" stroke-width="2"/>`+arrow(44,35,73,57);shade=`<path d="M121 59l38 13-18 16-32-14Zm15 6-21 15M119 67l34 11" fill="none" stroke="${c.brown}" stroke-width="3" opacity=".24"/>`;caption='窗框影子留在桌面';}
+    else if(id==='front_soft'){art=box(68,83,41,9)+arrow(88,81,88,73,c.red,true)+arrow(72,80,78,69,c.red,true)+arrow(105,80,101,69,c.red,true);shade=shadow(93,47,24,5,.1);caption='镜头这一侧 · 细节明亮';}
+    else if(id==='top_soft'){art=box(59,7,65,10)+arrow(69,22,79,52,c.red,true)+arrow(91,22,91,46,c.red,true)+arrow(111,22,103,53,c.red,true);shade=shadow(94,76,24,4,.26);caption='大灯在正上方 · 影子贴底';}
+    else if(id==='direct_flash'){art=camera(30,39,83,62)+`<path d="M28 18l-5 10h7l-4 10 14-15h-9l4-5Z" fill="${c.red}"/>`+arrow(43,35,81,56);shade=`<path d="M89 69l24-7 25 15-19 9-26-4Z" fill="${c.brown}" opacity=".38"/>`;caption='机顶闪光 · 短而清楚的影';}
+    else if(id==='spotlight'){art=`<path d="M33 13l15 5-8 14-13-9Z" fill="${c.brown}"/><path d="M41 28L72 75 135 77Z" fill="${c.pale}" opacity=".34"/>`+arrow(43,31,83,59);shade=shadow(118,79,27,4,.34);caption='小范围聚光 · 主体突出';}
+    else return light('window_soft');
+    const base=table(79), obj=loaf(93,68,.94);
+    return svg(base+shade+art+obj+txt(91,97,caption,7.8));
+  }
+  const zone=(x,y,w,h)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="${c.paper}" stroke="${c.line}" stroke-dasharray="3 3"/>`+txt(x+w/2,y+h/2+3,'留白',8,c.line);
+  const prop=(x,y,w=22,h=12)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="2" fill="none" stroke="${c.line}"/>`;
+  function composition(id){
+    let art='';
+    if(id==='center_whole')art=topLoaf(90,51,1)+`<path d="M90 17v10m0 48v9M29 51h18m86 0h18" stroke="${c.line}" stroke-dasharray="2 3"/>`;
+    else if(id==='lower_space')art=zone(47,17,86,25)+topLoaf(90,69,.87);
+    else if(id==='left_subject')art=topLoaf(58,54,.89)+zone(102,23,47,54);
+    else if(id==='right_subject')art=zone(30,23,47,54)+topLoaf(120,54,.89);
+    else if(id==='diagonal_flow')art=`<path d="M36 80L144 20" stroke="${c.line}" stroke-dasharray="4 4"/>`+prop(117,22,22,12)+`<g transform="rotate(-29 84 54)">${topLoaf(84,54,1.1)}</g>`;
+    else if(id==='detail_fill')art=`<path d="M19 87q-10-55 62-65 73-8 80 65" fill="${c.pale}" stroke="${c.brown}"/><path d="M52 33l-17 46M96 26 72 87m64-51-23 51" stroke="${c.red}" stroke-width="5" fill="none" stroke-linecap="round"/>`;
+    else if(id==='horizontal_base')art=`<path d="M34 77H146" stroke="${c.line}" stroke-width="2"/>`+`<g transform="translate(90 65) scale(1.5 .66)">${topLoaf(0,0,1)}</g>`+txt(90,27,'横向稳定',8,c.line);
+    else if(id==='vertical_depth')art=prop(75,19,31,12)+`<path d="M52 40h27m22 0h26" stroke="${c.line}"/>`+topLoaf(90,68,1.04)+arrow(145,80,145,26,c.line,true);
+    else if(id==='corner_space')art=zone(32,19,74,31)+topLoaf(125,67,.84);
+    else if(id==='package_frame')art=`<path d="M43 35l11-17h72l11 17M43 35h94v45H43Z" fill="${c.paper}" stroke="${c.brown}" stroke-width="1.4"/><path d="M49 40v34h82V40" fill="none" stroke="${c.line}" stroke-dasharray="2 2"/>`+topLoaf(90,58,.8);
+    else if(id==='edge_crop')art=`<g transform="translate(139 58)"><path d="M-32-27q34-20 41 5v35q-17 25-58 10-27-14-4-34Z" fill="${c.pale}" stroke="${c.brown}"/><path d="M-18-23l-19 43M1-27l-19 48" fill="none" stroke="${c.red}" stroke-width="3"/></g>`+zone(28,24,58,52);
+    else if(id==='small_subject')art=topLoaf(90,67,.54)+`<path d="M38 72h16m77 0h11M61 29h58" stroke="${c.line}" stroke-dasharray="3 3"/>`+txt(91,43,'更多环境',8,c.line);
+    else return composition('center_whole');
+    return svg(`<rect x="19" y="12" width="142" height="76" rx="3" fill="${c.paper}"/><svg x="19" y="12" width="142" height="76" viewBox="19 12 142 76" overflow="hidden">${art}</svg><rect x="19" y="12" width="142" height="76" rx="3" fill="none" stroke="${c.line}"/>`);
+  }
+  root.HalfdayVisuals={angle,light,composition};
+})(typeof window!=='undefined'?window:globalThis);
+
+</script><script>
+(function(){
+'use strict';
+const E=window.HalfdayEngine, products=window.HALFDAY_PRODUCTS, $=id=>document.getElementById(id);
+let selected=products.find(p=>p.id==='20')||products[0],sceneId='S01',filter='main',sceneDirty=false,toastTimer,sceneGroup='全部';
+const chosenFlavors=new Set();
+let lockedScene=null,stateBasis='whole',batchResults=[];const batchSelected=new Set(['20']);
+const protectedFields=['scene-text','packaging-text','angle-select','angle-text','composition-select','composition-text','light-select','light-text','state-select','ratio','depth-select','palette','additional','quality','negative','reference','random-mode'];
+const custom={id:'CUSTOM',name:'我的新产品',category:'自定义',ingredients:'',appearance:'',whole:'呈现一份食品，保留主要外形与表面特征。',cut:'将食品切开并展示切面，内部结构符合上方填写的组成。',macro:'近距离表现本产品最能体现口感的质地。',finishing:'烘焙师用合适的工具将一份成品轻放在托盘上。',handheld:'plate',avoid:'',recommended:['S02','S03']};
+function toast(t){$('toast').textContent=t;$('toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('visible'),2300);}
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function getAngle(){const k=$('angle-select').value;return k==='auto'?E.getScene(sceneId).defaultAngle:k;}
+function fillSelect(id,entries,value){const el=$(id);el.replaceChildren();for(const item of entries){const o=document.createElement('option');o.value=item.id;o.textContent=item.name;el.append(o);}el.value=entries.some(x=>x.id===value)?value:entries[0].id;}
+function refreshOptions(){const s=E.getScene(sceneId),customOption={id:'custom',name:'自定义'};
+ fillSelect('angle-select',[{id:'auto',name:'跟随场景'},...E.angleList.filter(a=>s.allowedAngles.includes(a.id)),customOption],$('angle-select').value||'auto');
+ const a=getAngle();const allowedStates=E.compatibleStates(s).filter(k=>['macro','top_detail','custom'].includes(a)||k!=='macro');
+ fillSelect('state-select',[{id:'auto',name:'跟随场景'},...E.states.filter(st=>allowedStates.includes(st.id)),customOption],$('state-select').value||'auto');
+ fillSelect('light-select',[...E.lightList.filter(x=>s.allowedLights.includes(x.id)),customOption],$('light-select').value||s.allowedLights[0]);
+ const comps=a==='custom'?E.compositions:E.compatibleCompositions(a);
+ fillSelect('composition-select',[...comps,customOption],$('composition-select').value||comps[0].id);
+}
+function fields(){const f={name:$('name').value,ingredients:$('ingredients').value,appearance:$('appearance').value,state:$('state-text').value,scene:$('scene-text').value,angle:$('angle-text').value,composition:$('composition-text').value,light:$('light-text').value,palette:$('palette').value,additional:$('additional').value,quality:$('quality').value,avoid:$('avoid').value,negative:$('negative').value,ratio:$('ratio').value,reference:$('reference').value,structure:$('structure-text').value,cutAvoid:$('cut-avoid').value,packaging:$('packaging-text').value,depth:depths[$('depth-select').value],flavors:E.flavors.filter(x=>chosenFlavors.has(x.id))};if(lockedScene)Object.assign(f,lockedScene.common,{series:seriesRule});return f;}
+const depths={soft:'食品主要部位清楚，背景柔和虚化但仍能辨认场景。',clear:'食品与附近包装、承托物、道具都保留清楚细节，远处环境仅轻微虚化；不制造大面积奶油状虚焦。',shallow:'焦点集中在本次指定的关键口感区域，前后逐渐柔化；主体轮廓仍可辨，不让主要切面大部分失焦。'};
+function updateOutput(){const f=fields(),prompt=E.buildPrompt(f);$('prompt').value=prompt;$('word-count').textContent=prompt.length+' 字';$('current-title').textContent=f.name||'未命名产品';$('selection-product').textContent=(selected.id==='CUSTOM'?'自定义':selected.id)+' '+(f.name||'未命名');$('selection-scene').textContent=sceneId+' '+E.getScene(sceneId).name;
+ $('candidate-note').hidden=!selected.id.startsWith('R');$('candidate-note').textContent='替换候选 · 可轮换 '+(selected.replace_for||'相关品类')+' 号。原料与外观为研发建议，可直接改成你想测试的新口味。';
+ $('usage-note').textContent=f.reference==='image'?'图片辅助模式：上传你想采用的产品照片，再粘贴提示词。':'复制提示词，直接粘贴到你使用的生图软件中，无需上传白底图。';
+ $('combination-note').hidden=!(sceneId==='S01'&&$('state-select').value==='cut');$('combination-note').textContent='切开后的手持场景建议用盘托住，避免手压奶油或夹馅。场景文字仍可自由修改。';
+ updateVisuals();updateGolden();updateLockUI();updateCutHint();
+}
+function renderList(){const q=$('search').value.trim().toLowerCase();const shown=products.filter(p=>(filter==='candidate'?p.id.startsWith('R'):!p.id.startsWith('R'))&&(!q||(p.id+' '+p.name+' '+p.category).toLowerCase().includes(q)));$('products').replaceChildren();shown.forEach(p=>{const b=document.createElement('button');b.className='product-button'+(selected.id===p.id?' selected':'');b.type='button';b.setAttribute('aria-pressed',String(selected.id===p.id));const n=document.createElement('span');n.className='product-id';n.textContent=p.id;const t=document.createElement('span');t.textContent=p.name;b.append(n,t);b.addEventListener('click',()=>selectProduct(p.id));$('products').append(b);});if(!shown.length){const empty=document.createElement('p');empty.className='empty';empty.textContent='没有匹配的产品，试试名称或编号。';$('products').append(empty);}document.querySelectorAll('[data-filter]').forEach(b=>{const active=b.dataset.filter===filter;b.classList.toggle('selected',active);b.setAttribute('aria-pressed',String(active));});}
+function renderScenes(){ $('scene-current').textContent='已选 '+sceneId+' · '+E.getScene(sceneId).name;document.querySelectorAll('[data-group]').forEach(b=>{b.classList.toggle('selected',b.dataset.group===sceneGroup);b.setAttribute('aria-pressed',String(b.dataset.group===sceneGroup));});document.querySelectorAll('[data-scene]').forEach(b=>{const active=b.dataset.scene===sceneId;b.hidden=sceneGroup!=='全部'&&E.getScene(b.dataset.scene).group!==sceneGroup;b.classList.toggle('selected',active);b.setAttribute('aria-pressed',String(active));});}
+function renderFlavors(){document.querySelectorAll('[data-flavor]').forEach(b=>{const on=chosenFlavors.has(b.dataset.flavor);b.classList.toggle('selected',on);b.setAttribute('aria-pressed',String(on));});}
+function effectiveState(){const k=$('state-select').value;return k==='auto'?E.getScene(sceneId).defaultState:k==='custom'?stateBasis:k;}
+function fillState(){const key=$('state-select').value;if(key!=='custom'){stateBasis=key==='auto'?E.getScene(sceneId).defaultState:key;$('state-text').value=E.stateFor(selected,sceneId,key);$('structure-text').value=E.structureFor(selected,stateBasis);$('cut-avoid').value=E.cutAvoidFor(selected,stateBasis);}}
+function fillAngle(){const key=getAngle();if(key!=='custom')$('angle-text').value=E.angleList.find(a=>a.id===key).text;}
+function fillComposition(){const k=$('composition-select').value;if(k!=='custom')$('composition-text').value=E.compositions.find(c=>c.id===k).text;}
+function fillLight(){const k=$('light-select').value;if(k!=='custom')$('light-text').value=E.lightList.find(l=>l.id===k).text;}
+function fillScene(){if(lockedScene)return;if(!sceneDirty)$('scene-text').value=E.getScene(sceneId).scene(selected,effectiveState());}
+function fillPackaging(){$('packaging-text').value=E.packagingFor(sceneId);$('packaging-name').textContent=E.guidance.packaging[sceneId]?.container||'按场景承托';}
+function selectScene(id){if(lockedScene){toast('场景已锁定；先解锁再换场景');return;}if(!E.scenes.some(s=>s.id===id))throw new Error('未知场景编号');sceneId=id;sceneDirty=false;applyGolden(false);}
+function fillProduct(){['name','ingredients','appearance','avoid'].forEach(k=>$(k).value=selected[k]);if(!lockedScene)$('reference').value='text';$('current-badge').textContent=selected.id==='CUSTOM'?'自定义':(selected.id.startsWith('R')?'候选 ':'NO.')+selected.id;chosenFlavors.clear();renderFlavors();if(lockedScene)$('state-select').value=lockedScene.stateKey;else if($('state-select').value==='custom')$('state-select').value=stateBasis;fillState();fillScene();renderList();updateOutput();}
+function selectProduct(id){const p=id==='CUSTOM'?custom:products.find(p=>p.id===id);if(!p)throw new Error('未知产品编号');invalidateBatch();if(selected.id==='CUSTOM'&&p.id!=='CUSTOM')batchSelected.delete('CUSTOM');selected=p;filter=p.id.startsWith('R')?'candidate':'main';fillProduct();renderBatchChoices();updateBatchCount();}
+E.scenes.forEach(s=>{const b=document.createElement('button');b.type='button';b.className='scene-button';b.dataset.scene=s.id;const small=document.createElement('small');small.textContent=s.id+' · '+s.desc;const strong=document.createElement('strong');strong.textContent=s.name;b.append(strong,small);b.addEventListener('click',()=>selectScene(s.id));$('scenes').append(b);});
+E.flavors.forEach(f=>{const b=document.createElement('button');b.type='button';b.className='flavor-chip';b.dataset.flavor=f.id;b.textContent=f.name;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{if(chosenFlavors.has(f.id))chosenFlavors.delete(f.id);else chosenFlavors.add(f.id);renderFlavors();invalidateBatch();updateOutput();});$('flavors').append(b);});
+document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;renderList();}));$('search').addEventListener('input',renderList);$('custom-product').addEventListener('click',()=>{selectProduct('CUSTOM');$('name').focus();});$('reset-product').addEventListener('click',()=>{invalidateBatch();fillProduct();toast('已恢复当前产品资料与原始风味');});
+['name','ingredients','appearance','palette','additional','quality','avoid','negative','packaging-text','structure-text','cut-avoid'].forEach(id=>$(id).addEventListener('input',()=>{invalidateBatch();updateOutput();}));
+for(const [input,selector] of [['state-text','state-select'],['angle-text','angle-select'],['composition-text','composition-select'],['light-text','light-select']])$(input).addEventListener('input',()=>{$(selector).value='custom';invalidateBatch();updateOutput();});
+$('scene-text').addEventListener('input',()=>{sceneDirty=true;invalidateBatch();updateOutput();});$('state-select').addEventListener('change',()=>{fillState();fillScene();invalidateBatch();updateOutput();});$('angle-select').addEventListener('change',()=>{refreshOptions();fillAngle();fillComposition();fillState();invalidateBatch();updateOutput();});$('composition-select').addEventListener('change',()=>{fillComposition();invalidateBatch();updateOutput();});$('light-select').addEventListener('change',()=>{fillLight();invalidateBatch();updateOutput();});$('ratio').addEventListener('change',()=>{invalidateBatch();updateOutput();});$('reference').addEventListener('change',()=>{invalidateBatch();updateOutput();});
+$('depth-select').addEventListener('change',()=>{invalidateBatch();updateOutput();});
+$('mix-surprise').addEventListener('click',()=>{if(lockedScene){toast('场景已锁定，先解锁再随机');return;}if($('random-mode').value==='golden'){sceneId=pick(E.scenes).id;sceneGroup='全部';sceneDirty=false;applyGolden(false);toast('已换成另一套场景黄金组合');return;}const s=pick(E.scenes);sceneId=s.id;sceneDirty=false;sceneGroup='全部';refreshOptions();$('angle-select').value=pick(s.allowedAngles);refreshOptions();const a=getAngle();$('state-select').value=pick(E.compatibleStates(s).filter(k=>['macro','top_detail'].includes(a)||k!=='macro'));$('light-select').value=pick(s.allowedLights);$('composition-select').value=pick(E.compatibleCompositions(a)).id;fillState();fillScene();fillPackaging();fillAngle();fillComposition();fillLight();renderScenes();invalidateBatch();updateOutput();toast('已换一组场景、状态、机位、光线与构图');});
+async function copyText(text,textarea){let copied=false;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);copied=true;}}catch(e){}if(!copied){const old=document.activeElement;const target=textarea||document.createElement('textarea');if(!textarea){target.value=text;target.style.position='fixed';target.style.left='0';target.style.top='0';target.setAttribute('aria-label','待复制的批量提示词');document.body.append(target);}target.focus();target.select();try{copied=document.execCommand('copy');}catch(e){}if(!textarea){if(copied)target.remove();else{target.style.position='static';target.style.width='100%';$('batch-results').prepend(target);}}if(copied&&old?.focus)old.focus();}toast(copied?'提示词已复制':'已选中全文，请按 Ctrl+C 或长按复制');}
+$('copy').addEventListener('click',()=>copyText($('prompt').value,$('prompt')));
+function showTab(key){document.querySelectorAll('[data-tab]').forEach(b=>{const on=b.dataset.tab===key;b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1;});document.querySelectorAll('.tab-panel').forEach(p=>p.hidden=p.id!=='panel-'+key);}
+document.querySelectorAll('[data-tab]').forEach(b=>{b.addEventListener('click',()=>showTab(b.dataset.tab));b.addEventListener('keydown',e=>{if(!['ArrowRight','ArrowLeft','Home','End'].includes(e.key))return;e.preventDefault();const keys=['scene','camera','light'];let i=keys.indexOf(b.dataset.tab);i=e.key==='Home'?0:e.key==='End'?2:(i+(e.key==='ArrowRight'?1:2))%3;showTab(keys[i]);$('tab-'+keys[i]).focus();});});
+document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>{showTab(b.dataset.next);$('tab-'+b.dataset.next).focus();document.querySelector('.workspace-tabs').scrollIntoView({block:'start',behavior:'smooth'});}));
+for(const group of ['全部',...new Set(E.scenes.map(s=>s.group))]){const b=document.createElement('button');b.type='button';b.dataset.group=group;b.textContent=group+' '+(group==='全部'?E.scenes.length:E.scenes.filter(s=>s.group===group).length);b.addEventListener('click',()=>{sceneGroup=group;renderScenes();});$('scene-groups').append(b);}
+function renderCards(kind,entries,selectedId){const host=$(kind+'-cards'),signature=entries.map(e=>e.id).join('|');if(host.dataset.signature!==signature){host.replaceChildren();host.dataset.signature=signature;for(const entry of entries){const b=document.createElement('button');b.type='button';b.className='visual-card';b.dataset.choice=entry.id;const picture=document.createElement('div');picture.className='card-diagram';picture.innerHTML=window.HalfdayVisuals[kind](entry.id);const title=document.createElement('strong');title.textContent=entry.name;const hint=document.createElement('small');hint.textContent=entry.hint||entry.name;b.append(picture,title,hint);b.addEventListener('click',()=>{if(lockedScene)return;const el=$(kind+'-select');el.value=entry.id;el.dispatchEvent(new Event('change',{bubbles:true}));});host.append(b);}}
+for(const b of host.children){const on=b.dataset.choice===selectedId;b.classList.toggle('selected',on);b.setAttribute('aria-pressed',String(on));}}
+function updateVisuals(){const scene=E.getScene(sceneId),a=getAngle(),l=$('light-select').value,c=$('composition-select').value;
+renderCards('angle',E.angleList.filter(x=>scene.allowedAngles.includes(x.id)),a);renderCards('light',E.lightList.filter(x=>scene.allowedLights.includes(x.id)),l);renderCards('composition',a==='custom'?E.compositions:E.compatibleCompositions(a),c);
+const host=$('preview-diagrams');host.replaceChildren();for(const [kind,id,title]of [['angle',a,'机位'],['light',l,'光线'],['composition',c,'构图']]){const box=document.createElement('div');const caption=document.createElement('span');caption.textContent=title;box.append(caption);if(id==='custom'){const p=document.createElement('p');p.textContent='已手动改写';box.append(p);}else{const diagram=document.createElement('div');diagram.innerHTML=window.HalfdayVisuals[kind](id);box.append(diagram);}host.append(box);}
+const angle=E.angleList.find(x=>x.id===a),light=E.lightList.find(x=>x.id===l);$('preview-summary').textContent=(angle?.name||'自定义机位')+' · '+(light?.name||'自定义光线')+' · '+$('ratio').selectedOptions[0].textContent;
+$('depth-hint').textContent=depths[$('depth-select').value];}
+const seriesRule='这是一组同场景产品系列中的单张照片。固定本条提示词的环境、桌面材质、道具位置、包装盒型与开合状态、相机方向、构图、光源方向、景深和画幅，只替换产品与其真实内部结构。不要为不同口味重新设计背景、改变光向或增加装饰。包装容量可适应本份食品的自然尺寸，但材质、颜色、零件和开口方向保持一致；不把小点心放大成整只大蛋糕。';
+const commonKeys=['scene','angle','composition','light','packaging','palette','additional','quality','negative','ratio','reference','depth'];
+function invalidateBatch(){if(!batchResults.length)return;batchResults=[];$('batch-results').replaceChildren();$('batch-export').hidden=true;$('batch-status').textContent='设置有变化，请重新生成这一组。';}
+function updateGolden(){const g=E.guidance.goldens[sceneId];$('golden-title').textContent=sceneId+' · '+g.label;$('golden-reason').textContent=g.why;const match=getAngle()===g.angle&&effectiveState()===g.state&&$('light-select').value===g.light&&$('composition-select').value===g.composition&&$('ratio').value===g.ratio&&$('depth-select').value===g.depth&&!sceneDirty;$('golden-status').textContent=match?'当前使用这套推荐参数 · 可继续微调':'当前为你的调整版 · 点击可恢复这套推荐参数';}
+function applyGolden(notify=true){if(lockedScene){toast('先解锁场景，再套用黄金组合');return;}const g=E.guidance.goldens[sceneId];sceneDirty=false;$('angle-select').value='auto';$('state-select').value='auto';refreshOptions();$('angle-select').value=g.angle;refreshOptions();$('state-select').value=g.state;$('light-select').value=g.light;$('composition-select').value=g.composition;$('ratio').value=g.ratio;$('depth-select').value=g.depth;fillState();fillScene();fillPackaging();fillAngle();fillLight();fillComposition();renderScenes();invalidateBatch();updateOutput();if(notify)toast('已套用本场景黄金组合');}
+function updateCutHint(){const k=effectiveState(),cut=['cut','bite'].includes(k);$('structure-fields').hidden=!cut;if(!cut){$('cut-summary').textContent=k==='whole'?(['S09','S13','S16','S19','S23'].includes(sceneId)?'纸盒要留出闭合空间，已保留能越过盒沿的俯看机位。':'')+'完整状态不增加切口；巴斯克按菜单原本的一片呈现。':'按这款食品自身的工艺和质地呈现。';return;}const top=['top','overhead','top_detail'].includes(getAngle());$('cut-summary').textContent=top?'当前高位主要看顶面；想清楚展示竖切面，建议改为45°或低位。切法与内部结构已按本款填好。':'切法、切块数量与内部结构已按本款单独填好，展开下方可修改。';}
+function updateLockUI(){const on=!!lockedScene;document.body.classList.toggle('scene-locked',on);document.querySelector('.series-panel').classList.toggle('is-locked',on);$('lock-scene').textContent=on?'解锁，调整场景':'锁定当前场景';$('lock-scene').setAttribute('aria-pressed',String(on));for(const id of protectedFields)$(id).disabled=on;for(const selector of ['[data-scene]','.visual-card'])document.querySelectorAll(selector).forEach(b=>b.disabled=on);$('apply-golden').disabled=on;$('mix-surprise').disabled=on;$('lock-summary').textContent=on?'已锁定 '+lockedScene.sceneId+' · '+E.getScene(lockedScene.sceneId).name+'。现在点左侧换产品，环境和包装保持不变；食品状态沿用，切面结构随产品更新。':'选好组合后锁定，再点左侧其他产品。';$('batch-generate').textContent=on?'按锁定场景生成这组提示词':'锁定并生成这组提示词';}
+function lockCurrent(){if(lockedScene)return;const f=fields();lockedScene={sceneId,stateKey:effectiveState(),common:Object.fromEntries(commonKeys.map(k=>[k,f[k]]))};updateOutput();}
+$('apply-golden').addEventListener('click',()=>applyGolden());
+$('lock-scene').addEventListener('click',()=>{invalidateBatch();if(lockedScene){lockedScene=null;updateOutput();toast('已解锁，当前设置保留');}else{lockCurrent();toast('已锁定拍摄设置，可以只换产品了');}});
+function renderBatchChoices(){$('batch-products').replaceChildren();const list=selected.id==='CUSTOM'?[custom,...products]:products;for(const p of list){const label=document.createElement('label'),input=document.createElement('input'),span=document.createElement('span');input.type='checkbox';input.dataset.batchProduct=p.id;input.checked=batchSelected.has(p.id);span.textContent=p.id+' '+p.name;input.addEventListener('change',()=>{if(input.checked)batchSelected.add(p.id);else batchSelected.delete(p.id);invalidateBatch();updateBatchCount();});label.append(input,span);$('batch-products').append(label);}}
+function updateBatchCount(){$('batch-count').textContent=batchSelected.size+' 款';$('batch-generate').disabled=batchSelected.size===0;document.querySelectorAll('[data-batch-product]').forEach(el=>el.checked=batchSelected.has(el.dataset.batchProduct));}
+function chooseBatch(ids){batchSelected.clear();ids.forEach(id=>batchSelected.add(id));invalidateBatch();renderBatchChoices();updateBatchCount();}
+$('batch-menu').addEventListener('click',()=>chooseBatch(products.filter(p=>!p.id.startsWith('R')).map(p=>p.id)));
+$('batch-candidates').addEventListener('click',()=>chooseBatch(products.filter(p=>p.id.startsWith('R')).map(p=>p.id)));
+$('batch-current').addEventListener('click',()=>chooseBatch([selected.id]));$('batch-clear').addEventListener('click',()=>chooseBatch([]));
+function fieldsForProduct(p){const f=fields();if(p.id===selected.id)return {...f,...lockedScene.common,series:seriesRule};return {...f,...lockedScene.common,name:p.name,ingredients:p.ingredients,appearance:p.appearance,avoid:p.avoid,state:E.stateFor(p,sceneId,lockedScene.stateKey),structure:E.structureFor(p,lockedScene.stateKey),cutAvoid:E.cutAvoidFor(p,lockedScene.stateKey),flavors:[],series:seriesRule};}
+function renderBatchResults(){$('batch-results').replaceChildren();for(const result of batchResults){const details=document.createElement('details');details.className='batch-result';const summary=document.createElement('summary');summary.textContent=result.id+' · '+result.name;const area=document.createElement('textarea');area.value=result.prompt;area.readOnly=true;area.setAttribute('aria-label',result.name+'的完整提示词');const copy=document.createElement('button');copy.type='button';copy.textContent='复制这一款';copy.addEventListener('click',()=>copyText(result.prompt,area));details.append(summary,area,copy);$('batch-results').append(details);}}
+function generateBatch(){if(batchSelected.has('CUSTOM')&&(!$('name').value.trim()||!$('ingredients').value.trim())){toast('先填好自定义产品名称和主要组成');return;}if(!batchSelected.size){toast('先勾选至少一款产品');return;}lockCurrent();const pool=[...products,custom];batchResults=[...batchSelected].map(id=>pool.find(p=>p.id===id)).filter(Boolean).map(p=>{const f=fieldsForProduct(p);return {id:p.id,name:f.name,prompt:E.buildPrompt(f)};});renderBatchResults();$('batch-export').hidden=false;$('batch-status').textContent='已生成 '+batchResults.length+' 条 · 同一 '+sceneId+' 场景。每条可单独复制；只有当前款沿用其已编辑的配方和新增风味，其余使用菜单设定。';}
+$('batch-generate').addEventListener('click',generateBatch);
+function batchText(){return batchResults.map(r=>'===== '+r.id+' '+r.name+' =====\n\n'+r.prompt).join('\n\n\n');}
+$('batch-copy').addEventListener('click',()=>{if(batchResults.length)copyText(batchText());});
+$('batch-download').addEventListener('click',()=>{if(!batchResults.length)return;const blob=new Blob(['\uFEFF'+batchText()],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='星起半-'+sceneId+'-同场景-'+batchResults.length+'款提示词.txt';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+
+$('quality').value=E.quality;$('negative').value=E.negative;refreshOptions();fillProduct();applyGolden(false);renderBatchChoices();updateBatchCount();
+const count=E.combinationCount();$('count-product').textContent=count.toLocaleString('zh-CN');$('count-total').textContent=(count*products.length).toLocaleString('zh-CN');$('count-explanation').textContent='按场景 × 状态 × 机位 × 光线 × 构图的兼容预设统计；不计画幅、景深、风味追加和手动改写。组合数不等于实际生成图的去重数量。';
+const editNames=['name','ingredients','appearance','state','scene','angle','composition','light','palette','additional','avoid','negative','quality','reference','ratio','packaging','structure','cutAvoid'];
+const tool={name:'compose_food_photo_prompt',title:'组合食品摄影提示词',description:'选择星起半产品与摄影场景，可追加风味并修改描述；更新页面并返回完整提示词，不生成图片。',inputSchema:{type:'object',properties:{product_id:{type:'string',description:'01–32、R01–R32或CUSTOM'},scene_id:{type:'string',enum:E.scenes.map(s=>s.id)},flavor_ids:{type:'array',items:{type:'string',enum:E.flavors.map(f=>f.id)}},edits:{type:'object',properties:Object.fromEntries(editNames.map(k=>[k,{type:'string'}])),additionalProperties:false}},additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:false},execute:async function(input){if(!input||typeof input!=='object'||Array.isArray(input))throw new Error('参数应为对象');if(Object.keys(input).some(k=>!['product_id','scene_id','flavor_ids','edits'].includes(k)))throw new Error('未知参数');if(input.product_id!==undefined&&input.product_id!=='CUSTOM'&&!products.some(p=>p.id===input.product_id))throw new Error('未知产品编号');if(input.scene_id!==undefined&&!E.scenes.some(s=>s.id===input.scene_id))throw new Error('未知场景编号');if(input.flavor_ids!==undefined&&(!Array.isArray(input.flavor_ids)||input.flavor_ids.some(id=>!E.flavors.some(f=>f.id===id))))throw new Error('无效风味编号');if(input.edits!==undefined&&(!input.edits||typeof input.edits!=='object'||Array.isArray(input.edits)))throw new Error('edits应为对象');for(const [k,v]of Object.entries(input.edits||{})){if(!editNames.includes(k)||typeof v!=='string')throw new Error('无效字段 '+k);if(k==='reference'&&!['image','text'].includes(v))throw new Error('无效参考方式');if(k==='ratio'&&![...$('ratio').options].some(o=>o.value===v))throw new Error('无效画面比例');}if(lockedScene&&(input.scene_id&&input.scene_id!==sceneId||Object.keys(input.edits||{}).some(k=>['scene','packaging','angle','composition','light','palette','additional','quality','negative','ratio','reference'].includes(k))))throw new Error('场景已锁定，请先在页面解锁后修改拍摄设置');if(input.product_id)selectProduct(input.product_id);if(input.scene_id&&(!lockedScene||input.scene_id!==sceneId))selectScene(input.scene_id);if(input.flavor_ids){chosenFlavors.clear();input.flavor_ids.forEach(id=>chosenFlavors.add(id));renderFlavors();}const map={state:'state-text',scene:'scene-text',angle:'angle-text',composition:'composition-text',light:'light-text',packaging:'packaging-text',structure:'structure-text',cutAvoid:'cut-avoid'};for(const [k,v]of Object.entries(input.edits||{})){if(k==='scene')sceneDirty=true;if(['state','angle','composition','light'].includes(k))$(k+'-select').value='custom';$(map[k]||k).value=v;}invalidateBatch();updateOutput();return {product_id:selected.id,scene_id:sceneId,prompt:$('prompt').value};}};
+if(document.modelContext?.registerTool){const lifecycle=new AbortController();try{Promise.resolve(document.modelContext.registerTool(tool,{signal:lifecycle.signal})).catch(()=>{});window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true});}catch(e){}}
+})();
+
+</script>
+</body></html>

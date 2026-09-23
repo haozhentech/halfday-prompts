@@ -1,0 +1,6 @@
+.private/
+data/
+node_modules/
+*.log
+.env
+.playwright-cli/
