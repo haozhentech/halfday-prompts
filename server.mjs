@@ -130,5 +130,5 @@ export async function createApp({dataDir=process.env.DATA_DIR||path.join(root,'d
   return server;
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
-  const server=await createApp();server.listen(Number(process.env.PORT||4190),process.env.HOST||'0.0.0.0',()=>console.log('Halfday server listening',server.address().port));
+  const server=await createApp();server.listen(Number(process.env.PORT||4188),process.env.HOST||'0.0.0.0',()=>console.log('Halfday server listening',server.address().port));
 }

@@ -18,7 +18,7 @@ export ADMIN_TOKEN="$(node -e 'console.log(require("node:crypto").randomBytes(36
 npm start
 ```
 
-默认端口 4190；公开页面 `/`，管理页面 `/admin/`。可配置 `PORT`、`HOST`、`DATA_DIR`。公网部署请使用 HTTPS 反向代理，后台口令只在当前页内存中使用，不写入浏览器存储。
+默认端口 4188；公开页面 `/`，管理页面 `/admin/`。可配置 `PORT`、`HOST`、`DATA_DIR`。公网部署请使用 HTTPS 反向代理，后台口令只在当前页内存中使用，不写入浏览器存储。
 
 管理页支持修改产品、场景、机位、光线、构图、风味、切面、包装、黄金组合说明与通用摄影要求；可发布兼容的新版 `index.html`，并回退完整历史版本。所有发布前自动备份。系统检查 HTML 的脚本语法，不保证上传的新版本在视觉与交互上没有问题，发布后应实际检查。
 
@@ -33,11 +33,11 @@ docker build -t halfday-prompts .
 docker volume create halfday-data
 # The named volume is initialized using the directory ownership from the image.
 docker run -d --name halfday-prompts --restart unless-stopped \
-  -p 127.0.0.1:4190:4190 --env-file .env \
+  -p 127.0.0.1:4188:4188 --env-file .env \
   -v halfday-data:/data halfday-prompts
 ```
 
-`.env` 只需包含自行生成的 `ADMIN_TOKEN=...`。可以通过 Caddy/Nginx 转发到 4190。仅在可信反向代理覆盖 `X-Halfday-Client-IP` 且后端端口不对公网开放时设置 `TRUST_CADDY=1`。
+`.env` 只需包含自行生成的 `ADMIN_TOKEN=...`。可以通过 Caddy/Nginx 转发到 4188。仅在可信反向代理覆盖 `X-Halfday-Client-IP` 且后端端口不对公网开放时设置 `TRUST_CADDY=1`。
 
 ## 开发与检查
 
